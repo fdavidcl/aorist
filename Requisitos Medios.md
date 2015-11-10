@@ -27,21 +27,8 @@ Crear un nuevo medio.
 Salida: 
 Ninguna. 
 
-### RF2: Solicitud de alta
 
-Actor: 
-Gerente del medio. 
-
-Entrada: 
-Descripción de la solicitud. 
-
-Procesamiento: 
-Enviar la solicitud a nuestra empresa. 
-
-Salida: 
-Ninguna. 
-
-### RF3: Añadir una temática al medio
+### RF2: Añadir una temática al medio
  
 Actor: 
 Administrador. 
@@ -54,7 +41,6 @@ Añadir la temática a los datos del medio.
 
 Salida: 
 Ninguna. 
-
 
 
 ## Requisitos de datos
