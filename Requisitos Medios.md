@@ -27,8 +27,21 @@ Crear un nuevo medio.
 Salida: 
 Ninguna. 
 
+### RF2: Dar de baja un medio
 
-### RF2: Añadir una temática al medio
+Actor: 
+Administrador. 
+
+Entrada: 
+Identificador del medio a dar de baja. 
+
+Procesamiento: 
+Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilidad. 
+
+Salida: 
+Ninguna. 
+
+### RF3: Añadir una temática al medio
  
 Actor: 
 Administrador. 
@@ -51,13 +64,12 @@ Ninguna.
    - Sitio web 
    - Temática 
    - Datos fiscales
-   - ...
 
 ### RD2: Datos necesarios para almacenar un Medio 
    - Nombre
    - Sitio web 
+   - Temática
    - Datos fiscales
-   - ... 
 
 
 ## Restricciones semánticas
