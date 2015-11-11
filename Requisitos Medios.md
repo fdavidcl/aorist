@@ -55,15 +55,44 @@ Añadir la temática a los datos del medio.
 Salida: 
 Ninguna. 
 
+### RF4: Eliminar una temática de un medio
+
+Actor: 
+Administrador. 
+
+Entrada: 
+Temática. 
+
+Procesamiento: 
+Si hay más de una temática en el medio, se muestran y se da a elegir una a eliminar. 
+
+Salida: 
+Ninguna,
+
+
+### RF5: Mostrar los datos de un medio
+
+Actor:
+Administrador.
+
+Entrada: 
+Identificador (o identificadores) del medio. 
+
+Procesamiento: 
+Buscar y mostrar los datos de los medios requeridos. 
+
+Salida: 
+Datos de los medios. 
+
 
 ## Requisitos de datos
 
 ### RD1: Datos almacenados de Medio 
    - Identificador
-   - Nombre
-   - Sitio web 
-   - Temática 
-   - Datos fiscales
+   - Nombre (cadena de caracteres)
+   - Sitio web (cadena de caracteres)
+   - Temática (lista de cadenas de caracteres)
+   - Datos fiscales (lista de cadenas de caracteres)
 
 ### RD2: Datos necesarios para almacenar un Medio 
    - Nombre
