@@ -1,5 +1,5 @@
 ---
-title: "Requisitos de Gestión de Medios"
+title: "Requisitos de Audiencia"
 author: "Luis Castro Martín"
 numbersections: true
 language: spanish
@@ -106,5 +106,6 @@ Datos de las audiencias.
 
 ## Restricciones semánticas
 
-### RS1: ???
+### RS1: Asociaciones
+
 Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema. 
