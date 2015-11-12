@@ -13,7 +13,7 @@ La gestión de anunciantes permite registras nuevas empresas anunciantes que qui
 
 ## Requisitos funcionales
 
-### RF-1: Dar de alta una empresa anunciante
+### RF1: Dar de alta una empresa anunciante
 
 Actor:
 Administrador
@@ -27,7 +27,7 @@ Crear nueva empresa, con identificador(RD-1)
 Salida:
 Ninguna
 
-### RF-2: Dar de baja una empresa anunciante
+### RF2: Dar de baja una empresa anunciante
 
 Actor:
 Administrador
@@ -41,7 +41,7 @@ Eliminar los datos almacenados con dicha empresa
 Salida:
 Ninguna
 
-### RF-3: Realizar contrato
+### RF3: Realizar contrato
 
 Actor:
 Administrador
@@ -56,7 +56,7 @@ Se establece un contrato que vincula una empresa a un conjunto de audiencias
 Salida:
 Ninguna
 
-### RF-4: Mostrar los datos de una empresa anunciante
+### RF4: Mostrar los datos de una empresa anunciante
 
 Actor:
 Administrador
@@ -68,25 +68,27 @@ Procesamiento:
 Buscar y mostrar los datos de la empresa anunciante.
 
 Salida:
-RD-1
+RD1
 
 ## Requisitos de datos
 
-### RD-1: Datos almacenados de empresa anunciante
+### RD1: Datos almacenados de empresa anunciante
  - ID empresa anunciante
  - Nombre de la empresa anunciante [cadena de caracteres]
  - Sitio web [cadena de caracteres]
  - Lista de contratos firmados [cadena de ID's contratos]
-### RD-2: Datos requeridos para registrar una empresa anunciante
+
+### RD2: Datos requeridos para registrar una empresa anunciante
  - Nombre de la empresa anunciante 	[cadena de caracteres]
  - Sitio web [cadena de caracteres]
-### RD-3: Datos almacenados de los contratos
+
+### RD3: Datos almacenados de los contratos
  - ID contrato
  - ID empresa anunciante
  - ID's audiencias [cadena de ID's audiencias]
 
 ## Restricciones semánticas
 
-### RS-1: Contratos
+### RS1: Contratos
 Los contratos deben contener, al menos, una audiencia.
 
