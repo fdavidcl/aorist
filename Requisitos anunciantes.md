@@ -86,6 +86,8 @@ RD1
  - ID contrato
  - ID empresa anunciante
  - ID's audiencias [cadena de ID's audiencias]
+ - Fecha
+ - Precio
 
 ## Restricciones semánticas
 
