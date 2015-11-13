@@ -13,21 +13,21 @@ La gestión de anunciantes permite registras nuevas empresas anunciantes que qui
 
 ## Requisitos funcionales
 
-<h3 id="RF1">RF1: Dar de alta una empresa anunciante</h3>
+\rf{Dar de alta una empresa anunciante}
 
 Actor:
 Administrador
 
 Entrada:
-[RD2](#RD2)
+RD2
 
 Procesamiento:
-Crear nueva empresa, con identificador([RD1](#RD1))
+Crear nueva empresa, con identificador RD1
 
 Salida:
 Ninguna
 
-<h3 id="RF2">RF2: Dar de baja una empresa anunciante</h3>
+\rf{Dar de baja una empresa anunciante}
 
 Actor:
 Administrador
@@ -41,7 +41,7 @@ Eliminar los datos almacenados con dicha empresa
 Salida:
 Ninguna
 
-<h3 id="RF3">RF3: Realizar contrato</h3>
+\rf{Realizar contrato}
 
 Actor:
 Administrador
@@ -56,7 +56,7 @@ Se establece un contrato que vincula una empresa a un conjunto de audiencias
 Salida:
 Ninguna
 
-<h3 id="RF4">RF4: Mostrar los datos de una empresa anunciante</h3>
+\rf{Mostrar los datos de una empresa anunciante}
 
 Actor:
 Administrador
@@ -68,29 +68,29 @@ Procesamiento:
 Buscar y mostrar los datos de la empresa anunciante.
 
 Salida:
-[RD1](#RD1)
+RD1
 
 ## Requisitos de datos
 
-<h3 id="RD1">RD1: Datos almacenados de empresa anunciante</h3>
+\rd{Datos almacenados de empresa anunciante}
  - ID empresa anunciante
- - Nombre de la empresa anunciante [cadena de caracteres]
- - Sitio web [cadena de caracteres]
- - Lista de contratos firmados [cadena de ID's contratos]
+ - Nombre de la empresa anunciante (cadena de caracteres)
+ - Sitio web (cadena de caracteres)
+ - Lista de contratos firmados (cadena de ID's contratos)
 
-<h3 id="RD2">RD2: Datos requeridos para registrar una empresa anunciante</h3>
- - Nombre de la empresa anunciante 	[cadena de caracteres]
- - Sitio web [cadena de caracteres]
+\rd{Datos requeridos para registrar una empresa anunciante}
+ - Nombre de la empresa anunciante 	(cadena de caracteres)
+ - Sitio web (cadena de caracteres)
 
-<h3 id="RD3">RD3: Datos almacenados de los contratos</h3>
+\rd{Datos almacenados de los contratos}
  - ID contrato
  - ID empresa anunciante
- - ID's audiencias [cadena de ID's audiencias]
+ - ID's audiencias (cadena de ID's audiencias)
  - Fecha
  - Precio
 
 ## Restricciones semánticas
 
-<h3 id="RS1">RS1: Contratos</h3>
+\rs{Contratos}
 Los contratos deben contener, al menos, una audiencia.
 
