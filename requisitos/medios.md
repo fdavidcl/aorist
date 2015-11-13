@@ -132,3 +132,6 @@ Ninguna.
 
 \rs{Temática}
 Todo medio tendrá al menos una temática asociada, pudiendo tener varias.
+
+\rs{Contratos}
+Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del medio.
