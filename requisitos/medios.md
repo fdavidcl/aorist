@@ -7,6 +7,8 @@ language: spanish
 mainfont: Droid Serif
 header-includes:
   - \setcounter{rf}{4}
+  - \setcounter{rd}{3}
+  - \setcounter{rs}{1}
 ---
 
 # Requisitos funcionales

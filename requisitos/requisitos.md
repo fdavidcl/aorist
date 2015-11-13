@@ -123,6 +123,7 @@ Desarrollados en el documento asociado: *Requisitos de Anuncios*.
 \rf{Dar de alta nuevo anuncio}
 \rf{Obtener anuncio}
 \rf{Modificar anuncio}
+\rf{Añadir anuncio a medio}
 \rf{Eliminar anuncio}
 
 ## Funcionalidad "Transacciones económicas"
@@ -162,6 +163,64 @@ Desarrollados en el documento asociado: *Requisitos de Audiencia*.
 
 # Requisitos de datos
 
-\rd{}
+Desarrollados en *Requisitos de Gestión de Anunciantes*:
+
+\rd{Datos almacenados de empresa anunciante}
+\label{rdanun1}
+\rd{Datos requeridos para registrar una empresa anunciante}
+\label{rdanun2}
+\rd{Datos almacenados de los contratos}
+\label{rdanun3}
+
+Desarrollados en *Requisitos de Gestión de Medios*:
+
+\rd{Datos almacenados de Medio}
+\label{rdmedio1}
+\rd{Datos necesarios para almacenar un Medio}
+\label{rdmedio2}
+\rd{Datos necesarios para crear un contrato con un medio}
+\label{rdmedio3}
+
+Desarrollados en *Requisitos de Anuncios*:
+
+\rd{Datos almacenados para Tipo de Anuncio}
+\label{rdtipo}
+\rd{Datos almacenados para Anuncio}
+\label{rdanuncio}
+\rd{Datos requeridos para crear Tipo de Anuncio}
+\label{rdtipo2}
+\rd{Datos requeridos para crear Anuncio}
+\label{rdanuncio2}
+
+Desarrollados en *Requisitos de Transacciones Económicas*:
+
+\rd{Datos requeridos para comprar un espacio publicitario a un medio}
+\label{rdtrans1}
+\rd{Datos requeridos para vender el espacio publicitario a un anunciante}
+\label{rdtrans2}
+
+Desarrollados en *Requisitos de Audiencia*:
+
+\rd{Datos almacenados de Audiencia}
+\label{rdaudi}
 
 # Restricciones semánticas
+
+Desarrolladas en *Requisitos de Gestión de Anunciantes*:
+
+\rs{Contratos}
+
+Desarrolladas en *Requisitos de Gestión de Medios*:
+
+\rs{Temática}
+
+Desarrolladas en *Requisitos de Anuncios*:
+
+\rs{Tipos y anuncios}
+\rs{Anuncios y empresas}
+\rs{Anuncios y medios}
+\rs{Anuncios que no enlazan}
+
+Desarrollados en *Requisitos de Audiencia*:
+
+\rs{Medios y anunciantes}

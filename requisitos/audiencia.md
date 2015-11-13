@@ -6,7 +6,9 @@ language: spanish
 
 mainfont: Droid Serif
 header-includes:
-  - \setcounter{rf}{23}
+  - \setcounter{rf}{24}
+  - \setcounter{rd}{12}
+  - \setcounter{rs}{6}
 ---
 
 # Requisitos funcionales
@@ -97,7 +99,7 @@ Datos de las audiencias.
 
 # Requisitos de datos
 
-\rd{Audiencia}
+\rd{Datos almacenados de Audiencia}
 \label{rdaudi}
 
    - Descripción
@@ -106,5 +108,5 @@ Datos de las audiencias.
 
 # Restricciones semánticas
 
-\rs{Asociaciones}
+\rs{Medios y anunciantes}
 Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema.

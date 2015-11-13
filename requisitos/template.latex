@@ -186,9 +186,9 @@ $endif$
 \newcounter{rd}
 \newcounter{rs}
 \setcounter{secnumdepth}{4}
-\titleformat{\rf}{\normalsize\bfseries}{}{0em}{RF\therf:~}\titlespacing*{\rf}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-\titleformat{\rd}{\normalsize\bfseries}{}{0em}{RD\therd:~}\titlespacing*{\rd}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-\titleformat{\rs}{\normalsize\bfseries}{}{0em}{RS\thers:~}\titlespacing*{\rs}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\rf}{\normalsize\bfseries}{}{0em}{RF\therf:~}\titlespacing*{\rf}{0pt}{1.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\rd}{\normalsize\bfseries}{}{0em}{RD\therd:~}\titlespacing*{\rd}{0pt}{1.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\rs}{\normalsize\bfseries}{}{0em}{RS\thers:~}\titlespacing*{\rs}{0pt}{1.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \newcommand{\rfautorefname}{RF}
 \newcommand{\rdautorefname}{RD}
 \newcommand{\rsautorefname}{RS}

@@ -8,6 +8,8 @@ numbersections: yes
 mainfont: Droid Serif
 header-includes:
   - \setcounter{rf}{10}
+  - \setcounter{rd}{6}
+  - \setcounter{rs}{2}
 ---
 
 # Requisitos funcionales
@@ -17,7 +19,7 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-\autoref{rdtipo}
+\autoref{rdtipo2}
 
 Procesamiento:  
 Crear nuevo tipo de anuncio con identificador (\autoref{rdtipo})
@@ -43,7 +45,7 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-\autoref{rdanuncio}
+\autoref{rdanuncio2}
 
 Procesamiento:  
 Crear nuevo anuncio con identificador (\autoref{rdanuncio})
@@ -70,6 +72,19 @@ Empleado gestor de productos
 
 Entrada:  
 Identificador y nuevos valores para datos modificables (tipo de anuncio, contenido y URL) de \autoref{rdanuncio}
+
+Procesamiento:  
+Actualizar los campos dados por la entrada en el anuncio especificado
+
+Salida:  
+Ninguna
+
+\rf{Añadir anuncio a medio}
+Actor:  
+Empleado gestor de productos
+
+Entrada:  
+Identificador de \autoref{rdanuncio} y del medio al que añadir (RD)
 
 Procesamiento:  
 Actualizar los campos dados por la entrada en el anuncio especificado
@@ -106,10 +121,27 @@ Ninguna
 
 - ID anuncio
 - Tipo de anuncio [\autoref{rdtipo}]
-- Empresa asociada [RD]
+- Empresa asociada [RD 1]
 - Contenido [cadena de caracteres]
 - URL al que dirigir [cadena de caracteres/nulo]
-- Medios donde se mostrará [lista de medios, RD]
+- Medios donde se mostrará [lista de medios, RD 4]
+
+\rd{Datos requeridos para crear Tipo de Anuncio}
+\label{rdtipo2}
+
+- ID tipo de anuncio
+- Acepta formato multimedia [valor booleano]
+- Tamaño [pareja de enteros]
+- Puede enlazar [valor booleano]
+
+\rd{Datos requeridos para crear Anuncio}
+\label{rdanuncio2}
+
+- ID anuncio
+- Tipo de anuncio [\autoref{rdtipo}]
+- Empresa asociada [RD 1]
+- Contenido [cadena de caracteres]
+- URL al que dirigir [cadena de caracteres/nulo]
 
 # Restricciones semánticas
 
