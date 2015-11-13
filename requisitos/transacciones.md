@@ -127,5 +127,3 @@ Valor total que ha ganado el medio.
 
 # Restricciones semánticas
 
-\rs{Contratos}
-Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del medio o anunciante.
