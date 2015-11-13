@@ -13,7 +13,7 @@ Los perfiles de audiencia consisten en distintos tipos de posibles compradores a
 
 ## Requisitos funcionales 
 
-### RF1: Insertar un nuevo tipo de audiencia
+\rf{Insertar un nuevo tipo de audiencia}
 
 Actor: 
 Administrador. 
@@ -27,7 +27,7 @@ Crear una nueva entrada de tipo de audiencia.
 Salida: 
 Ninguna. 
 
-### RF2: Asociar un medio frecuentado por una audiencia
+\rf{Asociar un medio frecuentado por una audiencia}
 
 Actor: 
 Administrador. 
@@ -41,7 +41,7 @@ Añadir el identificador de este medio a la lista de medios asociados de la audi
 Salida: 
 Ninguna. 
 
-### RF3: Asociar una audiencia preferida por un anunciante
+\rf{Asociar una audiencia preferida por un anunciante}
  
 Actor: 
 Administrador. 
@@ -55,7 +55,7 @@ Añadir el identificador de este anunciante a la lista de medios asociados de la
 Salida: 
 Ninguna. 
 
-### RF4: Desasociar un medio frecuentado por una audiencia
+\rf{Desasociar un medio frecuentado por una audiencia}
 
 Actor: 
 Administrador. 
@@ -69,7 +69,7 @@ Eliminar el identificador de este medio de la lista de medios asociados de la au
 Salida: 
 Ninguna. 
 
-### RF5: Desasociar una audiencia preferida por un anunciante
+\rf{Desasociar una audiencia preferida por un anunciante}
  
 Actor: 
 Administrador. 
@@ -83,7 +83,7 @@ Eliminar el identificador de este anunciante de la lista de medios asociados de 
 Salida: 
 Ninguna.
 
-### RF6: Mostrar información sobre las audiencias disponibles
+\rf{Mostrar información sobre las audiencias disponibles}
  
 Actor: 
 Administrador. 
@@ -99,13 +99,13 @@ Datos de las audiencias.
 
 ## Requisitos de datos
 
-### RD1: Audiencia 
+\rd{Audiencia} 
    - Descripción
    - Medios que frecuenta
    - Anunciantes interesados
 
 ## Restricciones semánticas
 
-### RS1: Asociaciones
+\rs{Asociaciones}
 
 Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema. 

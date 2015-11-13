@@ -13,7 +13,7 @@ La gestión de medios permite registras nuevos medios en los que podemos publica
 
 ## Requisitos funcionales 
 
-### RF1: Dar de alta un nuevo medio
+\rf{Dar de alta un nuevo medio}
 
 Actor: 
 Administrador. 
@@ -27,7 +27,7 @@ Crear un nuevo medio.
 Salida: 
 Ninguna. 
 
-### RF2: Dar de baja un medio
+\rf{Dar de baja un medio}
 
 Actor: 
 Administrador. 
@@ -41,7 +41,7 @@ Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilid
 Salida: 
 Ninguna. 
 
-### RF3: Añadir una temática al medio
+\rf{Añadir una temática al medio}
  
 Actor: 
 Administrador. 
@@ -55,7 +55,7 @@ Añadir la temática a los datos del medio.
 Salida: 
 Ninguna. 
 
-### RF4: Eliminar una temática de un medio
+\rf{Eliminar una temática de un medio}
 
 Actor: 
 Administrador. 
@@ -70,7 +70,7 @@ Salida:
 Ninguna,
 
 
-### RF5: Mostrar los datos de un medio
+\rf{Mostrar los datos de un medio}
 
 Actor:
 Administrador.
@@ -87,14 +87,14 @@ Datos de los medios.
 
 ## Requisitos de datos
 
-### RD1: Datos almacenados de Medio 
+\rd{Datos almacenados de Medio}
    - Identificador
    - Nombre (cadena de caracteres)
    - Sitio web (cadena de caracteres)
    - Temática (lista de cadenas de caracteres)
    - Datos fiscales (lista de cadenas de caracteres)
 
-### RD2: Datos necesarios para almacenar un Medio 
+\rd{Datos necesarios para almacenar un Medio}
    - Nombre
    - Sitio web 
    - Temática
@@ -103,7 +103,7 @@ Datos de los medios.
 
 ## Restricciones semánticas
 
-### RS1: Temática
+\rs{Temática}
 Todo medio tendrá al menos una temática asociada, pudiendo tener varias. 
 
 
