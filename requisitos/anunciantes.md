@@ -95,8 +95,9 @@ Salida:
  - ID's audiencias (cadena de ID's audiencias)
  - Fecha
  - Precio
+ - Descripción (cadena de caracteres)
 
 # Restricciones semánticas
 
 \rs{Contratos}
-Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del medio o anunciante.
+Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del anunciante.
