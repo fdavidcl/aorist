@@ -20,7 +20,7 @@ La gestión de anunciantes permite registras nuevas empresas anunciantes que qui
 \rf{Dar de alta una empresa anunciante}
 
 Actor:  
-Administrador
+Empleado encargado de contrataciones
 
 Entrada:  
 autoref{rdanun2}
@@ -34,7 +34,7 @@ Ninguna
 \rf{Dar de baja una empresa anunciante}
 
 Actor:  
-Administrador
+Empleado encargado de contrataciones
 
 Entrada:  
 ID empresa
@@ -48,7 +48,7 @@ Ninguna
 \rf{Realizar contrato}
 
 Actor:  
-Administrador
+Empleado encargado de contrataciones
 
 Entrada:  
 
@@ -64,7 +64,7 @@ Ninguna
 \rf{Mostrar los datos de una empresa anunciante}
 
 Actor:  
-Administrador
+Empleado encargado de contrataciones
 
 Entrada:  
 ID empresa

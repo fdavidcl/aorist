@@ -20,7 +20,7 @@ La gestión de medios permite registrar nuevos medios en los que podemos publica
 \rf{Dar de alta un nuevo medio}
 
 Actor:  
-Administrador.
+Empleado encargado de contrataciones
 
 Entrada:  
 \autoref{rdmedio1}
@@ -34,7 +34,7 @@ Ninguna.
 \rf{Dar de baja un medio}
 
 Actor:  
-Administrador.
+Empleado encargado de contrataciones
 
 Entrada:  
 Identificador del medio a dar de baja.
@@ -48,7 +48,7 @@ Ninguna.
 \rf{Añadir una temática al medio}
 
 Actor:  
-Administrador.
+Empleado encargado de contrataciones
 
 Entrada:  
 Nueva temática.
@@ -62,7 +62,7 @@ Ninguna.
 \rf{Eliminar una temática de un medio}
 
 Actor:  
-Administrador.
+Empleado encargado de contrataciones
 
 Entrada:  
 Temática.
@@ -77,7 +77,7 @@ Ninguna.
 \rf{Mostrar los datos de un medio}
 
 Actor:  
-Administrador.
+Empleado encargado de contrataciones
 
 Entrada:  
 Identificador (o identificadores) del medio.
@@ -91,7 +91,7 @@ Datos de los medios.
 \rf{Realizar contrato con un medio}
 
 Actor:  
-Administrador.
+Empleado encargado de contrataciones
 
 Entrada:  
 \autoref{rdmedio3}

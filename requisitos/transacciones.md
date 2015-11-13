@@ -19,7 +19,7 @@ Las transacciones económicas permiten llevar todas las acciones relacionadas co
 \rf{Compra de espacios publicitarios a medios}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 \autoref{rdtrans1}
@@ -33,7 +33,7 @@ Ninguna.
 \rf{Vender espacios publicitarios a anunciantes}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 autoref{rdtrans2}
@@ -47,7 +47,7 @@ Ninguna.
 \rf{Ver contabilidad}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 Fecha (en caso de querer que imprima todo ponemos la fecha 0/0/0000).
@@ -61,7 +61,7 @@ Lista de nombres, tanto de medios como de anunciantes, y el valor de los contrat
 \rf{Operaciones más exitosas}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 Ninguna.
@@ -75,7 +75,7 @@ El nombre del anunciante y el valor que tiene asociado.
 \rf{Pagos más importantes}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 Ninguna.
@@ -89,7 +89,7 @@ El nombre del medio y el valor que tiene asociado.
 \rf{Gasto por anunciantes}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 ID de anunciante.
@@ -103,7 +103,7 @@ Valor total del dinero gastado por el anunciante.
 \rf{Gasto en cada medio}
 
 Actor:  
-Administrador.
+Empleado de contabilidad
 
 Entrada:  
 ID de medio.

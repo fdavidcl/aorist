@@ -20,7 +20,7 @@ Los perfiles de audiencia consisten en distintos tipos de posibles compradores a
 \rf{Insertar un nuevo tipo de audiencia}
 
 Actor:  
-Administrador.
+Empleado gestor de productos
 
 Entrada:  
 \autoref{rdaudi}
@@ -34,7 +34,7 @@ Ninguna.
 \rf{Asociar un medio frecuentado por una audiencia}
 
 Actor:  
-Administrador.
+Empleado gestor de productos
 
 Entrada:  
 Identificador del medio a asociar con la audiencia, identificador de la audiencia.
@@ -48,7 +48,7 @@ Ninguna.
 \rf{Asociar una audiencia preferida por un anunciante}
 
 Actor:  
-Administrador.
+Empleado gestor de productos
 
 Entrada:  
 Identificador del anunciante a asociar con la audiencia, identificador de la audiencia.
@@ -62,7 +62,7 @@ Ninguna.
 \rf{Desasociar un medio frecuentado por una audiencia}
 
 Actor:  
-Administrador.
+Empleado gestor de productos
 
 Entrada:  
 Identificador del medio asociado con la audiencia, identificador de la audiencia.  
@@ -76,7 +76,7 @@ Ninguna.
 \rf{Desasociar una audiencia preferida por un anunciante}
 
 Actor:  
-Administrador.
+Empleado gestor de productos
 
 Entrada:  
 Identificador del anunciante asociado con la audiencia, identificador de la audiencia.  
@@ -90,7 +90,7 @@ Ninguna.
 \rf{Mostrar información sobre las audiencias disponibles}
 
 Actor:  
-Administrador.
+Empleado gestor de productos
 
 Entrada:  
 Ninguna.
