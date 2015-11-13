@@ -1,5 +1,5 @@
 ---
-title: "Requisitos de Transacciones económicas"
+title: "Requisitos de Transacciones Económicas"
 author: "José Ramón Trillo Vílchez"
 numbersections: true
 language: spanish
@@ -13,10 +13,10 @@ Las transacciones económicas permiten llevar todas las acciones relacionadas co
 
 ###RF1: Compra de espacios publicitarios a medios
 
-Actor: 
+Actor:
 Administrador
 
-Entrada: 
+Entrada:
 RD-1
 
 Procesamiento:
@@ -27,14 +27,14 @@ TRUE si la operacion ha sido éxito, false si hay algún error.
 
 ###RF2: Vender espacios publicitarios a anunciantes
 
-Actor: 
+Actor:
 Administrador
 
 Entrada:
 RD-2
 
 Procesamiento:
-Buscamos el id del anunciante en el contrato, buscamos el contrato usando su identificador, vemos que coincide con el del anunciante, sumamos la cantidad a nuestra cuenta y guardamos la transacción en una tabla guardando su fecha, nombre del anunciante, el id anunciante, id del contrato y el valor. 
+Buscamos el id del anunciante en el contrato, buscamos el contrato usando su identificador, vemos que coincide con el del anunciante, sumamos la cantidad a nuestra cuenta y guardamos la transacción en una tabla guardando su fecha, nombre del anunciante, el id anunciante, id del contrato y el valor.
 
 Salida:
 TRUE si la operacion ha sido éxito, false si hay algún error.
@@ -44,7 +44,7 @@ TRUE si la operacion ha sido éxito, false si hay algún error.
 Actor:
 Administrador
 
-Entrada: 
+Entrada:
 Fecha (en caso de querer que imprima todo ponemos la fecha 0/0/0000).
 
 Procesamiento:
@@ -58,13 +58,13 @@ Lista de nombres, tanto de medios como de anunciantes, y el valor de los contrat
 Actor:
 Administrador
 
-Entrada: 
+Entrada:
 Ninguna
 
 Procedimiento:
 Busca dentro de la tabla de los contratos los valores más altos y después, busca el nombre del anunciante asociado.
 
-Salida: 
+Salida:
 El nombre del anunciante y el valor que tiene asociado.
 
 ###RF5: Pagos más importantes
@@ -86,7 +86,7 @@ El nombre del medio y el valor que tiene asociado.
 Actor:
 Administrador
 
-Entrada: 
+Entrada:
 ID de anunciante
 
 Procedimiento:
@@ -101,7 +101,7 @@ Actor:
 Administrador
 
 Entrada:
-ID de medio 
+ID de medio
 
 Procedimiento:
 Se busca dentro de la tabla de contratos el id del medio y sumamos todos los valores asociados a ese id.
