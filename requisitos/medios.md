@@ -15,79 +15,94 @@ La gestión de medios permite registras nuevos medios en los que podemos publica
 
 \rf{Dar de alta un nuevo medio}
 
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 RD1. 
 
-Procesamiento: 
+Procesamiento:  
 Crear un nuevo medio. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Dar de baja un medio}
 
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 Identificador del medio a dar de baja. 
 
-Procesamiento: 
+Procesamiento:  
 Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilidad. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Añadir una temática al medio}
  
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 Nueva temática.
 
-Procesamiento: 
+Procesamiento:  
 Añadir la temática a los datos del medio. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Eliminar una temática de un medio}
 
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 Temática. 
 
-Procesamiento: 
+Procesamiento:  
 Si hay más de una temática en el medio, se muestran y se da a elegir una a eliminar. 
 
-Salida: 
-Ninguna,
+Salida:  
+Ninguna. 
 
 
 \rf{Mostrar los datos de un medio}
 
-Actor:
+Actor:  
 Administrador.
 
-Entrada: 
+Entrada:  
 Identificador (o identificadores) del medio. 
 
-Procesamiento: 
+Procesamiento:  
 Buscar y mostrar los datos de los medios requeridos. 
 
-Salida: 
+Salida:  
 Datos de los medios. 
 
+\rf{Realizar contrato con un medio}
+
+Actor:  
+Administrador. 
+
+Entrada:  
+RD3.
+   
+Procesamiento:  
+Crear el contrato en el sistema.
+
+Salida:  
+Ninguna. 
+   
 
 ## Requisitos de datos
 
 \rd{Datos almacenados de Medio}
+
    - Identificador
    - Nombre (cadena de caracteres)
    - Sitio web (cadena de caracteres)
@@ -95,16 +110,23 @@ Datos de los medios.
    - Datos fiscales (lista de cadenas de caracteres)
 
 \rd{Datos necesarios para almacenar un Medio}
+
    - Nombre
    - Sitio web 
    - Temática
    - Datos fiscales
+   
+\rd{Datos necesarios para crear un contrato con un medio}
+
+   - Identificador del medio
+   - Fecha (cadena de caracteres)
+   - Duración del contrato (cadena de caracteres)
+   - Importe (número real)
+   - Descripción (cadena de caracteres)
 
 
 ## Restricciones semánticas
 
 \rs{Temática}
 Todo medio tendrá al menos una temática asociada, pudiendo tener varias. 
-
-
 
