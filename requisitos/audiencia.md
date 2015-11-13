@@ -3,96 +3,100 @@ title: "Requisitos de Audiencia"
 author: "Luis Castro Martín"
 numbersections: true
 language: spanish
+
+mainfont: Droid Serif
+header-includes:
+  - \setcounter{rf}{23}
 ---
 
 # Funcionalidad "Audiencia"
 
-## Descripción 
+## Descripción
 
 Los perfiles de audiencia consisten en distintos tipos de posibles compradores a los que que pueden ir dirigidos los anuncios y sobre los que pueden especializarse los medios.
 
-## Requisitos funcionales 
+## Requisitos funcionales
 
 \rf{Insertar un nuevo tipo de audiencia}
 
 Actor:  
-Administrador. 
+Administrador.
 
 Entrada:  
 \autoref{rdaudi}
 
 Procesamiento:  
-Crear una nueva entrada de tipo de audiencia. 
+Crear una nueva entrada de tipo de audiencia.
 
 Salida:  
-Ninguna. 
+Ninguna.
 
 \rf{Asociar un medio frecuentado por una audiencia}
 
 Actor:  
-Administrador. 
+Administrador.
 
 Entrada:  
 Identificador del medio a asociar con la audiencia, identificador de la audiencia.
 
 Procesamiento:  
-Añadir el identificador de este medio a la lista de medios asociados de la audiencia. 
+Añadir el identificador de este medio a la lista de medios asociados de la audiencia.
 
 Salida:  
-Ninguna. 
+Ninguna.
 
 \rf{Asociar una audiencia preferida por un anunciante}
- 
+
 Actor:  
-Administrador. 
+Administrador.
 
 Entrada:  
-Identificador del anunciante a asociar con la audiencia, identificador de la audiencia. 
+Identificador del anunciante a asociar con la audiencia, identificador de la audiencia.
 
 Procesamiento:  
-Añadir el identificador de este anunciante a la lista de medios asociados de la audiencia. 
+Añadir el identificador de este anunciante a la lista de medios asociados de la audiencia.
 
 Salida:  
-Ninguna. 
+Ninguna.
 
 \rf{Desasociar un medio frecuentado por una audiencia}
 
 Actor:  
-Administrador. 
+Administrador.
 
 Entrada:  
 Identificador del medio asociado con la audiencia, identificador de la audiencia.  
 
 Procesamiento:  
-Eliminar el identificador de este medio de la lista de medios asociados de la audiencia. 
+Eliminar el identificador de este medio de la lista de medios asociados de la audiencia.
 
 Salida:  
-Ninguna. 
+Ninguna.
 
 \rf{Desasociar una audiencia preferida por un anunciante}
- 
+
 Actor:  
-Administrador. 
+Administrador.
 
 Entrada:  
 Identificador del anunciante asociado con la audiencia, identificador de la audiencia.  
 
 Procesamiento:  
-Eliminar el identificador de este anunciante de la lista de medios asociados de la audiencia. 
+Eliminar el identificador de este anunciante de la lista de medios asociados de la audiencia.
 
 Salida:  
 Ninguna.
 
 \rf{Mostrar información sobre las audiencias disponibles}
- 
+
 Actor:  
-Administrador. 
+Administrador.
 
 Entrada:  
-Ninguna. 
+Ninguna.
 
 Procesamiento:  
-Recolectar la información pertinente sobre los medios y anunciantes de cada una y generar un resumen de audiencias. 
+Recolectar la información pertinente sobre los medios y anunciantes de cada una y generar un resumen de audiencias.
 
 Salida:  
 Datos de las audiencias.
@@ -101,7 +105,7 @@ Datos de las audiencias.
 
 \rd{Audiencia}
 \label{rdaudi}
- 
+
    - Descripción
    - Medios que frecuenta
    - Anunciantes interesados
@@ -109,4 +113,4 @@ Datos de las audiencias.
 ## Restricciones semánticas
 
 \rs{Asociaciones}
-Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema. 
+Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema.

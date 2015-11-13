@@ -7,7 +7,7 @@ numbersections: yes
 
 mainfont: Droid Serif
 header-includes:
-  - \setcounter{rf}{8}
+  - \setcounter{rf}{10}
 ---
 
 # Funcionalidad "Anuncios"
@@ -57,28 +57,28 @@ Crear nuevo anuncio con identificador (\autoref{rdanuncio})
 Salida:  
 Ninguna
 
-\rf{Obtener datos de anuncio}
+\rf{Obtener anuncio}
 Actor:  
 Empleado gestor de productos
 
 Entrada:  
-Identificador 
+Identificador del anuncio (\autoref{rdanuncio})
 
 Procesamiento:  
-Crear nuevo tipo de anuncio con identificador (\autoref{rdtipo})
+Buscar y recuperar los valores de los campos de \autoref{rdanuncio}
 
 Salida:  
-Ninguna
+Datos de tipo, contenido, URL y nombre e identificador de la empresa asociada.
 
 \rf{Modificar anuncio}
 Actor:  
 Empleado gestor de productos
 
 Entrada:  
-\autoref{rdtipo}
+Identificador y nuevos valores para datos modificables (tipo de anuncio, contenido y URL) de \autoref{rdanuncio}
 
 Procesamiento:  
-Crear nuevo tipo de anuncio con identificador (\autoref{rdtipo})
+Actualizar los campos dados por la entrada en el anuncio especificado
 
 Salida:  
 Ninguna
@@ -88,10 +88,10 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-\autoref{rdtipo}
+Identificador del anuncio (\autoref{rdanuncio})
 
 Procesamiento:  
-Crear nuevo tipo de anuncio con identificador (\autoref{rdtipo})
+Buscar y eliminar el anuncio con el identificador dado en la entrada
 
 Salida:  
 Ninguna
@@ -103,7 +103,9 @@ Ninguna
 \label{rdtipo}
 
 - ID tipo de anuncio
--
+- Acepta formato multimedia [valor booleano]
+- Tamaño [pareja de enteros]
+- Puede enlazar [valor booleano]
 
 \rd{Datos almacenados para Anuncio}
 \label{rdanuncio}

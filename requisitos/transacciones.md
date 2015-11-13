@@ -3,11 +3,15 @@ title: "Requisitos de Transacciones Económicas"
 author: "José Ramón Trillo Vílchez"
 numbersections: true
 language: spanish
+
+mainfont: Droid Serif
+header-includes:
+  - \setcounter{rf}{16}
 ---
 
 #Funcionalidad "Transacciones económicas"
 
-##Descripción:
+##Descripción
 Las transacciones económicas permiten llevar todas las acciones relacionadas con la contabilidad dentro de la empresa, desde el gasto generado por la compra de espacios publicitarios a medios hasta la cantidad de dinero que nos ha dado un anunciante por contratar nuestros servicios. También nos permite ver cuáles son nuestros mejores clientes y cuáles son los espacios publicitarios donde nos hemos gastado más dinero.
 
 ##Requisitos funcionales
@@ -115,13 +119,13 @@ Valor total que ha ganado el medio.
 \rd{Datos requeridos cuando compras un espacio publicitario a un medio}
 \label{rdtrans1}
 
-- ID medio 
+- ID medio
 - ID Contratos
 
 \rd{Datos requeridos cuando vendes el espacio publicitario a un anunciante}
 \label{rdtrans2}
 
-- ID anunciante 
+- ID anunciante
 - ID Contratos
 
 ## Restricciones semánticas

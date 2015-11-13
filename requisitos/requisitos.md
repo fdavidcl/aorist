@@ -85,65 +85,29 @@ La gestión de anunciantes permite registras nuevas empresas anunciantes que qui
 
 ### Requisitos funcionales
 
+Desarrollados en el documento asociado: *Requisitos de Gestión de Anunciantes*.
+
 \rf{Dar de alta una empresa anunciante}
-\label{rf1}
-
-Actor:
-Administrador
-
-Entrada: RD2 (\ref{rd2})
-
-Procesamiento:
-Crear nueva empresa, con identificador (RD1 (\ref{rd1}))
-
-Salida:
-Ninguna
-
 \rf{Dar de baja una empresa anunciante}
-\label{rf2}
-
-Actor:
-Administrador
-
-Entrada:
-ID empresa
-
-Procesamiento:
-Eliminar los datos almacenados con dicha empresa
-
-Salida:
-Ninguna
-
 \rf{Realizar contrato}
-
-Actor:
-Administrador
-
-Entrada:
- - ID empresa
- - ID's audiencias
-
-Procesamiento:
-Se establece un contrato que vincula una empresa a un conjunto de audiencias
-
-Salida:
-Ninguna
-
 \rf{Mostrar los datos de una empresa anunciante}
 
-Actor:
-Administrador
-
-Entrada:
-ID empresa
-
-Procesamiento:
-Buscar y mostrar los datos de la empresa anunciante.
-
-Salida: RD1 (\ref{rd1})
-
-
 ## Funcionalidad "Gestión de medios"
+
+### Descripción
+La gestión de medios permite registrar nuevos medios en los que podemos publicar anuncios. Asociado a cada medio tendremos uno o varios temas de interés, los cuales nos servirán para enviarles anuncios que se adecuen a la temática de cada medio. Debemos poder añadir nuevos medios y añadir o eliminar temáticas.
+
+### Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Gestión de Medios*.
+
+\rf{Dar de alta un nuevo medio}
+\rf{Dar de baja un medio}
+\rf{Añadir una temática al medio}
+\rf{Eliminar una temática de un medio}
+\rf{Mostrar los datos de un medio}
+\rf{Realizar contrato con un medio}
+
 ## Funcionalidad "Anuncios"
 
 ### Descripción
@@ -152,15 +116,49 @@ Incluye la creación de distintos tipos de anuncios que después se podrán ofer
 
 ### Requisitos funcionales
 
+Desarrollados en el documento asociado: *Requisitos de Anuncios*.
+
 \rf{Dar de alta nuevo tipo de anuncio}
 \rf{Eliminar tipo de anuncio}
 \rf{Dar de alta nuevo anuncio}
-\rf{Obtener datos de anuncio}
+\rf{Obtener anuncio}
 \rf{Modificar anuncio}
 \rf{Eliminar anuncio}
 
 ## Funcionalidad "Transacciones económicas"
+
+
+###Descripción
+Las transacciones económicas permiten llevar todas las acciones relacionadas con la contabilidad dentro de la empresa, desde el gasto generado por la compra de espacios publicitarios a medios hasta la cantidad de dinero que nos ha dado un anunciante por contratar nuestros servicios. También nos permite ver cuáles son nuestros mejores clientes y cuáles son los espacios publicitarios donde nos hemos gastado más dinero.
+
+###Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Transacciones Económicas*.
+
+\rf{Compra de espacios publicitarios a medios}
+\rf{Vender espacios publicitarios a anunciantes}
+\rf{Ver contabilidad}
+\rf{Operaciones más exitosas}
+\rf{Pagos más importantes}
+\rf{Gasto por anunciantes}
+\rf{Gasto en cada medio}
+
 ## Funcionalidad "Audiencia"
+
+### Descripción
+
+Los perfiles de audiencia consisten en distintos tipos de posibles compradores a los que que pueden ir dirigidos los anuncios y sobre los que pueden especializarse los medios.
+
+### Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Audiencia*.
+
+\rf{Insertar un nuevo tipo de audiencia}
+\rf{Asociar un medio frecuentado por una audiencia}
+\rf{Asociar una audiencia preferida por un anunciante}
+\rf{Desasociar un medio frecuentado por una audiencia}
+\rf{Desasociar una audiencia preferida por un anunciante}
+\rf{Mostrar información sobre las audiencias disponibles}
 
 # Requisitos de datos
 

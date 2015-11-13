@@ -3,13 +3,17 @@ title: "Requisitos de Gestión de Medios"
 author: "José Carlos Entrena Jiménez"
 numbersections: true
 language: spanish
+
+mainfont: Droid Serif
+header-includes:
+  - \setcounter{rf}{4}
 ---
 
 # Funcionalidad "Gestión de Medios"
 
 ## Descripción
 
-La gestión de medios permite registras nuevos medios en los que podemos publicar anuncios. Asociado a cada medio tendremos uno o varios temas de interés, los cuales nos servirán para enviarles anuncios que se adecuen a la temática de cada medio. Debemos poder añadir nuevos medios y añadir o eliminar temáticas.
+La gestión de medios permite registrar nuevos medios en los que podemos publicar anuncios. Asociado a cada medio tendremos uno o varios temas de interés, los cuales nos servirán para enviarles anuncios que se adecuen a la temática de cada medio. Debemos poder añadir nuevos medios y añadir o eliminar temáticas.
 
 ## Requisitos funcionales
 

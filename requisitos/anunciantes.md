@@ -3,12 +3,16 @@ title: "Requisitos de Gestión de Anunciantes"
 author: "Óscar Bermúdez Garrido"
 numbersections: true
 language: spanish
+
+mainfont: Droid Serif
+header-includes:
+  - \setcounter{rf}{0}
 ---
 
 # Funcionalidad "Gestión de Anunciantes"
 
 ## Descripción
-La gestión de anunciantes permite registras nuevas empresas anunciantes que quieren promocionar sus productos mediante anuncios. Cada anuncio está dirigido a uno o varios sectores del mercado. 
+La gestión de anunciantes permite registras nuevas empresas anunciantes que quieren promocionar sus productos mediante anuncios. Cada anuncio está dirigido a uno o varios sectores del mercado.
 
 
 ## Requisitos funcionales
@@ -82,14 +86,14 @@ Salida:
  - Lista de contratos firmados (cadena de ID's contratos)
 
 \rd{Datos requeridos para registrar una empresa anunciante}
-\label{rdanun2} 
- 
+\label{rdanun2}
+
  - Nombre de la empresa anunciante 	(cadena de caracteres)
  - Sitio web (cadena de caracteres)
 
 \rd{Datos almacenados de los contratos}
 \label{rdanun3}
- 
+
  - ID contrato
  - ID empresa anunciante
  - ID's audiencias (cadena de ID's audiencias)
@@ -100,4 +104,3 @@ Salida:
 
 \rs{Contratos}
 Los contratos deben contener, al menos, una audiencia.
-
