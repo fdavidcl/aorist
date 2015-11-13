@@ -19,7 +19,7 @@ Actor:
 Administrador. 
 
 Entrada:  
-RD1. 
+autoref{rdmedio1}
 
 Procesamiento:  
 Crear un nuevo medio. 
@@ -90,7 +90,7 @@ Actor:
 Administrador. 
 
 Entrada:  
-RD3.
+\autoref{rdmedio3}
    
 Procesamiento:  
 Crear el contrato en el sistema.
@@ -102,6 +102,7 @@ Ninguna.
 ## Requisitos de datos
 
 \rd{Datos almacenados de Medio}
+\label{rdmedio1}
 
    - Identificador
    - Nombre (cadena de caracteres)
@@ -110,6 +111,7 @@ Ninguna.
    - Datos fiscales (lista de cadenas de caracteres)
 
 \rd{Datos necesarios para almacenar un Medio}
+\label{rdmedio2}
 
    - Nombre
    - Sitio web 
@@ -117,6 +119,7 @@ Ninguna.
    - Datos fiscales
    
 \rd{Datos necesarios para crear un contrato con un medio}
+\label{rdmedio3}
 
    - Identificador del medio
    - Fecha (cadena de caracteres)
