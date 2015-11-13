@@ -19,7 +19,7 @@ Actor:
 Administrador. 
 
 Entrada:  
-RD1. 
+\autoref{rdaudi}
 
 Procesamiento:  
 Crear una nueva entrada de tipo de audiencia. 
@@ -100,6 +100,7 @@ Datos de las audiencias.
 ## Requisitos de datos
 
 \rd{Audiencia}
+\label{rdaudi}
  
    - Descripción
    - Medios que frecuenta

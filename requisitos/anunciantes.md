@@ -19,7 +19,7 @@ Actor:
 Administrador
 
 Entrada:  
-RD2
+autoref{rdanun2}
 
 Procesamiento:  
 Crear nueva empresa, con identificador RD1
@@ -69,11 +69,12 @@ Procesamiento:
 Buscar y mostrar los datos de la empresa anunciante.
 
 Salida:  
-RD1
+\autoref{rdanun1}
 
 ## Requisitos de datos
 
 \rd{Datos almacenados de empresa anunciante}
+\label{rdanun1}
 
  - ID empresa anunciante
  - Nombre de la empresa anunciante (cadena de caracteres)
@@ -81,11 +82,13 @@ RD1
  - Lista de contratos firmados (cadena de ID's contratos)
 
 \rd{Datos requeridos para registrar una empresa anunciante}
+\label{rdanun2} 
  
  - Nombre de la empresa anunciante 	(cadena de caracteres)
  - Sitio web (cadena de caracteres)
 
 \rd{Datos almacenados de los contratos}
+\label{rdanun3}
  
  - ID contrato
  - ID empresa anunciante

@@ -18,7 +18,7 @@ Actor:
 Administrador.
 
 Entrada:  
-RD1.
+\autoref{rdtrans1}
 
 Procesamiento:  
 Buscamos el id del medio en el contrato, buscamos el contrato usando su identificador, vemos que coincide con el del medio, restamos la cantidad a nuestra cuenta y guardamos la transacción en una tabla guardando su fecha, nombre del medio, el id anunciante, id del contrato y el valor.
@@ -32,7 +32,7 @@ Actor:
 Administrador.
 
 Entrada:  
-RD2.
+autoref{rdtrans2}
 
 Procesamiento:  
 Buscamos el id del anunciante en el contrato, buscamos el contrato usando su identificador, vemos que coincide con el del anunciante, sumamos la cantidad a nuestra cuenta y guardamos la transacción en una tabla guardando su fecha, nombre del anunciante, el id anunciante, id del contrato y el valor.
@@ -113,11 +113,13 @@ Valor total que ha ganado el medio.
 ##Requisitos de datos
 
 \rd{Datos requeridos cuando compras un espacio publicitario a un medio}
+\label{rdtrans1}
 
 - ID medio 
 - ID Contratos
 
 \rd{Datos requeridos cuando vendes el espacio publicitario a un anunciante}
+\label{rdtrans2}
 
 - ID anunciante 
 - ID Contratos
