@@ -1,3 +1,5 @@
+*.pdf
+
 *.rbc
 capybara-*.html
 .rspec
