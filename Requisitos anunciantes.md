@@ -22,7 +22,7 @@ Entrada:
 [RD2](#RD2)
 
 Procesamiento:
-Crear nueva empresa, con identificador(RD-1)
+Crear nueva empresa, con identificador([RD1](#RD1))
 
 Salida:
 Ninguna
