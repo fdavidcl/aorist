@@ -10,13 +10,7 @@ header-includes:
   - \setcounter{rf}{10}
 ---
 
-# Funcionalidad "Anuncios"
-
-## Descripción
-
-Incluye la creación de distintos tipos de anuncios que después se podrán ofertar a los anunciantes. La gestión de anuncios incluye recuentos de impresiones y clicks, y permite reunir estadísticas sobre el éxito de los anuncios en cada medio.
-
-## Requisitos funcionales
+# Requisitos funcionales
 
 \rf{Crear nuevo tipo de anuncio}
 Actor:  
@@ -97,7 +91,7 @@ Salida:
 Ninguna
 
 
-## Requisitos de datos
+# Requisitos de datos
 
 \rd{Datos almacenados para Tipo de Anuncio}
 \label{rdtipo}
@@ -115,3 +109,23 @@ Ninguna
 - Empresa asociada [RD]
 - Contenido [cadena de caracteres]
 - URL al que dirigir [cadena de caracteres/nulo]
+- Medios donde se mostrará [lista de medios, RD]
+
+# Restricciones semánticas
+
+\rs{Tipos y anuncios}
+
+Un anuncio *debe* ser de algún tipo (y sólo uno). *Puede* haber varios anuncios de cada tipo.
+
+\rs{Anuncios y empresas}
+
+Un anuncio *debe* asociarse con una (y sólo una) empresa. *Puede* haber varios anuncios asociados
+a la misma empresa
+
+\rs{Anuncios y medios}
+
+Cada anuncio *puede* aparecer en varios medios. En un mismo medio *pueden* aparecer varios anuncios.
+
+\rs{Anuncios que no enlazan}
+
+Un anuncio de un tipo que no puede enlazar *debe* tener URL nulo. Un anuncio de un tipo que puede enlazar *puede* tener URL nulo.
