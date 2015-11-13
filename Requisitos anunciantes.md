@@ -13,13 +13,13 @@ La gestión de anunciantes permite registras nuevas empresas anunciantes que qui
 
 ## Requisitos funcionales
 
-### RF1: Dar de alta una empresa anunciante
+<h3 id="RF1">RF1: Dar de alta una empresa anunciante</h3>
 
 Actor:
 Administrador
 
 Entrada:
-RD-2
+[RD2](#RD2)
 
 Procesamiento:
 Crear nueva empresa, con identificador(RD-1)
@@ -27,7 +27,7 @@ Crear nueva empresa, con identificador(RD-1)
 Salida:
 Ninguna
 
-### RF2: Dar de baja una empresa anunciante
+<h3 id="RF2">RF2: Dar de baja una empresa anunciante</h3>
 
 Actor:
 Administrador
@@ -41,7 +41,7 @@ Eliminar los datos almacenados con dicha empresa
 Salida:
 Ninguna
 
-### RF3: Realizar contrato
+<h3 id="RF3">RF3: Realizar contrato</h3>
 
 Actor:
 Administrador
@@ -56,7 +56,7 @@ Se establece un contrato que vincula una empresa a un conjunto de audiencias
 Salida:
 Ninguna
 
-### RF4: Mostrar los datos de una empresa anunciante
+<h3 id="RF4">RF4: Mostrar los datos de una empresa anunciante</h3>
 
 Actor:
 Administrador
@@ -68,21 +68,21 @@ Procesamiento:
 Buscar y mostrar los datos de la empresa anunciante.
 
 Salida:
-RD1
+[RD1](#RD1)
 
 ## Requisitos de datos
 
-### RD1: Datos almacenados de empresa anunciante
+<h3 id="RD1">RD1: Datos almacenados de empresa anunciante</h3>
  - ID empresa anunciante
  - Nombre de la empresa anunciante [cadena de caracteres]
  - Sitio web [cadena de caracteres]
  - Lista de contratos firmados [cadena de ID's contratos]
 
-### RD2: Datos requeridos para registrar una empresa anunciante
+<h3 id="RD2">RD2: Datos requeridos para registrar una empresa anunciante</h3>
  - Nombre de la empresa anunciante 	[cadena de caracteres]
  - Sitio web [cadena de caracteres]
 
-### RD3: Datos almacenados de los contratos
+<h3 id="RD3">RD3: Datos almacenados de los contratos</h3>
  - ID contrato
  - ID empresa anunciante
  - ID's audiencias [cadena de ID's audiencias]
@@ -91,6 +91,6 @@ RD1
 
 ## Restricciones semánticas
 
-### RS1: Contratos
+<h3 id="RS1">RS1: Contratos</h3>
 Los contratos deben contener, al menos, una audiencia.
 
