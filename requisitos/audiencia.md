@@ -15,91 +15,92 @@ Los perfiles de audiencia consisten en distintos tipos de posibles compradores a
 
 \rf{Insertar un nuevo tipo de audiencia}
 
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 RD1. 
 
-Procesamiento: 
+Procesamiento:  
 Crear una nueva entrada de tipo de audiencia. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Asociar un medio frecuentado por una audiencia}
 
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
-Identificador del medio a asociar con la audiencia, identificador de la audiencia.  
+Entrada:  
+Identificador del medio a asociar con la audiencia, identificador de la audiencia.
 
-Procesamiento: 
+Procesamiento:  
 Añadir el identificador de este medio a la lista de medios asociados de la audiencia. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Asociar una audiencia preferida por un anunciante}
  
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
-Identificador del anunciante a asociar con la audiencia, identificador de la audiencia.  
+Entrada:  
+Identificador del anunciante a asociar con la audiencia, identificador de la audiencia. 
 
-Procesamiento: 
+Procesamiento:  
 Añadir el identificador de este anunciante a la lista de medios asociados de la audiencia. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Desasociar un medio frecuentado por una audiencia}
 
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 Identificador del medio asociado con la audiencia, identificador de la audiencia.  
 
-Procesamiento: 
+Procesamiento:  
 Eliminar el identificador de este medio de la lista de medios asociados de la audiencia. 
 
-Salida: 
+Salida:  
 Ninguna. 
 
 \rf{Desasociar una audiencia preferida por un anunciante}
  
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
+Entrada:  
 Identificador del anunciante asociado con la audiencia, identificador de la audiencia.  
 
-Procesamiento: 
+Procesamiento:  
 Eliminar el identificador de este anunciante de la lista de medios asociados de la audiencia. 
 
-Salida: 
+Salida:  
 Ninguna.
 
 \rf{Mostrar información sobre las audiencias disponibles}
  
-Actor: 
+Actor:  
 Administrador. 
 
-Entrada: 
-Ninguna.  
+Entrada:  
+Ninguna. 
 
-Procesamiento: 
+Procesamiento:  
 Recolectar la información pertinente sobre los medios y anunciantes de cada una y generar un resumen de audiencias. 
 
-Salida: 
+Salida:  
 Datos de las audiencias.
 
 ## Requisitos de datos
 
-\rd{Audiencia} 
+\rd{Audiencia}
+ 
    - Descripción
    - Medios que frecuenta
    - Anunciantes interesados
@@ -107,5 +108,4 @@ Datos de las audiencias.
 ## Restricciones semánticas
 
 \rs{Asociaciones}
-
 Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema. 

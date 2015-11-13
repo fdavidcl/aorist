@@ -15,74 +15,78 @@ La gestión de anunciantes permite registras nuevas empresas anunciantes que qui
 
 \rf{Dar de alta una empresa anunciante}
 
-Actor:
+Actor:  
 Administrador
 
-Entrada:
+Entrada:  
 RD2
 
-Procesamiento:
+Procesamiento:  
 Crear nueva empresa, con identificador RD1
 
-Salida:
+Salida:  
 Ninguna
 
 \rf{Dar de baja una empresa anunciante}
 
-Actor:
+Actor:  
 Administrador
 
-Entrada:
+Entrada:  
 ID empresa
 
-Procesamiento:
+Procesamiento:  
 Eliminar los datos almacenados con dicha empresa
 
-Salida:
+Salida:  
 Ninguna
 
 \rf{Realizar contrato}
 
-Actor:
+Actor:  
 Administrador
 
-Entrada:
+Entrada:  
+
  - ID empresa
  - ID's audiencias
 
-Procesamiento:
+Procesamiento:  
 Se establece un contrato que vincula una empresa a un conjunto de audiencias
 
-Salida:
+Salida:  
 Ninguna
 
 \rf{Mostrar los datos de una empresa anunciante}
 
-Actor:
+Actor:  
 Administrador
 
-Entrada:
+Entrada:  
 ID empresa
 
-Procesamiento:
+Procesamiento:  
 Buscar y mostrar los datos de la empresa anunciante.
 
-Salida:
+Salida:  
 RD1
 
 ## Requisitos de datos
 
 \rd{Datos almacenados de empresa anunciante}
+
  - ID empresa anunciante
  - Nombre de la empresa anunciante (cadena de caracteres)
  - Sitio web (cadena de caracteres)
  - Lista de contratos firmados (cadena de ID's contratos)
 
 \rd{Datos requeridos para registrar una empresa anunciante}
+ 
  - Nombre de la empresa anunciante 	(cadena de caracteres)
  - Sitio web (cadena de caracteres)
 
 \rd{Datos almacenados de los contratos}
+ 
  - ID contrato
  - ID empresa anunciante
  - ID's audiencias (cadena de ID's audiencias)
