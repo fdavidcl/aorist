@@ -9,13 +9,7 @@ header-includes:
   - \setcounter{rf}{0}
 ---
 
-# Funcionalidad "Gestión de Anunciantes"
-
-## Descripción
-La gestión de anunciantes permite registras nuevas empresas anunciantes que quieren promocionar sus productos mediante anuncios. Cada anuncio está dirigido a uno o varios sectores del mercado.
-
-
-## Requisitos funcionales
+# Requisitos funcionales
 
 \rf{Dar de alta una empresa anunciante}
 
@@ -23,7 +17,7 @@ Actor:
 Empleado encargado de contrataciones
 
 Entrada:  
-autoref{rdanun2}
+\autoref{rdanun2}
 
 Procesamiento:  
 Crear nueva empresa, con identificador RD1
@@ -75,7 +69,7 @@ Buscar y mostrar los datos de la empresa anunciante.
 Salida:  
 \autoref{rdanun1}
 
-## Requisitos de datos
+# Requisitos de datos
 
 \rd{Datos almacenados de empresa anunciante}
 \label{rdanun1}
@@ -100,7 +94,7 @@ Salida:
  - Fecha
  - Precio
 
-## Restricciones semánticas
+# Restricciones semánticas
 
 \rs{Contratos}
 Los contratos deben contener, al menos, una audiencia.

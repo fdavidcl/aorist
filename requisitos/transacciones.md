@@ -9,12 +9,7 @@ header-includes:
   - \setcounter{rf}{16}
 ---
 
-#Funcionalidad "Transacciones económicas"
-
-##Descripción
-Las transacciones económicas permiten llevar todas las acciones relacionadas con la contabilidad dentro de la empresa, desde el gasto generado por la compra de espacios publicitarios a medios hasta la cantidad de dinero que nos ha dado un anunciante por contratar nuestros servicios. También nos permite ver cuáles son nuestros mejores clientes y cuáles son los espacios publicitarios donde nos hemos gastado más dinero.
-
-##Requisitos funcionales
+#Requisitos funcionales
 
 \rf{Compra de espacios publicitarios a medios}
 
@@ -114,7 +109,7 @@ Se busca dentro de la tabla de contratos el id del medio y sumamos todos los val
 Salida:  
 Valor total que ha ganado el medio.
 
-##Requisitos de datos
+# Requisitos de datos
 
 \rd{Datos requeridos cuando compras un espacio publicitario a un medio}
 \label{rdtrans1}
@@ -128,7 +123,7 @@ Valor total que ha ganado el medio.
 - ID anunciante
 - ID Contratos
 
-## Restricciones semánticas
+# Restricciones semánticas
 
 \rs{Contratos}
 Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del medio o anunciante.

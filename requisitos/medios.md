@@ -9,13 +9,7 @@ header-includes:
   - \setcounter{rf}{4}
 ---
 
-# Funcionalidad "Gestión de Medios"
-
-## Descripción
-
-La gestión de medios permite registrar nuevos medios en los que podemos publicar anuncios. Asociado a cada medio tendremos uno o varios temas de interés, los cuales nos servirán para enviarles anuncios que se adecuen a la temática de cada medio. Debemos poder añadir nuevos medios y añadir o eliminar temáticas.
-
-## Requisitos funcionales
+# Requisitos funcionales
 
 \rf{Dar de alta un nuevo medio}
 
@@ -103,7 +97,7 @@ Salida:
 Ninguna.
 
 
-## Requisitos de datos
+# Requisitos de datos
 
 \rd{Datos almacenados de Medio}
 \label{rdmedio1}
@@ -132,7 +126,7 @@ Ninguna.
    - Descripción (cadena de caracteres)
 
 
-## Restricciones semánticas
+# Restricciones semánticas
 
 \rs{Temática}
 Todo medio tendrá al menos una temática asociada, pudiendo tener varias.

@@ -9,13 +9,7 @@ header-includes:
   - \setcounter{rf}{23}
 ---
 
-# Funcionalidad "Audiencia"
-
-## Descripción
-
-Los perfiles de audiencia consisten en distintos tipos de posibles compradores a los que que pueden ir dirigidos los anuncios y sobre los que pueden especializarse los medios.
-
-## Requisitos funcionales
+# Requisitos funcionales
 
 \rf{Insertar un nuevo tipo de audiencia}
 
@@ -101,7 +95,7 @@ Recolectar la información pertinente sobre los medios y anunciantes de cada una
 Salida:  
 Datos de las audiencias.
 
-## Requisitos de datos
+# Requisitos de datos
 
 \rd{Audiencia}
 \label{rdaudi}
@@ -110,7 +104,7 @@ Datos de las audiencias.
    - Medios que frecuenta
    - Anunciantes interesados
 
-## Restricciones semánticas
+# Restricciones semánticas
 
 \rs{Asociaciones}
 Los medios y los anunciantes asociados deben pertenecer a la base de datos del sistema.
