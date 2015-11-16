@@ -84,7 +84,7 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-Identificador de \autoref{rdanuncio} y del medio al que añadir (RD)
+Identificador de \autoref{rdanuncio} y del medio al que añadir (RD 4)
 
 Procesamiento:  
 Actualizar los campos dados por la entrada en el anuncio especificado
