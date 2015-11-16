@@ -33,7 +33,7 @@ Actor:
 Empleado de contabilidad
 
 Entrada:  
-autoref{rdtrans2}
+\autoref{rdtrans2}
 
 Procesamiento:  
 Buscamos el id del anunciante en el contrato, buscamos el contrato usando su identificador, vemos que coincide con el del anunciante, sumamos la cantidad a nuestra cuenta y guardamos la transacción en una tabla guardando su fecha, nombre del anunciante, el id anunciante, id del contrato y el valor.
