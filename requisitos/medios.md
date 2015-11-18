@@ -16,7 +16,7 @@ header-includes:
 \rf{Dar de alta un nuevo medio}
 
 Actor:  
-Empleado encargado de contrataciones
+Empleado encargado de contrataciones.
 
 Entrada:  
 \autoref{rdmedio1}
@@ -41,30 +41,30 @@ Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilid
 Salida:  
 Ninguna.
 
-\rf{Añadir una temática al medio}
+\rf{Añadir una audiencia al medio}
 
 Actor:  
-Empleado encargado de contrataciones
+Empleado encargado de contrataciones.
 
 Entrada:  
-Nueva temática.
+Identificador de la nueva audiencia.
 
 Procesamiento:  
-Añadir la temática a los datos del medio.
+Enlazar la audiencia con el medio.
 
 Salida:  
 Ninguna.
 
-\rf{Eliminar una temática de un medio}
+\rf{Eliminar una audiencia de un medio}
 
 Actor:  
-Empleado encargado de contrataciones
+Empleado encargado de contrataciones.
 
 Entrada:  
-Temática.
+Identificador de la audiencia a eliminar.
 
 Procesamiento:  
-Si hay más de una temática en el medio, se muestran y se da a elegir una a eliminar.
+Eliminar el enlace de la audiencia y el medio.
 
 Salida:  
 Ninguna.
@@ -73,7 +73,7 @@ Ninguna.
 \rf{Mostrar los datos de un medio}
 
 Actor:  
-Empleado encargado de contrataciones
+Empleado encargado de contrataciones.
 
 Entrada:  
 Identificador (o identificadores) del medio.
@@ -87,7 +87,7 @@ Datos de los medios.
 \rf{Realizar contrato con un medio}
 
 Actor:  
-Empleado encargado de contrataciones
+Empleado encargado de contrataciones.
 
 Entrada:  
 \autoref{rdmedio3}
@@ -107,7 +107,6 @@ Ninguna.
    - Identificador
    - Nombre (cadena de caracteres)
    - Sitio web (cadena de caracteres)
-   - Temática (lista de cadenas de caracteres)
    - Datos fiscales (lista de cadenas de caracteres)
 
 \rd{Datos necesarios para almacenar un Medio}
@@ -115,14 +114,14 @@ Ninguna.
 
    - Nombre
    - Sitio web
-   - Temática
    - Datos fiscales
 
-\rd{Datos necesarios para crear un contrato con un medio}
+\rd{Datos almacenados de un contrato con un medio}
 \label{rdmedio3}
 
-   - Identificador del medio
-   - Fecha (cadena de caracteres)
+   - ID contrato
+   - ID medio
+   - Fecha 
    - Duración del contrato (cadena de caracteres)
    - Importe (número real)
    - Descripción (cadena de caracteres)
@@ -130,8 +129,8 @@ Ninguna.
 
 # Restricciones semánticas
 
-\rs{Temática}
-Todo medio tendrá al menos una temática asociada, pudiendo tener varias.
+\rs{Audiencia}
+Todo medio tendrá al menos una audiencia asociada, pudiendo tener varias.
 
 \rs{Contratos}
 Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del medio.

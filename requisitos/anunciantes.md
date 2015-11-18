@@ -87,14 +87,14 @@ Salida:
  - Nombre de la empresa anunciante 	(cadena de caracteres)
  - Sitio web (cadena de caracteres)
 
-\rd{Datos almacenados de los contratos}
+\rd{Datos almacenados de un contrato con un anunciante}
 \label{rdanun3}
 
  - ID contrato
  - ID empresa anunciante
  - ID's audiencias (cadena de ID's audiencias)
  - Fecha
- - Precio
+ - Importe (numero real)
  - Descripción (cadena de caracteres)
 
 # Restricciones semánticas

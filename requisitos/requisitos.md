@@ -103,8 +103,8 @@ Desarrollados en el documento asociado: *Requisitos de Gestión de Medios*.
 
 \rf{Dar de alta un nuevo medio}
 \rf{Dar de baja un medio}
-\rf{Añadir una temática al medio}
-\rf{Eliminar una temática de un medio}
+\rf{Añadir una audiencia al medio}
+\rf{Eliminar una audiencia de un medio}
 \rf{Mostrar los datos de un medio}
 \rf{Realizar contrato con un medio}
 
@@ -169,7 +169,7 @@ Desarrollados en *Requisitos de Gestión de Anunciantes*:
 \label{rdanun1}
 \rd{Datos requeridos para registrar una empresa anunciante}
 \label{rdanun2}
-\rd{Datos almacenados de los contratos}
+\rd{Datos almacenados de un contrato con un anunciante}
 \label{rdanun3}
 
 Desarrollados en *Requisitos de Gestión de Medios*:
@@ -178,7 +178,7 @@ Desarrollados en *Requisitos de Gestión de Medios*:
 \label{rdmedio1}
 \rd{Datos necesarios para almacenar un Medio}
 \label{rdmedio2}
-\rd{Datos necesarios para crear un contrato con un medio}
+\rd{Datos almacenados de un contrato con un medio}
 \label{rdmedio3}
 
 Desarrollados en *Requisitos de Anuncios*:
@@ -212,7 +212,7 @@ Desarrolladas en *Requisitos de Gestión de Anunciantes*:
 
 Desarrolladas en *Requisitos de Gestión de Medios*:
 
-\rs{Temática}
+\rs{Audiencia}
 
 Desarrolladas en *Requisitos de Anuncios*:
 
