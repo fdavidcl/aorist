@@ -1,5 +1,5 @@
 ---
-title: "Requisitos de Anuncios"
+title: "Requisitos de Anuncios y Espacios"
 author:
   - Francisco David Charte Luque
 lang: spanish
@@ -14,7 +14,7 @@ header-includes:
 
 # Requisitos funcionales
 
-\rf{Crear nuevo tipo de anuncio}
+\rf{Crear nuevo espacio publicitario}
 Actor:  
 Empleado gestor de productos
 
@@ -22,20 +22,20 @@ Entrada:
 \autoref{rdtipo2}
 
 Procesamiento:  
-Crear nuevo tipo de anuncio con identificador (\autoref{rdtipo})
+Crear nuevo espacio con identificador (\autoref{rdtipo})
 
 Salida:  
 Ninguna
 
-\rf{Eliminar tipo de anuncio}
+\rf{Eliminar espacio publicitario}
 Actor:  
 Empleado gestor de productos
 
 Entrada:  
-Identificador del tipo de anuncio (\autoref{rdtipo})
+Identificador del espacio (\autoref{rdtipo})
 
 Procesamiento:  
-Buscar y eliminar tipo de anuncio con el identificador especificado
+Buscar y eliminar espacio con el identificador especificado
 
 Salida:  
 Ninguna
@@ -79,15 +79,15 @@ Actualizar los campos dados por la entrada en el anuncio especificado
 Salida:  
 Ninguna
 
-\rf{Añadir anuncio a medio}
+\rf{Asignar anuncio a espacio publicitario}
 Actor:  
 Empleado gestor de productos
 
 Entrada:  
-Identificador de \autoref{rdanuncio} y del medio al que añadir (RD 4)
+Identificador de \autoref{rdanuncio} y del espacio al que asignar (\autoref{rdtipo})
 
 Procesamiento:  
-Actualizar los campos dados por la entrada en el anuncio especificado
+Relaciona el anuncio y el espacio dados
 
 Salida:  
 Ninguna
@@ -108,10 +108,10 @@ Ninguna
 
 # Requisitos de datos
 
-\rd{Datos almacenados para Tipo de Anuncio}
+\rd{Datos almacenados para Espacio publicitario}
 \label{rdtipo}
 
-- ID tipo de anuncio
+- ID espacio
 - Acepta formato multimedia [valor booleano]
 - Tamaño [pareja de enteros]
 - Puede enlazar [valor booleano]
@@ -126,10 +126,10 @@ Ninguna
 - URL al que dirigir [cadena de caracteres/nulo]
 - Medios donde se mostrará [lista de medios, RD 4]
 
-\rd{Datos requeridos para crear Tipo de Anuncio}
+\rd{Datos requeridos para crear Espacio publicitario}
 \label{rdtipo2}
 
-- ID tipo de anuncio
+- ID espacio
 - Acepta formato multimedia [valor booleano]
 - Tamaño [pareja de enteros]
 - Puede enlazar [valor booleano]
@@ -145,18 +145,14 @@ Ninguna
 
 # Restricciones semánticas
 
-\rs{Tipos y anuncios}
+\rs{Espacios y anuncios}
 
-Un anuncio *debe* ser de algún tipo (y sólo uno). *Puede* haber varios anuncios de cada tipo.
+A un espacio publicitario sólo se puede asignar un anuncio, y un anuncio no se puede asignar a más de un espacio.
 
 \rs{Anuncios y empresas}
 
 Un anuncio *debe* asociarse con una (y sólo una) empresa. *Puede* haber varios anuncios asociados
 a la misma empresa
-
-\rs{Anuncios y medios}
-
-Cada anuncio *puede* aparecer en varios medios. En un mismo medio *pueden* aparecer varios anuncios.
 
 \rs{Anuncios que no enlazan}
 

@@ -183,11 +183,11 @@ Desarrollados en *Requisitos de Gestión de Medios*:
 
 Desarrollados en *Requisitos de Anuncios*:
 
-\rd{Datos almacenados para Tipo de Anuncio}
+\rd{Datos almacenados para Espacio publicitario}
 \label{rdtipo}
 \rd{Datos almacenados para Anuncio}
 \label{rdanuncio}
-\rd{Datos requeridos para crear Tipo de Anuncio}
+\rd{Datos requeridos para crear Espacio publicitario}
 \label{rdtipo2}
 \rd{Datos requeridos para crear Anuncio}
 \label{rdanuncio2}
@@ -216,9 +216,8 @@ Desarrolladas en *Requisitos de Gestión de Medios*:
 
 Desarrolladas en *Requisitos de Anuncios*:
 
-\rs{Tipos y anuncios}
+\rs{Espacios y anuncios}
 \rs{Anuncios y empresas}
-\rs{Anuncios y medios}
 \rs{Anuncios que no enlazan}
 
 Desarrollados en *Requisitos de Audiencia*:

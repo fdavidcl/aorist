@@ -8,7 +8,7 @@ mainfont: Droid Serif
 header-includes:
   - \setcounter{rf}{24}
   - \setcounter{rd}{12}
-  - \setcounter{rs}{6}
+  - \setcounter{rs}{5}
 ---
 
 # Requisitos funcionales
