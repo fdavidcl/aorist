@@ -41,35 +41,6 @@ Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilid
 Salida:  
 Ninguna.
 
-\rf{Añadir una audiencia al medio}
-
-Actor:  
-Empleado encargado de contrataciones.
-
-Entrada:  
-Identificador de la nueva audiencia.
-
-Procesamiento:  
-Enlazar la audiencia con el medio.
-
-Salida:  
-Ninguna.
-
-\rf{Eliminar una audiencia de un medio}
-
-Actor:  
-Empleado encargado de contrataciones.
-
-Entrada:  
-Identificador de la audiencia a eliminar.
-
-Procesamiento:  
-Eliminar el enlace de la audiencia y el medio.
-
-Salida:  
-Ninguna.
-
-
 \rf{Mostrar los datos de un medio}
 
 Actor:  
@@ -121,7 +92,7 @@ Ninguna.
 
    - ID contrato
    - ID medio
-   - Fecha 
+   - Fecha
    - Duración del contrato (cadena de caracteres)
    - Importe (número real)
    - Descripción (cadena de caracteres)

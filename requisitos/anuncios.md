@@ -7,7 +7,7 @@ numbersections: yes
 
 mainfont: Droid Serif
 header-includes:
-  - \setcounter{rf}{10}
+  - \setcounter{rf}{8}
   - \setcounter{rd}{6}
   - \setcounter{rs}{2}
 ---

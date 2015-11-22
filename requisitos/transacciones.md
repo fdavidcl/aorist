@@ -6,7 +6,7 @@ language: spanish
 
 mainfont: Droid Serif
 header-includes:
-  - \setcounter{rf}{17}
+  - \setcounter{rf}{15}
   - \setcounter{rd}{10}
   - \setcounter{rs}{6}
 ---
@@ -126,4 +126,3 @@ Valor total que ha ganado el medio.
 - ID Contratos
 
 # Restricciones semánticas
-

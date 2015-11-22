@@ -103,8 +103,6 @@ Desarrollados en el documento asociado: *Requisitos de Gestión de Medios*.
 
 \rf{Dar de alta un nuevo medio}
 \rf{Dar de baja un medio}
-\rf{Añadir una audiencia al medio}
-\rf{Eliminar una audiencia de un medio}
 \rf{Mostrar los datos de un medio}
 \rf{Realizar contrato con un medio}
 
