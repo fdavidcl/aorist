@@ -218,7 +218,7 @@ Desarrolladas en *Requisitos de Anuncios*:
 
 \rs{Espacios y anuncios}
 \rs{Anuncios y empresas}
-\rs{Anuncios que no enlazan}
+\rs{Anuncios y espacios incompatibles}
 
 Desarrollados en *Requisitos de Audiencia*:
 

@@ -146,13 +146,13 @@ Ninguna
 
 \rs{Espacios y anuncios}
 
-A un espacio publicitario sólo se puede asignar un anuncio, y un anuncio no se puede asignar a más de un espacio. No se pueden asignar anuncios a espacios incompatibles (anuncios con URL/contenido multimedia a espacios que no lo permitan).
+A un espacio publicitario sólo se puede asignar un anuncio, y un anuncio no se puede asignar a más de un espacio.
 
 \rs{Anuncios y empresas}
 
 Un anuncio *debe* asociarse con una (y sólo una) empresa. *Puede* haber varios anuncios asociados
 a la misma empresa
 
-\rs{Anuncios que no enlazan}
+\rs{Anuncios y espacios incompatibles}
 
-Un anuncio de un tipo que no puede enlazar *debe* tener URL nulo. Un anuncio de un tipo que puede enlazar *puede* tener URL nulo.
+No se pueden asignar anuncios a espacios incompatibles (anuncios con URL/contenido multimedia a espacios que no lo permitan).
