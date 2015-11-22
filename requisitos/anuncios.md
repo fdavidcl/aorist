@@ -146,7 +146,7 @@ Ninguna
 
 \rs{Espacios y anuncios}
 
-A un espacio publicitario sólo se puede asignar un anuncio, y un anuncio no se puede asignar a más de un espacio.
+A un espacio publicitario sólo se puede asignar un anuncio, y un anuncio no se puede asignar a más de un espacio. No se pueden asignar anuncios a espacios incompatibles (anuncios con URL/contenido multimedia a espacios que no lo permitan).
 
 \rs{Anuncios y empresas}
 
