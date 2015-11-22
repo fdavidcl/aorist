@@ -6,7 +6,7 @@ language: spanish
 
 mainfont: Droid Serif
 header-includes:
-  - \setcounter{rf}{22}
+  - \setcounter{rf}{23}
   - \setcounter{rd}{12}
   - \setcounter{rs}{5}
 ---

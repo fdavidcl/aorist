@@ -122,6 +122,7 @@ Desarrollados en el documento asociado: *Requisitos de Anuncios*.
 \rf{Obtener anuncio}
 \rf{Modificar anuncio}
 \rf{Asignar anuncio a espacio publicitario}
+\rf{Mostrar anuncios puestos en marcha}
 \rf{Eliminar anuncio}
 
 ## Funcionalidad "Transacciones económicas"

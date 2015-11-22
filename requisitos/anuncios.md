@@ -92,6 +92,19 @@ Relaciona el anuncio y el espacio dados
 Salida:  
 Ninguna
 
+\rf{Mostrar anuncios puestos en marcha}
+Actor:  
+Empleado gestor de productos
+
+Entrada:  
+Ninguna
+
+Procesamiento:  
+Busca anuncios y espacios que estén relacionados
+
+Salida:  
+Datos de los anuncios (\autoref{rdanuncio}) y espacios (\autoref{rdtipo}) relacionados
+
 \rf{Eliminar anuncio}
 Actor:  
 Empleado gestor de productos
