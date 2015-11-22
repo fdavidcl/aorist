@@ -124,7 +124,6 @@ Ninguna
 - Empresa asociada [RD 1]
 - Contenido [cadena de caracteres]
 - URL al que dirigir [cadena de caracteres/nulo]
-- Medios donde se mostrará [lista de medios, RD 4]
 
 \rd{Datos requeridos para crear Espacio publicitario}
 \label{rdtipo2}
