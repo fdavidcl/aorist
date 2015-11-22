@@ -116,12 +116,12 @@ Incluye la creación de distintos tipos de anuncios que después se podrán ofer
 
 Desarrollados en el documento asociado: *Requisitos de Anuncios*.
 
-\rf{Dar de alta nuevo tipo de anuncio}
-\rf{Eliminar tipo de anuncio}
+\rf{Dar de alta nuevo espacio publicitario}
+\rf{Eliminar espacio publicitario}
 \rf{Dar de alta nuevo anuncio}
 \rf{Obtener anuncio}
 \rf{Modificar anuncio}
-\rf{Añadir anuncio a medio}
+\rf{Asignar anuncio a espacio publicitario}
 \rf{Eliminar anuncio}
 
 ## Funcionalidad "Transacciones económicas"

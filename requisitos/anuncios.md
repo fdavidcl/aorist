@@ -64,7 +64,7 @@ Procesamiento:
 Buscar y recuperar los valores de los campos de \autoref{rdanuncio}
 
 Salida:  
-Datos de tipo, contenido, URL y nombre e identificador de la empresa asociada.
+Datos de contenido, URL y nombre e identificador de la empresa asociada.
 
 \rf{Modificar anuncio}
 Actor:  
