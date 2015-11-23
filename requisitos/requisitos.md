@@ -136,7 +136,7 @@ Las transacciones económicas permiten llevar todas las acciones relacionadas co
 Desarrollados en el documento asociado: *Requisitos de Transacciones Económicas*.
 
 \rf{Hacer un pago a medio}
-\rf{Hacer cobro a anunciantes}
+\rf{Hacer un cobro a anunciante}
 \rf{Obtener balance}
 \rf{Obtener pagos ordenados por importe}
 \rf{Obtener cobros ordenados por importe}
