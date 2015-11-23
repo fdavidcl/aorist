@@ -195,29 +195,12 @@ Desarrollados en *Requisitos de Transacciones Económicas*:
 
 \rd{Datos requeridos para pago a medio}
 \label{rdtrans1}
-
-- ID contrato (RD 6)
-- importe [valor real]
-
 \rd{Datos requeridos para cobro a anunciante}
 \label{rdtrans2}
-
-- ID contrato (RD 3)
-- importe [valor real]
-
 \rd{Datos almacenados de pago}
 \label{rdtrans3}
-
-- ID contrato (RD 6)
-- fecha transacción [fecha]
-- importe [valor real]
-
 \rd{Datos almacenados de cobro}
 \label{rdtrans4}
-
-- ID contrato (RD 3)
-- fecha transacción [fecha]
-- importe [valor real]
 
 Desarrollados en *Requisitos de Audiencia*:
 
