@@ -135,11 +135,11 @@ Las transacciones económicas permiten llevar todas las acciones relacionadas co
 
 Desarrollados en el documento asociado: *Requisitos de Transacciones Económicas*.
 
-\rf{Compra de espacios publicitarios a medios}
-\rf{Vender espacios publicitarios a anunciantes}
-\rf{Ver contabilidad}
-\rf{Operaciones más exitosas}
-\rf{Pagos más importantes}
+\rf{Hacer un pago a medio}
+\rf{Hacer cobro a anunciantes}
+\rf{Obtener balance}
+\rf{Obtener pagos ordenados por importe}
+\rf{Obtener cobros ordenados por importe}
 \rf{Gasto por anunciantes}
 \rf{Gasto en cada medio}
 
