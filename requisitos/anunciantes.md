@@ -66,7 +66,7 @@ Entrada:
 ID empresa
 
 Procesamiento:  
-Buscar y mostrar los datos de la empresa anunciante.
+Buscar y mostrar los datos de la empresa anunciante y sus contratos asociados (\autoref{rdanun3}).
 
 Salida:  
 \autoref{rdanun1}

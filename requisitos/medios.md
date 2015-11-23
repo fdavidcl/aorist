@@ -50,7 +50,7 @@ Entrada:
 Identificador (o identificadores) del medio.
 
 Procesamiento:  
-Buscar y mostrar los datos de los medios requeridos.
+Buscar y mostrar los datos de los medios requeridos y sus contratos asociados (\autoref{rdmedio3}).
 
 Salida:  
 Datos de los medios.
