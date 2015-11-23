@@ -136,7 +136,7 @@ Las transacciones económicas permiten llevar todas las acciones relacionadas co
 Desarrollados en el documento asociado: *Requisitos de Transacciones Económicas*.
 
 \rf{Hacer un pago a medio}
-\rf{Hacer cobro a anunciantes}
+\rf{Hacer un cobro a anunciante}
 \rf{Obtener balance}
 \rf{Obtener pagos ordenados por importe}
 \rf{Obtener cobros ordenados por importe}
@@ -193,10 +193,31 @@ Desarrollados en *Requisitos de Anuncios*:
 
 Desarrollados en *Requisitos de Transacciones Económicas*:
 
-\rd{Datos requeridos para comprar un espacio publicitario a un medio}
+\rd{Datos requeridos para pago a medio}
 \label{rdtrans1}
-\rd{Datos requeridos para vender el espacio publicitario a un anunciante}
+
+- ID contrato (RD 6)
+- importe [valor real]
+
+\rd{Datos requeridos para cobro a anunciante}
 \label{rdtrans2}
+
+- ID contrato (RD 3)
+- importe [valor real]
+
+\rd{Datos almacenados de pago}
+\label{rdtrans3}
+
+- ID contrato (RD 6)
+- fecha transacción [fecha]
+- importe [valor real]
+
+\rd{Datos almacenados de cobro}
+\label{rdtrans4}
+
+- ID contrato (RD 3)
+- fecha transacción [fecha]
+- importe [valor real]
 
 Desarrollados en *Requisitos de Audiencia*:
 

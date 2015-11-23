@@ -27,7 +27,7 @@ Buscamos el contrato (RD 6) usando su identificador, restamos la cantidad a nues
 Salida:  
 Ninguna.
 
-\rf{Hacer cobro a anunciantes}
+\rf{Hacer un cobro a anunciante}
 
 Actor:  
 Empleado de contabilidad
