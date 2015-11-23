@@ -13,7 +13,7 @@ header-includes:
 
 #Requisitos funcionales
 
-\rf{Compra de espacios publicitarios a medios}
+\rf{Hacer un pago a medio}
 
 Actor:  
 Empleado de contabilidad
@@ -22,12 +22,12 @@ Entrada:
 \autoref{rdtrans1}
 
 Procesamiento:  
-Buscamos el id del medio en el contrato, buscamos el contrato usando su identificador, vemos que coincide con el del medio, restamos la cantidad a nuestra cuenta y guardamos la transacción en una tabla guardando su fecha, nombre del medio, el id anunciante, id del contrato y el valor.
+Buscamos el contrato (RD 6) usando su identificador, restamos la cantidad a nuestro balance y guardamos la transacción en una tabla guardando su fecha, nombre del medio, el id anunciante, id del contrato y el valor.
 
 Salida:  
 Ninguna.
 
-\rf{Vender espacios publicitarios a anunciantes}
+\rf{Hacer cobro a anunciantes}
 
 Actor:  
 Empleado de contabilidad
@@ -41,21 +41,21 @@ Buscamos el id del anunciante en el contrato, buscamos el contrato usando su ide
 Salida:  
 Ninguna.
 
-\rf{Ver contabilidad}
+\rf{Obtener balance}
 
 Actor:  
 Empleado de contabilidad
 
 Entrada:  
-Fecha (en caso de querer que imprima todo ponemos la fecha 0/0/0000).
+Fecha
 
 Procesamiento:  
-A partir de fecha busca todos los contratos que se han hecho a partir de esta.
+A partir de fecha busca cobros \autoref{rdtrans4} y pagos \autoref{rdtrans3}, obtiene los contratos asociados y realiza la suma.
 
 Salida:  
-Lista de nombres, tanto de medios como de anunciantes, y el valor de los contratos que se han hecho en esas fechas y posteriores.
+Lista de transacciones con su importe y contrato asociado y balance total.
 
-\rf{Operaciones más exitosas}
+\rf{Obtener pagos ordenados por importe}
 
 Actor:  
 Empleado de contabilidad
@@ -64,12 +64,12 @@ Entrada:
 Ninguna.
 
 Procedimiento:  
-Busca dentro de la tabla de los contratos los valores más altos y después, busca el nombre del anunciante asociado.
+Obtiene los pagos y ordena de mayor a menor por importe.
 
 Salida:  
-El nombre del anunciante y el valor que tiene asociado.
+El pago y el valor que tiene asociado.
 
-\rf{Pagos más importantes}
+\rf{Obtener cobros ordenados por importe}
 
 Actor:  
 Empleado de contabilidad
@@ -78,10 +78,10 @@ Entrada:
 Ninguna.
 
 Procedimiento:  
-Busca dentro de la tabla de contratos los valores más bajos y después, busca el nombre del medio asociado.
+Obtiene los cobros y ordena de mayor a menor por importe.
 
 Salida:  
-El nombre del medio y el valor que tiene asociado.
+El cobro y el valor que tiene asociado.
 
 \rf{Gasto por anunciantes}
 
@@ -89,10 +89,10 @@ Actor:
 Empleado de contabilidad
 
 Entrada:  
-ID de anunciante.
+ID de anunciante (RD 1).
 
 Procedimiento:  
-Se busca dentro de la tabla de contratos el id del anunciante y sumamos todos los valores asociados a ese id.
+Se buscan dentro de la tabla de cobros contratos asociados al id del anunciante y se suman los importes.
 
 Salida:  
 Valor total del dinero gastado por el anunciante.
@@ -103,26 +103,40 @@ Actor:
 Empleado de contabilidad
 
 Entrada:  
-ID de medio.
+ID de medio (RD 4).
 
 Procedimiento:  
-Se busca dentro de la tabla de contratos el id del medio y sumamos todos los valores asociados a ese id.
+Se buscan dentro de la tabla de pagos contratos asociados al id del medio y se suman los importes.
 
 Salida:  
 Valor total que ha ganado el medio.
 
 # Requisitos de datos
 
-\rd{Datos requeridos cuando compras un espacio publicitario a un medio}
+\rd{Datos requeridos para pago a medio}
 \label{rdtrans1}
 
-- ID medio
-- ID Contratos
+- ID contrato (RD 6)
+- importe [valor real]
 
-\rd{Datos requeridos cuando vendes el espacio publicitario a un anunciante}
+\rd{Datos requeridos para cobro a anunciante}
 \label{rdtrans2}
 
-- ID anunciante
-- ID Contratos
+- ID contrato (RD 3)
+- importe [valor real]
+
+\rd{Datos almacenados de pago}
+\label{rdtrans3}
+
+- ID contrato (RD 6)
+- fecha transacción [fecha]
+- importe [valor real]
+
+\rd{Datos almacenados de cobro}
+\label{rdtrans4}
+
+- ID contrato (RD 3)
+- fecha transacción [fecha]
+- importe [valor real]
 
 # Restricciones semánticas
