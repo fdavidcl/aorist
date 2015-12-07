@@ -125,6 +125,7 @@ Ninguna
 \label{rdtipo}
 
 - ID espacio
+- Medio asociado [RD 4]
 - Acepta formato multimedia [valor booleano]
 - Tamaño [pareja de enteros]
 - Puede enlazar [valor booleano]
@@ -133,7 +134,6 @@ Ninguna
 \label{rdanuncio}
 
 - ID anuncio
-- Tipo de anuncio [\autoref{rdtipo}]
 - Empresa asociada [RD 1]
 - Contenido [cadena de caracteres]
 - URL al que dirigir [cadena de caracteres/nulo]
