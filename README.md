@@ -1,2 +1,2 @@
-# erp-publi
-Prácticas de la asignatura DDSI. 
+# aorist
+#### Ad-oriented Information System
