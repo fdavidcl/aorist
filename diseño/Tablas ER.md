@@ -2,7 +2,7 @@
 
 Cobro(\underline{ID cobro}, ID anunciante, Importe, Fecha)
 Contrato con anunciante(\underline{ID contrato anunciante, ID anunciante}, ID's audiencias, Fecha, Importe, Descripción)
-Anunciante(\underline{ID anunciante}, Nombre, Sitio web, ID's contratos anunciantes)
+Anunciante(\underline{ID anunciante}, Nombre, Sitio web, Datos fiscales)
 Audiencia(\underline{ID Audiencia}, Nombre, Descripción, ID's medios, ID's anunciantes)
 Anuncio(\underline{ID anuncio, ID anunciante}, Contenido, URL)
 Espacio(\underline{ID espacio, ID medio}, Multimedia, Tamaño, Enlace)
