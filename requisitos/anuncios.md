@@ -150,7 +150,6 @@ Ninguna
 \label{rdanuncio2}
 
 - ID anuncio
-- Tipo de anuncio [\autoref{rdtipo}]
 - Empresa asociada [RD 1]
 - Contenido [cadena de caracteres]
 - URL al que dirigir [cadena de caracteres/nulo]
