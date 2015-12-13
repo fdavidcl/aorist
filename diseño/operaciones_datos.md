@@ -14,4 +14,4 @@ Buscar los pagos asociados a contratos de medio a partir del identificador del m
 
 ## Modificación de anuncio
 
-Actualizar un anuncio dados un nuevo contenido y URL.
+Actualizar el contenido y URL de un anuncio, dado su identificador.
