@@ -158,7 +158,7 @@ Ninguna
 
 \rs{Espacios y anuncios}
 
-A un espacio publicitario sólo se puede asignar un anuncio, y un anuncio no se puede asignar a más de un espacio.
+A un espacio publicitario sólo se puede asignar un anuncio, pero un anuncio se puede asignar a más de un espacio.
 
 \rs{Anuncios y empresas}
 
