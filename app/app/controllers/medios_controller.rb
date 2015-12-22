@@ -1,0 +1,2 @@
+class MediosController < ApplicationController
+end
