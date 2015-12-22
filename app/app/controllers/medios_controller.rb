@@ -1,7 +1,7 @@
 class MediosController < ApplicationController
   private
   def medio_params
-    params.require(:medio, :nombre).permit(:web, :fiscales)
+    params.require(:medio).permit(:nombre, :web, :fiscales)
   end
 
   public
