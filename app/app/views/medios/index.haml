@@ -1,0 +1,7 @@
+%h1 Todos los medios
+
+= link_to "Nuevo medio", new_medio_path
+
+- @medios.each do |medio|
+  %h3
+    = link_to medio.nombre, medio
