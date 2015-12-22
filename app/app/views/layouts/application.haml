@@ -1,0 +1,15 @@
+!!! 5
+%html
+  %head
+    %title Aorist
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    .wrapper.pure-g
+      = render "common/header"
+      .pure-u-1-24.pure-u-lg-1-6
+      .pure-u-22-24.pure-u-lg-2-3
+        = yield
+      .pure-u-1-24.pure-u-lg-1-6
