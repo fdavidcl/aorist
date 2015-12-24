@@ -1,0 +1,57 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background: #f0f0f0
+$card-background: #ffffff
+$foreground: #000000
+$link: #006064
+$hmargin: 2em
+$vmargin: 1em
+$font: 'Roboto'
+
+*
+  font-family: $font, sans-serif
+
+body
+  background: $background
+  color: $foreground
+
+  .header
+    background: darken($background, 10%)
+    border: solid darken($background, 15%)
+    border-width: 0 0 1px 0
+
+    .header-title
+      display: inline-block
+      padding: $vmargin 0
+      text-decoration: none
+      font-weight: bold
+      color: lighten($foreground, 30%)
+
+      &:hover
+        color: $foreground
+
+  h1
+    font-weight: 300
+    font-size: 2.5em
+
+  .cards
+    margin: $vmargin 0
+
+    .card
+      display: block
+      color: $foreground
+      text-decoration: none
+      background: $card-background
+      border: 1px solid darken($background, 10%)
+      box-shadow: 0 0 7px -5px rgba(0,0,0,0.5)
+      padding: $vmargin $hmargin
+      margin: $vmargin 0
+      transition: box-shadow .1s ease
+
+      &:hover
+        box-shadow: 0 0 10px -5px rgba(0,0,0,0.6)
+
+    a.card
+      color: $link
