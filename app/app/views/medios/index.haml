@@ -1,6 +1,8 @@
 %h1 Todos los medios
 
-= link_to "Nuevo medio", {:controller => :medios, :action => :new}, {:class => "pure-button pure-button-primary"}
+%a.pure-button.pure-button-primary{href: new_medio_path}
+  %i.fa.fa-plus
+  Nuevo medio
 
 .cards
   - @medios.each do |medio|
