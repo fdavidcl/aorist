@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222173314) do
+ActiveRecord::Schema.define(version: 20151228201006) do
 
   create_table "anuncios", force: :cascade do |t|
     t.string   "contenido"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20151222173314) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "espacios", force: :cascade do |t|
+    t.integer  "medio_id"
+    t.boolean  "multimedia"
+    t.boolean  "enlace"
+    t.integer  "ancho"
+    t.integer  "alto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "espacios", ["medio_id"], name: "index_espacios_on_medio_id"
 
   create_table "medios", force: :cascade do |t|
     t.string   "nombre"

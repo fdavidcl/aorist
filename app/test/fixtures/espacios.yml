@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medio_id: 
+  multimedia: false
+  enlace: false
+  ancho: 1
+  alto: 1
+
+two:
+  medio_id: 
+  multimedia: false
+  enlace: false
+  ancho: 1
+  alto: 1
