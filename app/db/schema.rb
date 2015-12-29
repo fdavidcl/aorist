@@ -11,13 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228201006) do
+ActiveRecord::Schema.define(version: 20151229185457) do
 
-  create_table "anuncios", force: :cascade do |t|
-    t.string   "contenido"
-    t.string   "url"
+  create_table "anunciantes", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "web"
+    t.string   "fiscales"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "anuncios", force: :cascade do |t|
+    t.text     "contenido"
+    t.string   "URL"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "audiences", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "cobros", force: :cascade do |t|
+    t.float    "importe"
+    t.date     "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contrato_anunciantes", force: :cascade do |t|
+    t.float    "importe"
+    t.date     "fecha"
+    t.string   "descripcion"
+    t.date     "duracion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "contrato_medios", force: :cascade do |t|
+    t.float    "importe"
+    t.date     "fecha"
+    t.string   "descripcion"
+    t.date     "duracion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "espacios", force: :cascade do |t|
@@ -36,6 +76,13 @@ ActiveRecord::Schema.define(version: 20151228201006) do
     t.string   "nombre"
     t.string   "web"
     t.string   "fiscales"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pagos", force: :cascade do |t|
+    t.float    "importe"
+    t.date     "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

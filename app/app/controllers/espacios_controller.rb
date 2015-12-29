@@ -1,9 +1,6 @@
 class EspaciosController < ApplicationController
   def index
-    @espacios = Espacios.all
-  end
-
-  def por_medio id_medio
-    @espacios = Espacios.where :medio => id_medio
+    @medio = Medio.find_by :id => params[:medio_id]
+    @espacios = Espacio.where :medio => params[:medio_id]
   end
 end
