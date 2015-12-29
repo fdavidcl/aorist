@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  importe: 1.5
+  fecha: 2015-12-29
+  descripcion: MyString
+  duracion: 2015-12-29
+
+two:
+  importe: 1.5
+  fecha: 2015-12-29
+  descripcion: MyString
+  duracion: 2015-12-29
