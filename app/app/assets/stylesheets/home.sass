@@ -60,6 +60,15 @@ body
       margin: $vmargin 0
       transition: box-shadow .1s ease
 
+      .count
+        color: mix($foreground, $card-background, 50%)
+        margin-left: $hmargin/4
+        font-size: 0.8em
+
+        &:before
+          content: "·"
+          padding-right: $hmargin/4
+
       &:hover
         box-shadow: 0 0 10px -5px rgba(0,0,0,0.6)
 
