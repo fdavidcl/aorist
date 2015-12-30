@@ -12,4 +12,4 @@
     Atrás
 
   /%a.pure-button{href: }
-  = link_to "Espacios", :controller => :espacios, :action => :index, :medio_id => @medio.id
+  = link_to "Espacios", {:controller => :espacios, :action => :index, :medio_id => @medio.id}, {:class => "pure-button pure-button-primary"}
