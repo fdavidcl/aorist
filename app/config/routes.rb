@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   #   resources :products
   resources :medios do
     resources :espacios
-    resources :contratos, :controller => :medio_contratos
+    resources :contratos, :controller => :contrato_medios
   end
 
   resources :anunciantes do
     resources :anuncios
-    resources :contratos, :controller => :anunciante_contratos
+    resources :contratos, :controller => :contrato_anunciantes
   end
 
   # Example resource route with options:
