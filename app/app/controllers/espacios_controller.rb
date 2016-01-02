@@ -22,4 +22,12 @@ class EspaciosController < ApplicationController
   def create
     @espacio = Espacio.new espacio_params
   end
+  
+  def destroy 
+    @espacio = Espacio.find params[:id]
+    @espacio.destroy
+    
+    redirect_to espacios_path
+  end
+  
 end
