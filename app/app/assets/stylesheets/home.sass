@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Palette
+$red: #f44336
+$teal: #006064
+
 $background: #f0f0f0
 $card-background: #ffffff
 $foreground: #000000
-$link: #006064
+$link: $teal
 $hmargin: 2em
 $vmargin: 1em
 $font: 'Roboto'
@@ -82,3 +86,7 @@ body
 
     &.pure-button-primary
       background-color: lighten($link, 10%)
+
+    &.button-delete
+      background-color: $red
+      color: white
