@@ -7,12 +7,12 @@ class AnunciosController < ApplicationController
 
   public
   def index
-    @anunciante = Anunciante.find_by :id => params[:anunciante_id]
+    @anunciante = Anunciante.find_by id: params[:anunciante_id]
     @anuncios = @anunciante.anuncios
   end
 
   def new
-    @anunciante = Anunciante.find_by :id => params[:anunciante_id]
+    @anunciante = Anunciante.find_by id: params[:anunciante_id]
     @anuncio = Anuncio.new
   end
 

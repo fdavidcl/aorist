@@ -6,12 +6,12 @@ class EspaciosController < ApplicationController
 
   public
   def index
-    @medio = Medio.find_by :id => params[:medio_id]
+    @medio = Medio.find_by id: params[:medio_id]
     @espacios = @medio.espacios
   end
 
   def new
-    @medio = Medio.find_by :id => params[:medio_id]
+    @medio = Medio.find_by id: params[:medio_id]
     @espacio = Espacio.new
   end
 

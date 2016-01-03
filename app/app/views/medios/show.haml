@@ -7,7 +7,7 @@
   = @medio.fiscales
 
 %p
-  = link_to "Eliminar", medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, :class => "pure-button button-delete"
+  = link_to "Eliminar", medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete"
 
 %p
   %a.pure-button{href: medios_path}
@@ -15,4 +15,4 @@
     Atrás
 
   /%a.pure-button{href: }
-  = link_to "Espacios", {:controller => :espacios, :action => :index, :medio_id => @medio.id}, {:class => "pure-button pure-button-primary"}
+  = link_to "Espacios", {controller: :espacios, action: :index, medio_id: @medio.id}, {class: "pure-button pure-button-primary"}

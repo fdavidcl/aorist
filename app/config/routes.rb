@@ -23,12 +23,12 @@ Rails.application.routes.draw do
   #   resources :products
   resources :medios do
     resources :espacios
-    resources :contratos, :controller => :contrato_medios
+    resources :contratos, controller: :contrato_medios
   end
 
   resources :anunciantes do
     resources :anuncios
-    resources :contratos, :controller => :contrato_anunciantes
+    resources :contratos, controller: :contrato_anunciantes
   end
 
   resources :audiences

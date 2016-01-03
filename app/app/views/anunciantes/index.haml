@@ -6,7 +6,7 @@
 
 .cards
   - @anunciantes.each do |anunciante|
-    = link_to anunciante, {:class => "card"} do
+    = link_to anunciante, {class: "card"} do
       = anunciante.nombre
       %span.count #{anunciante.anuncios.count} anuncios
       /%span.count #{anunciante.contratos.count} contratos

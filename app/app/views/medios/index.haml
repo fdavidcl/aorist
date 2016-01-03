@@ -6,7 +6,7 @@
 
 .cards
   - @medios.each do |medio|
-    = link_to medio, {:class => "card"} do
+    = link_to medio, {class: "card"} do
       = medio.nombre
       %span.count #{medio.espacios.count} espacios
       /%span.count #{medio.contratos.count} contratos
