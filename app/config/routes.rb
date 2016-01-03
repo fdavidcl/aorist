@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     resources :contratos, :controller => :contrato_anunciantes
   end
 
+  resources :audiences
+  resources :pagos
+  resources :cobros
+
   # Example resource route with options:
   #   resources :products do
   #     member do
