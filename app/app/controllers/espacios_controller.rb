@@ -7,7 +7,7 @@ class EspaciosController < ApplicationController
   public
   def index
     @medio = Medio.find_by :id => params[:medio_id]
-    @espacios = Espacio.where :medio => params[:medio_id]
+    @espacios = @medio.espacios
   end
 
   def new
@@ -22,12 +22,12 @@ class EspaciosController < ApplicationController
   def create
     @espacio = Espacio.new espacio_params
   end
-  
-  def destroy 
+
+  def destroy
     @espacio = Espacio.find params[:id]
     @espacio.destroy
-    
+
     redirect_to espacios_path
   end
-  
+
 end

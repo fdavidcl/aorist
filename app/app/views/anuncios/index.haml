@@ -1,0 +1,11 @@
+%h1
+  Anuncios del anunciante
+  = link_to @anunciante.nombre, @anunciante
+
+%a.pure-button.pure-button-primary{href: new_anunciante_anuncio_path}
+  %i.fa.fa-plus
+  Nuevo anuncio
+
+.cards
+  - @anuncios.each do |a|
+    = link_to a.id, a, {:class => "card"}

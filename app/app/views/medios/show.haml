@@ -7,6 +7,9 @@
   = @medio.fiscales
 
 %p
+  = link_to "Eliminar", medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, :class => "pure-button button-delete"
+
+%p
   %a.pure-button{href: medios_path}
     %i.fa.fa-arrow-left
     Atrás

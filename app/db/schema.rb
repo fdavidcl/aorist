@@ -22,11 +22,14 @@ ActiveRecord::Schema.define(version: 20151229185457) do
   end
 
   create_table "anuncios", force: :cascade do |t|
+    t.integer  "anunciante_id"
     t.text     "contenido"
     t.string   "URL"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "anuncios", ["anunciante_id"], name: "index_anuncios_on_anunciante_id"
 
   create_table "audiences", force: :cascade do |t|
     t.string   "nombre"

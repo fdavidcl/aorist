@@ -4,7 +4,7 @@ class Anunciante < ActiveRecord::Base
   has_many :audiences
   validates :nombre, :web, :fiscales, presence: true, length: {minimum: 1}
 
-  def anunciantes
-    Anunciante.where :anunciante_id => self.id
+  def anuncios
+    Anuncio.where :anunciante_id => self.id
   end
 end
