@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'audiences/index'
+
   get 'anuncios/index'
 
   get 'anunciantes/index'
