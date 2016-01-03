@@ -26,4 +26,12 @@ class MediosController < ApplicationController
   def index
     @medios = Medio.all
   end
+  
+  def destroy 
+    @medio = Medio.find params[:id]
+    @medio.destroy
+    
+    redirect_to medios_path
+  end 
+  
 end

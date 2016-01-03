@@ -53,3 +53,4 @@ end
 
 # Comparing dates gem.
 gem 'date_validator', '~> 0.8.1'
+# Documentation http://www.rubydoc.info/gems/date_validator/0.8.1
