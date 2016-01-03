@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20151229185457) do
 
+  create_table "anunciante_contratos", force: :cascade do |t|
+    t.float    "importe"
+    t.date     "fecha"
+    t.string   "descripcion"
+    t.date     "duracion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "anunciantes", force: :cascade do |t|
     t.string   "nombre"
     t.string   "web"
@@ -45,24 +54,6 @@ ActiveRecord::Schema.define(version: 20151229185457) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "contrato_anunciantes", force: :cascade do |t|
-    t.float    "importe"
-    t.date     "fecha"
-    t.string   "descripcion"
-    t.date     "duracion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "contrato_medios", force: :cascade do |t|
-    t.float    "importe"
-    t.date     "fecha"
-    t.string   "descripcion"
-    t.date     "duracion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "espacios", force: :cascade do |t|
     t.integer  "medio_id"
     t.boolean  "multimedia"
@@ -74,6 +65,15 @@ ActiveRecord::Schema.define(version: 20151229185457) do
   end
 
   add_index "espacios", ["medio_id"], name: "index_espacios_on_medio_id"
+
+  create_table "medio_contratos", force: :cascade do |t|
+    t.float    "importe"
+    t.date     "fecha"
+    t.string   "descripcion"
+    t.date     "duracion"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "medios", force: :cascade do |t|
     t.string   "nombre"

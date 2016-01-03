@@ -1,6 +1,6 @@
-class CreateContratoMedios < ActiveRecord::Migration
+class CreateMedioContratos < ActiveRecord::Migration
   def change
-    create_table :contrato_medios do |t|
+    create_table :medio_contratos do |t|
       t.float :importe
       t.date :fecha
       t.string :descripcion

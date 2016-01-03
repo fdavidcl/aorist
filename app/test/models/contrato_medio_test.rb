@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ContratoMedioTest < ActiveSupport::TestCase
+class MedioContratoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

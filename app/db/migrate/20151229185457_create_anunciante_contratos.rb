@@ -1,6 +1,6 @@
-class CreateContratoAnunciantes < ActiveRecord::Migration
+class CreateAnuncianteContratos < ActiveRecord::Migration
   def change
-    create_table :contrato_anunciantes do |t|
+    create_table :anunciante_contratos do |t|
       t.float :importe
       t.date :fecha
       t.string :descripcion
