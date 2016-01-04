@@ -3,5 +3,14 @@
   del anunciante
   = link_to @anunciante.nombre, @anunciante
 
-= form_for [:anunciante, @anuncio], url: anunciante_anuncio_path do
+= form_for [:anunciante, @anuncio], url: anunciante_anuncio_path do |f|
   %p
+    = f.label :contenido
+    = f.text_field :contenido
+    
+  %p 
+    = f.label :URL
+    = f.text_filed :URL
+    
+  %p
+    = f.submit
