@@ -34,7 +34,7 @@ class MediosController < ApplicationController
     redirect_to medios_path
   end
 
-  def asociate_audience
+  def associate_audience
     @audience = Audience.find params[:audience_id]
     @medio = Medio.find params[:id]
     @medio.audiences << @audience

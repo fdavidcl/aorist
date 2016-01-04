@@ -4,22 +4,22 @@ class AnunciantesController < ApplicationController
     params.require(:anunciante).permit(:nombre, :web, :fiscales)
   end
 
-  public 
-  
+  public
+
   def new
     @anunciante = Anunciante.new
   end
-  
+
   def create
     @anunciante = Anunciante.new anunciante_params
-    
+
     if @anunciante.save
       redirect_to @anunciante
-    else 
+    else
       render :new
     end
   end
-  
+
   def show
     @anunciante = Anunciante.find params[:id]
   end
@@ -27,19 +27,18 @@ class AnunciantesController < ApplicationController
   def index
     @anunciantes = Anunciante.all
   end
-  
+
   def destroy
     @anunciante = Anunciante.find params[:id]
     @anunciante.destroy
-    
+
     redirect_to anunciantes_path
   end
-  
-  # Check this out. 
-  def asociate_audience
+
+  def associate_audience
     @audience = Audience.find params[:audience_id]
     @anunciante = Anunciante.find params[:id]
     @anunciante.audiences << @audience
   end
-  
+
 end
