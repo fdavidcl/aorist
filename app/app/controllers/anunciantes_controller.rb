@@ -35,4 +35,11 @@ class AnunciantesController < ApplicationController
     redirect_to anunciantes_path
   end
   
+  # Check this out. 
+  def asociate_audience
+    @audience = Audience.find params[:audience_id]
+    @anunciante = Anunciante.find params[:id]
+    @anunciante.audiences << @audience
+  end
+  
 end
