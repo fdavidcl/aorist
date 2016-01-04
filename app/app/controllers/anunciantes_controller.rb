@@ -21,7 +21,7 @@ class AnunciantesController < ApplicationController
   end
   
   def show
-    @anunciante = Anunciante.find params[:id]
+    @anunciante = Anunciante.find_by id: params[:id]
   end
 
   def index
@@ -29,7 +29,7 @@ class AnunciantesController < ApplicationController
   end
   
   def destroy
-    @anunciante = Anunciante.find params[:id]
+    @anunciante = Anunciante.find_by id: params[:id]
     @anunciante.destroy
     
     redirect_to anunciantes_path
@@ -37,8 +37,8 @@ class AnunciantesController < ApplicationController
   
   # Check this out. 
   def asociate_audience
-    @audience = Audience.find params[:audience_id]
-    @anunciante = Anunciante.find params[:id]
+    @audience = Audience.find_by id: params[:audience_id]
+    @anunciante = Anunciante.find_by id: params[:id]
     @anunciante.audiences << @audience
   end
   

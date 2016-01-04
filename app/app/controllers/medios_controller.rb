@@ -20,7 +20,7 @@ class MediosController < ApplicationController
   end
 
   def show
-    @medio = Medio.find params[:id]
+    @medio = Medio.find_by id: params[:id]
   end
 
   def index
@@ -28,15 +28,15 @@ class MediosController < ApplicationController
   end
   
   def destroy 
-    @medio = Medio.find params[:id]
+    @medio = Medio.find_by id: params[:id]
     @medio.destroy
     
     redirect_to medios_path
   end 
   
   def asociate_audience
-    @audience = Audience.find params[:audience_id]
-    @medio = Medio.find params[:id]
+    @audience = Audience.find_by id: params[:audience_id]
+    @medio = Medio.find_by id: params[:id]
     @medio.audiences << @audience  
   end
   
