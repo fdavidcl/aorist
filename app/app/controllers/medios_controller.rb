@@ -26,18 +26,18 @@ class MediosController < ApplicationController
   def index
     @medios = Medio.all
   end
-  
-  def destroy 
+
+  def destroy
     @medio = Medio.find params[:id]
     @medio.destroy
-    
+
     redirect_to medios_path
-  end 
-  
+  end
+
   def asociate_audience
     @audience = Audience.find params[:audience_id]
     @medio = Medio.find params[:id]
-    @medio.audiences << @audience  
+    @medio.audiences << @audience
   end
-  
+
 end
