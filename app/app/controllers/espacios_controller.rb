@@ -32,7 +32,7 @@ class EspaciosController < ApplicationController
   end
 
   def destroy
-    @espacio = Espacio.find params[:id]
+    @espacio = Espacio.find_by id: params[:id]
     @espacio.destroy
 
     redirect_to medio_espacios_path

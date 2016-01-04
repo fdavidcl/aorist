@@ -33,7 +33,7 @@ class AnunciosController < ApplicationController
   end
 
   def destroy
-    @anuncio = Anuncio.find params[:id]
+    @anuncio = Anuncio.find_by id: params[:id]
     @anuncio.destroy
 
     redirect_to anuncios_path
