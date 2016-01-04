@@ -22,9 +22,9 @@ class AnunciosController < ApplicationController
   end
 
   def create
-    @anunciante = Anunciante.find_by id: params[:id]
+    @anunciante = Anunciante.find_by id: params[:anunciante_id]
     @anuncio = @anunciante.anuncios.create anuncio_params
-    
+
     if espacio.save
       redirect_to manunciante_anuncio_path params[:anunciante_id], @anuncio.id
     else
