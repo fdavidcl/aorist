@@ -8,4 +8,5 @@
 
 .cards
   - @espacios.each do |e|
-    = link_to e.id, e, {class: "card"}
+    %p
+      = link_to "Espacio #{e.id}", medio_espacio_path(@medio, e), {class: "card"}

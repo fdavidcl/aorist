@@ -1,0 +1,27 @@
+%h1 Espacio #{@espacio.id}
+%h3
+  del medio
+  = link_to @medio.nombre, @medio
+
+%h4 Dimensiones
+%ul
+  %li Ancho: #{@espacio.ancho}
+  %li Alto: #{@espacio.alto}
+
+%h4 Propiedades
+%ul
+  %li
+    - if @espacio.multimedia
+      Puede
+    - else
+      No puede
+    almacenar contenido audiovisual.
+  %li
+    - if @espacio.enlace
+      Puede
+    - else
+      No puede
+    enlazar a un sitio web.
+
+= link_to "Atrás", medio_espacios_path(@medio), class: "pure-button"
+= link_to "Eliminar", medio_espacio_path(@medio, @espacio), method: :delete, class: "pure-button button-delete"
