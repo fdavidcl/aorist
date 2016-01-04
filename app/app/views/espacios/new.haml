@@ -3,5 +3,22 @@
   en medio
   = link_to @medio.nombre, @medio
 
-= form_for [:medio, @espacio], url: medio_espacios_path do
+= form_for [:medio, @espacio], url: medio_espacios_path do |f|
   %p
+    = f.label :ancho, "Ancho"
+    = f.number_field :ancho, in: 16..1024, value: 128
+
+  %p
+    = f.label :alto
+    = f.number_field :alto, in: 16..1024, value: 128
+
+  %p
+    = f.check_box :multimedia
+    = f.label :multimedia, "El espacio permite contenido audiovisual"
+
+  %p
+    = f.check_box :enlace
+    = f.label :enlace, "El espacio permite enlazar a otro sitio web"
+
+  %p
+    = f.submit

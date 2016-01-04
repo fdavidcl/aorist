@@ -1,7 +1,7 @@
 class EspaciosController < ApplicationController
   private
   def espacio_params
-    params.require(:espacio).permit(:multimedia, :enlace, :ancho, :alto)
+    params.require(:espacio).permit(:medio_id, :multimedia, :enlace, :ancho, :alto)
   end
 
   public
@@ -21,6 +21,12 @@ class EspaciosController < ApplicationController
 
   def create
     @espacio = Espacio.new espacio_params
+
+    if @espacio.save
+      redirect_to medio_espacio_path params[:medio_id], @espacio.id
+    else
+      render :new
+    end
   end
 
   def destroy
