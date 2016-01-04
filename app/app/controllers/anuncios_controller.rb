@@ -17,11 +17,19 @@ class AnunciosController < ApplicationController
   end
 
   def show
-
+    @anunciante = Anunciante.find_by id: params[:anunciante_id]
+    @anuncio = Anuncio.find params[:id]
   end
 
   def create
-    @anuncio = Anuncio.new anuncio_params
+    @anunciante = Anunciante.find_by id: params[:id]
+    @anuncio = @anunciante.anuncios.create anuncio_params
+    
+    if espacio.save
+      redirect_to manunciante_anuncio_path params[:anunciante_id], @anuncio.id
+    else
+      render :new
+    end
   end
 
   def destroy
