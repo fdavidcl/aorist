@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cobros/index'
+
+  get 'pagos/index'
+
   get 'audiences/index'
 
   get 'anuncios/index'
