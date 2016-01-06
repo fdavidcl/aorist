@@ -1,0 +1,2 @@
+module MedioContratosHelper
+end

@@ -1,0 +1,2 @@
+module AnuncianteContratosHelper
+end
