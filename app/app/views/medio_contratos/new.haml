@@ -1,0 +1,13 @@
+%h1 Nuevo contrato
+%h3
+  en el medio
+  = link_to @medio.nombre, @medio
+
+= form_for [:medio, @contrato], url: medio_contratos_path do |f|
+  %p
+    = f.label :descripcion, "Descripción"
+    = f.text_field :descripcion
+  %p
+    = f.label :fecha, "Fecha creación"
+    = f.date_select :fecha
+    
