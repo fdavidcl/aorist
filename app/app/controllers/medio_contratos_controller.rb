@@ -11,6 +11,7 @@ class MedioContratosController < ApplicationController
   end
   
   def new
+    @medio = Medio.find_by id: params[:medio_id]
     @contrato = MedioContrato.new
   end 
   
