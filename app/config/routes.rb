@@ -32,17 +32,23 @@ Rails.application.routes.draw do
   #   resources :products
   resources :medios do
     resources :espacios
-    resources :contratos, controller: :medio_contratos
+    shallow do
+      resources :contratos, controller: :medio_contratos do
+        resources :pagos, shallow: true
+      end
+    end
   end
 
   resources :anunciantes do
     resources :anuncios
-    resources :contratos, controller: :anunciante_contratos
+    shallow do
+      resources :contratos, controller: :anunciante_contratos do
+        resources :cobros, shallow: true
+      end
+    end
   end
 
   resources :audiences
-  resources :pagos
-  resources :cobros
 
   # Example resource route with options:
   #   resources :products do
