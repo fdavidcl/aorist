@@ -12,7 +12,7 @@ class EspaciosController < ApplicationController
 
   def new
     @medio = Medio.find_by id: params[:medio_id]
-    @espacio = @medio.espacios.create
+    @espacio = Espacio.new
   end
 
   def show
