@@ -8,4 +8,4 @@
 
 .cards
   - @anuncios.each do |a|
-    = link_to a.id, a, {class: "card"}
+    = link_to a.id, anunciante_anuncio_path(@anunciante, a), {class: "card"}
