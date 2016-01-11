@@ -32,7 +32,10 @@ class MedioContratosController < ApplicationController
   end
   
   def destroy
-  
+    @contrato = MedioContrato.find_by id: params[:id]
+    @contrato.destroy
+    
+    redirect_to medio_contratos_path
   end
   
 end
