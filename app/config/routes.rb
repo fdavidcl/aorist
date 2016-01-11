@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     resources :espacios
     shallow do
       resources :contratos, controller: :medio_contratos do
-        resources :pagos, shallow: true
+        resources :pagos
       end
     end
   end
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     resources :anuncios
     shallow do
       resources :contratos, controller: :anunciante_contratos do
-        resources :cobros, shallow: true
+        resources :cobros
       end
     end
   end
