@@ -9,3 +9,8 @@
 .cards
   - @anuncios.each do |a|
     = link_to a.id, anunciante_anuncio_path(@anunciante, a), {class: "card"}
+    
+%p
+  %a.pure-button{href: anunciantes_path}
+    %i.fa.fa-arrow-left
+    Volver a anunciantes

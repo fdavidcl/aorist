@@ -10,3 +10,9 @@
   - @espacios.each do |e|
     %p
       = link_to "Espacio #{e.id}", medio_espacio_path(@medio, e), {class: "card"}
+      
+      
+%p
+  %a.pure-button{href: medios_path}
+    %i.fa.fa-arrow-left
+    Volver a medios
