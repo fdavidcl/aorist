@@ -4,19 +4,23 @@ class MedioContratosController < ApplicationController
     params.require(:medio_contrato).permit(:importe, :fecha, :descripcion, :duracion)
   end
   
+  def find_by_id
+    Medio.find_by id: params[:medio_id]
+  end
+  
   public
   def index
-    @medio = Medio.find_by id: params[:medio_id]
+    @medio = find_by_id
     @contratos = MedioContrato.all
   end
   
   def new
-    @medio = Medio.find_by id: params[:medio_id]
+    @medio = find_by_id
     @contrato = MedioContrato.new
   end 
   
   def create
-    @medio = Medio.find_by id: params[:medio_id]
+    @medio = find_by_id
     @contrato = @medio.contratos.create medio_contrato_params
     
     if @contrato.save 
@@ -27,7 +31,7 @@ class MedioContratosController < ApplicationController
   end
   
   def show
-    @medio = Medio.find_by id: params[:medio_id] 
+    @medio = find_by_id
     @contrato = MedioContrato.find_by id: params[:id]
   end
   

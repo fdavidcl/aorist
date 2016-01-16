@@ -5,24 +5,28 @@ class AnunciosController < ApplicationController
     params.require(:anuncio).permit(:contenido, :URL)
   end
 
+  def find_by_id
+    Anunciante.find_by id: params[:anunciante_id]
+  end
+
   public
   def index
-    @anunciante = Anunciante.find_by id: params[:anunciante_id]
+    @anunciante = find_by_id
     @anuncios = @anunciante.anuncios
   end
 
   def new
-    @anunciante = Anunciante.find_by id: params[:anunciante_id]
+    @anunciante = find_by_id
     @anuncio = Anuncio.new
   end
 
   def show
-    @anunciante = Anunciante.find_by id: params[:anunciante_id]
+    @anunciante = find_by_id
     @anuncio = Anuncio.find params[:id]
   end
 
   def create
-    @anunciante = Anunciante.find_by id: params[:anunciante_id]
+    @anunciante = find_by_id
     @anuncio = @anunciante.anuncios.create anuncio_params
 
     if @anuncio.save
