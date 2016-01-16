@@ -1,0 +1,13 @@
+%h1= @audience.nombre
+
+%p
+  = @audience.descripcion
+
+%p
+  = link_to "Eliminar", audience_path(@audience), method: :delete, data: {confirm: "Confirma que quieres borrar la audiencia '#{@audience.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete"
+
+%p
+  %a.pure-button{href: audiences_path}
+    %i.fa.fa-arrow-left
+    Atrás
+
