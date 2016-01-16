@@ -1,0 +1,13 @@
+%h1 Crear una nueva audiencia
+
+= form_for :audience, url: audiences_path do |f|
+  %p 
+    = f.label :nombre
+    = f.text_field :nombre
+    
+  %p
+    = f.label :descripcion
+    = f.text_field :descripcion
+    
+  %p 
+    = f.submit
