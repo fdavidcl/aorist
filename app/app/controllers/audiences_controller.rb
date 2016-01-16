@@ -20,7 +20,7 @@ class AudiencesController < ApplicationController
   end
   
   def show
-    @aucience = Audience.find_by id: params[:id]
+    @audience = Audience.find_by id: params[:id]
   end
 
   def index
