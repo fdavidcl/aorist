@@ -10,7 +10,7 @@ class AudiencesController < ApplicationController
   end
 
   def create
-    @audience = Aucience.new audience_params
+    @audience = Audience.new audience_params
     
     if @audience.save
       redirect_to @audience
