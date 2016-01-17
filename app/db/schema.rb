@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229185457) do
+ActiveRecord::Schema.define(version: 20160117172110) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
     t.integer  "anunciante_id"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20151229185457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "anuncio_allocations", force: :cascade do |t|
+    t.integer  "anuncio_id"
+    t.integer  "espacio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "anuncio_allocations", ["anuncio_id"], name: "index_anuncio_allocations_on_anuncio_id"
+  add_index "anuncio_allocations", ["espacio_id"], name: "index_anuncio_allocations_on_espacio_id"
 
   create_table "anuncios", force: :cascade do |t|
     t.integer  "anunciante_id"
