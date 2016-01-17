@@ -40,7 +40,15 @@ Rails.application.routes.draw do
   end
 
   resources :anunciantes do
-    resources :anuncios
+    #get 'associate', on: member, to: asociate_audience
+
+    resources :anuncios do
+      member do
+        post 'allocate_to'
+        post 'deallocate_from/:espacio_id', to: :deallocate_from, as: :deallocate_from
+      end
+    end
+
     shallow do
       resources :contratos, controller: :anunciante_contratos do
         resources :cobros
