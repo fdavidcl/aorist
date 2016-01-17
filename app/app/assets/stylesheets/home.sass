@@ -92,10 +92,9 @@ body
       text-decoration: none
       background: $card-background
       border: 1px solid darken($background, 10%)
-      box-shadow: 0 0 7px -5px rgba(0,0,0,0.5)
       padding: $vmargin $hmargin
       margin: $vmargin 0
-      transition: box-shadow .1s ease
+      transition: background-color .1s ease, border-color .1s ease
 
       .count
         color: mix($foreground, $card-background, 50%)
@@ -123,13 +122,15 @@ body
       color: $link
 
       &:hover
-        box-shadow: 0 0 10px -5px rgba(0,0,0,0.6)
+        border-color: mix($link, $card-background, 40%)
+        background: mix($link, $card-background, 5%)
 
     &:empty:before
       content: "Aquí no hay nada"
 
   .pure-button
     background-color: mix($link, $background, 30%)
+    border-radius: 0
 
     i.fa
       margin-left: -0.25em
