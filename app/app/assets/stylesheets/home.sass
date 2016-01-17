@@ -28,13 +28,23 @@ body
 
     .header-title
       display: inline-block
-      padding: $vmargin 0
+      padding: $vmargin $hmargin $vmargin 0
       text-decoration: none
       font-weight: bold
       color: lighten($foreground, 30%)
 
       &:hover
         color: $foreground
+
+    .tab
+      padding: $vmargin $hmargin
+      border: 1px solid transparent
+
+      &.selected
+        color: inherit
+        background: $background
+        border-color: darken($background, 15%)
+        border-bottom-color: $background
 
   .side
     @media screen and (max-width: 63.938em)
