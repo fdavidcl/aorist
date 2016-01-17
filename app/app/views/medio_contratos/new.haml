@@ -1,4 +1,6 @@
-%h1 Nuevo contrato
+%h1
+  = render partial: "common/back", locals: {path: medio_contratos_path}
+  Nuevo contrato
 %h3
   en el medio
   = link_to @medio.nombre, @medio
@@ -10,4 +12,3 @@
   %p
     = f.label :fecha, "Fecha creación"
     = f.date_select :fecha
-    

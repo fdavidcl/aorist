@@ -1,4 +1,6 @@
-%h1 Nuevo anuncio
+%h1
+  = render partial: "common/back", locals: {path: anunciante_anuncios_path}
+  Nuevo anuncio
 %h3
   del anunciante
   = link_to @anunciante.nombre, @anunciante

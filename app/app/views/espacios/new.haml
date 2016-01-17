@@ -1,4 +1,6 @@
-%h1 Nuevo espacio
+%h1
+  = render partial: "common/back", locals: {path: medio_espacios_path}
+  Nuevo espacio
 %h3
   en medio
   = link_to @medio.nombre, @medio

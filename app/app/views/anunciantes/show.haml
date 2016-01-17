@@ -1,4 +1,6 @@
-%h1= @anunciante.nombre
+%h1
+  = render partial: "common/back", locals: {path: anunciantes_path}
+  = @anunciante.nombre
 
 %p
   = @anunciante.web
@@ -10,9 +12,5 @@
   = link_to "Eliminar", anunciante_path(@anunciante), method: :delete, data: {confirm: "Confirma que quieres borrar el anunciante '#{@anunciante.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete"
 
 %p
-  %a.pure-button{href: anunciantes_path}
-    %i.fa.fa-arrow-left
-    Atrás
-
   /%a.pure-button{href: }
   = link_to "Anuncios", {controller: :anuncios, action: :index, anunciante_id: @anunciante.id}, {class: "pure-button pure-button-primary"}

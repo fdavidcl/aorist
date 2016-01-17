@@ -1,13 +1,15 @@
-%h1 Crear una nueva audiencia
+%h1
+  = render partial: "common/back", locals: {path: audiences_path}
+  Crear una nueva audiencia
 
 = form_for :audience, url: audiences_path do |f|
-  %p 
+  %p
     = f.label :nombre
     = f.text_field :nombre
-    
+
   %p
     = f.label :descripcion
     = f.text_field :descripcion
-    
-  %p 
+
+  %p
     = f.submit

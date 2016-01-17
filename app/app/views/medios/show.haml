@@ -1,4 +1,6 @@
-%h1= @medio.nombre
+%h1
+  = render partial: "common/back", locals: {path: medios_path}
+  = @medio.nombre
 
 %p
   = @medio.web
@@ -10,9 +12,4 @@
   = link_to "Eliminar", medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete"
 
 %p
-  %a.pure-button{href: medios_path}
-    %i.fa.fa-arrow-left
-    Atrás
-
-  /%a.pure-button{href: }
   = link_to "Espacios", {controller: :espacios, action: :index, medio_id: @medio.id}, {class: "pure-button pure-button-primary"}

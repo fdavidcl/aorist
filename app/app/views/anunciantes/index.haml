@@ -1,4 +1,6 @@
-%h1 Todos los anunciantes
+%h1
+  = render partial: "common/back", locals: {path: "/"}
+  Todos los anunciantes
 
 %a.pure-button.pure-button-primary{href: new_anunciante_path}
   %i.fa.fa-plus
@@ -10,8 +12,3 @@
       = anunciante.nombre
       %span.count #{anunciante.anuncios.count} anuncios
       /%span.count #{anunciante.contratos.count} contratos
-      
-%p
-  %a.pure-button{href: "/"}
-    %i.fa.fa-arrow-left
-    Atrás

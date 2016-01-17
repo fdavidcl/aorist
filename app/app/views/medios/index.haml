@@ -1,4 +1,6 @@
-%h1 Todos los medios
+%h1
+  = render partial: "common/back", locals: {path: "/"}
+  Todos los medios
 
 %a.pure-button.pure-button-primary{href: new_medio_path}
   %i.fa.fa-plus
@@ -10,9 +12,3 @@
       = medio.nombre
       %span.count #{medio.espacios.count} espacios
       /%span.count #{medio.contratos.count} contratos
-      
-      
-%p
-  %a.pure-button{href: "/"}
-    %i.fa.fa-arrow-left
-    Atrás

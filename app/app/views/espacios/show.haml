@@ -1,4 +1,6 @@
-%h1 Espacio #{@espacio.id}
+%h1
+  = render partial: "common/back", locals: {path: medio_espacios_path}
+  Espacio #{@espacio.id}
 %h3
   del medio
   = link_to @medio.nombre, @medio
@@ -23,5 +25,4 @@
       No puede
     enlazar a un sitio web.
 
-= link_to "Atrás", medio_espacios_path(@medio), class: "pure-button"
 = link_to "Eliminar", medio_espacio_path(@medio, @espacio), method: :delete, class: "pure-button button-delete"

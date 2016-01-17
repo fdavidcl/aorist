@@ -1,4 +1,6 @@
-%h1 Crear un nuevo anunciante
+%h1
+  = render partial: "common/back", locals: {path: anunciantes_path}
+  Crear un nuevo anunciante
 
 = form_for :anunciante, url: anunciantes_path do |f|
   %p

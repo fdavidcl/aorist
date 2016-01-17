@@ -1,4 +1,6 @@
-%h1 Crear un nuevo medio
+%h1
+  = render partial: "common/back", locals: {path: medios_path}
+  Crear un nuevo medio
 
 = form_for :medio, url: medios_path do |f|
   %p
