@@ -18,11 +18,13 @@ class AnunciosController < ApplicationController
 
   def new
     @anunciante = find_by_id
+    @anuncios = @anunciante.anuncios
     @anuncio = Anuncio.new
   end
 
   def show
     @anunciante = find_by_id
+    @anuncios = @anunciante.anuncios
     @anuncio = Anuncio.find params[:id]
   end
 

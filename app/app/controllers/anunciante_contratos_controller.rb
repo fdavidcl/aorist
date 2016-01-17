@@ -14,11 +14,12 @@ class AnuncianteContratosController < ApplicationController
 
   def index
     @anunciante = find_by_id
-    @contratos = AnuncianteContrato.all
+    @contratos = @anunciante.anunciante_contratos
   end
 
   def new
     @anunciante = find_by_id
+    @contratos = @anunciante.anunciante_contratos
     @contrato = AnuncianteContrato.new
   end
 
@@ -36,6 +37,7 @@ class AnuncianteContratosController < ApplicationController
 
   def show
     @anunciante = find_by_id
+    @contratos = @anunciante.anunciante_contratos
     @contrato = AnuncianteContrato.find_by id: params[:id]
   end
 

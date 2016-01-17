@@ -8,6 +8,7 @@ class AudiencesController < ApplicationController
 
   public
   def new
+    @audiences = Audience.all
     @audience = Audience.new
   end
 
@@ -22,6 +23,7 @@ class AudiencesController < ApplicationController
   end
 
   def show
+    @audiences = Audience.all
     @audience = Audience.find_by id: params[:id]
   end
 

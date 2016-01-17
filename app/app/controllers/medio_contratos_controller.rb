@@ -13,11 +13,12 @@ class MedioContratosController < ApplicationController
   public
   def index
     @medio = find_by_id
-    @contratos = MedioContrato.all
+    @contratos = @medio.medio_contratos
   end
 
   def new
     @medio = find_by_id
+    @contratos = @medio.medio_contratos
     @contrato = MedioContrato.new
   end
 
@@ -34,6 +35,7 @@ class MedioContratosController < ApplicationController
 
   def show
     @medio = find_by_id
+    @contratos = @medio.medio_contratos
     @contrato = MedioContrato.find_by id: params[:id]
   end
 

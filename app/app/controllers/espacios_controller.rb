@@ -18,11 +18,13 @@ class EspaciosController < ApplicationController
 
   def new
     @medio = find_by_id
+    @espacios = @medio.espacios
     @espacio = Espacio.new
   end
 
   def show
     @medio = find_by_id
+    @espacios = @medio.espacios
     @espacio = Espacio.find_by id: params[:id]
   end
 
