@@ -40,6 +40,9 @@ body
     @media screen and (max-width: 63.938em)
       display: none
 
+    .count
+      display: none
+
   h1
     font-weight: 300
     font-size: 2.5em
@@ -54,6 +57,11 @@ body
       &:hover
         text-decoration: none
         opacity: .75
+
+  h4
+    padding-top: 1em
+    border-top: 1px solid darken($background, 10%)
+    text-transform: uppercase
 
   .name
     color: $link
@@ -88,11 +96,27 @@ body
           content: "·"
           padding-right: $hmargin/4
 
-      &:hover
-        box-shadow: 0 0 10px -5px rgba(0,0,0,0.6)
+      .pure-button
+        font-size: 0.8em
+
+      a + .pure-button
+        margin-left: $hmargin
+
+      &.disabled
+        background: mix($card-background, $foreground, 85%)
+        border: 1px solid mix($card-background, $foreground, 75%)
+        box-shadow: none
+        text-align: center
+        color: mix($card-background, $foreground, 40%)
 
     a.card
       color: $link
+
+      &:hover
+        box-shadow: 0 0 10px -5px rgba(0,0,0,0.6)
+
+    &:empty:before
+      content: "Aquí no hay nada"
 
   .pure-button
     background-color: mix($link, $background, 30%)
