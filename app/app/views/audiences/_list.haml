@@ -3,6 +3,9 @@
   Nueva audiencia
 
 .cards
-  - @audiences.each do |audiencia|
-    = link_to audiencia, {class: "card"} do
-      = audiencia.nombre
+  - if @anuncios.empty?
+    .card.disabled Aquí no hay nada
+  - else
+    - @audiences.each do |audiencia|
+      = link_to audiencia, {class: "card"} do
+        = audiencia.nombre
