@@ -3,13 +3,20 @@
   = @medio.nombre
 
 %p
+  = link_to medio_espacios_path(@medio), {class: "pure-button"} do
+    %i.fa.fa-square-o
+    Espacios (#{@medio.espacios.count})
+
+  = link_to medio_contratos_path(@medio), {class: "pure-button"} do
+    %i.fa.fa-file-text
+    Contratos (#{@medio.medio_contratos.count})
+
+  = link_to medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
+    %i.fa.fa-trash
+    Eliminar
+
+%p
   = @medio.web
 
 %p
   = @medio.fiscales
-
-%p
-  = link_to "Eliminar", medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete"
-
-%p
-  = link_to "Espacios", {controller: :espacios, action: :index, medio_id: @medio.id}, {class: "pure-button pure-button-primary"}
