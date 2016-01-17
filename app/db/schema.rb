@@ -14,13 +14,16 @@
 ActiveRecord::Schema.define(version: 20151229185457) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
+    t.integer  "anunciante_id"
     t.float    "importe"
     t.date     "fecha"
     t.string   "descripcion"
     t.date     "duracion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "anunciante_contratos", ["anunciante_id"], name: "index_anunciante_contratos_on_anunciante_id"
 
   create_table "anunciantes", force: :cascade do |t|
     t.string   "nombre"
@@ -67,6 +70,7 @@ ActiveRecord::Schema.define(version: 20151229185457) do
   add_index "espacios", ["medio_id"], name: "index_espacios_on_medio_id"
 
   create_table "medio_contratos", force: :cascade do |t|
+    t.integer  "medio_id"
     t.float    "importe"
     t.date     "fecha"
     t.string   "descripcion"
@@ -74,6 +78,8 @@ ActiveRecord::Schema.define(version: 20151229185457) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "medio_contratos", ["medio_id"], name: "index_medio_contratos_on_medio_id"
 
   create_table "medios", force: :cascade do |t|
     t.string   "nombre"
