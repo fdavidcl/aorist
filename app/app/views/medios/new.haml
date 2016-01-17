@@ -1,19 +1,26 @@
-%h1
-  = render partial: "common/back", locals: {path: medios_path}
-  Crear un nuevo medio
+.pure-g
+  .pure-u-1.pure-u-lg-1-4.side
+    %h1 &nbsp;
+    = render "list"
 
-= form_for :medio, url: medios_path do |f|
-  %p
-    = f.label :nombre
-    = f.text_field :nombre
+  .pure-u-1.pure-u-lg-1-24
+  .pure-u-1.pure-u-lg-17-24
+    %h1
+      = render partial: "common/back", locals: {path: medios_path}
+      Crear un nuevo medio
 
-  %p
-    = f.label :web
-    = f.text_field :web
+    = form_for :medio, url: medios_path do |f|
+      %p
+        = f.label :nombre
+        = f.text_field :nombre
 
-  %p
-    = f.label :fiscales
-    = f.text_field :fiscales
+      %p
+        = f.label :web
+        = f.text_field :web
 
-  %p
-    = f.submit
+      %p
+        = f.label :fiscales
+        = f.text_field :fiscales
+
+      %p
+        = f.submit

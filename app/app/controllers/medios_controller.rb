@@ -1,4 +1,6 @@
 class MediosController < ApplicationController
+  layout "with_side", except: [:index]
+
   private
   def medio_params
     params.require(:medio).permit(:nombre, :web, :fiscales)
@@ -6,6 +8,7 @@ class MediosController < ApplicationController
 
   public
   def new
+    @medios = Medio.all
     @medio = Medio.new
   end
 
@@ -20,6 +23,7 @@ class MediosController < ApplicationController
   end
 
   def show
+    @medios = Medio.all
     @medio = Medio.find_by id: params[:id]
   end
 

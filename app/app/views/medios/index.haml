@@ -2,13 +2,4 @@
   = render partial: "common/back", locals: {path: "/"}
   Todos los medios
 
-%a.pure-button.pure-button-primary{href: new_medio_path}
-  %i.fa.fa-plus
-  Nuevo medio
-
-.cards
-  - @medios.each do |medio|
-    = link_to medio, {class: "card"} do
-      = medio.nombre
-      %span.count #{medio.espacios.count} espacios
-      /%span.count #{medio.contratos.count} contratos
+= render "list"

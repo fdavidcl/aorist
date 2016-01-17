@@ -12,5 +12,5 @@
       = render "common/header"
       .pure-u-1-24.pure-u-lg-1-6
       .pure-u-22-24.pure-u-lg-2-3
-        = yield
+        = content_for?(:main) ? yield(:main) : yield
       .pure-u-1-24.pure-u-lg-1-6
