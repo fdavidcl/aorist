@@ -1,0 +1,10 @@
+%a.pure-button.pure-button-primary{href: new_anunciante_path}
+  %i.fa.fa-plus
+  Nuevo anunciante
+
+.cards
+  - @anunciantes.each do |anunciante|
+    = link_to anunciante, {class: "card"} do
+      = anunciante.nombre
+      %span.count #{anunciante.anuncios.count} anuncios
+      %span.count #{anunciante.anunciante_contratos.count} contratos

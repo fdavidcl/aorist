@@ -1,4 +1,6 @@
 class AnunciantesController < ApplicationController
+  layout "with_side", except: [:index]
+
   private
   def anunciante_params
     params.require(:anunciante).permit(:nombre, :web, :fiscales)
@@ -7,6 +9,7 @@ class AnunciantesController < ApplicationController
   public
 
   def new
+    @anunciantes = Anunciante.all
     @anunciante = Anunciante.new
   end
 
@@ -21,6 +24,7 @@ class AnunciantesController < ApplicationController
   end
 
   def show
+    @anunciantes = Anunciante.all
     @anunciante = Anunciante.find_by id: params[:id]
   end
 
@@ -34,7 +38,7 @@ class AnunciantesController < ApplicationController
 
     redirect_to anunciantes_path
   end
-  
+
   def asociate_audience
     @audience = Audience.find_by id: params[:audience_id]
     @anunciante = Anunciante.find_by id: params[:id]
