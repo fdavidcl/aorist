@@ -3,14 +3,16 @@
   = @anunciante.nombre
 
 %p
+  = link_to anunciante_anuncios_path(@anunciante), {class: "pure-button"} do
+    %i.fa.fa-shopping-bag
+    Anuncios (#{@anunciante.anuncios.count})
+
+  = link_to anunciante_path(@anunciante), method: :delete, data: {confirm: "Confirma que quieres borrar el anunciante '#{@anunciante.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
+    %i.fa.fa-trash
+    Eliminar
+
+%p
   = @anunciante.web
 
 %p
   = @anunciante.fiscales
-
-%p
-  = link_to "Eliminar", anunciante_path(@anunciante), method: :delete, data: {confirm: "Confirma que quieres borrar el anunciante '#{@anunciante.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete"
-
-%p
-  /%a.pure-button{href: }
-  = link_to "Anuncios", {controller: :anuncios, action: :index, anunciante_id: @anunciante.id}, {class: "pure-button pure-button-primary"}
