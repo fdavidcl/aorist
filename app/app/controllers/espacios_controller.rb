@@ -1,13 +1,15 @@
 class EspaciosController < ApplicationController
+  layout "with_side", except: [:index]
+
   private
   def espacio_params
     params.require(:espacio).permit(:multimedia, :enlace, :ancho, :alto)
   end
-  
+
   def find_by_id
     Medio.find_by id: params[:medio_id]
   end
-  
+
   public
   def index
     @medio = find_by_id

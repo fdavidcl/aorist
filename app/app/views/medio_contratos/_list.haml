@@ -1,0 +1,8 @@
+%a.pure-button.pure-button-primary{href: new_medio_contrato_path}
+  %i.fa.fa-plus
+  Nuevo contrato
+
+.cards
+  - @contratos.each do |c|
+    %p
+      = link_to "Contrato #{c.id}", medio_contrato_path(@medio, c), {class: "card"}

@@ -3,11 +3,4 @@
   Espacios del medio
   = link_to @medio.nombre, @medio
 
-%a.pure-button.pure-button-primary{href: new_medio_espacio_path}
-  %i.fa.fa-plus
-  Nuevo espacio
-
-.cards
-  - @espacios.each do |e|
-    %p
-      = link_to "Espacio #{e.id}", medio_espacio_path(@medio, e), {class: "card"}
+= render "list"

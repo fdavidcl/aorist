@@ -1,4 +1,5 @@
 class AnunciosController < ApplicationController
+  layout "with_side", except: [:index]
 
   private
   def anuncio_params
