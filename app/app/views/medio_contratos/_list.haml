@@ -3,6 +3,9 @@
   Nuevo contrato
 
 .cards
-  - @contratos.each do |c|
-    %p
-      = link_to "Contrato #{c.id}", medio_contrato_path(@medio, c), {class: "card"}
+  - if @contratos.empty?
+    .card.disabled Aquí no hay nada
+  - else
+    - @contratos.each do |c|
+      %p
+        = link_to "Contrato #{c.id}", medio_contrato_path(@medio, c), {class: "card"}

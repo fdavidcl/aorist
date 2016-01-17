@@ -3,5 +3,8 @@
   Nuevo anuncio
 
 .cards
-  - @anuncios.each do |a|
-    = link_to a.id, anunciante_anuncio_path(@anunciante, a), {class: "card"}
+  - if @anuncios.empty?
+    .card.disabled Aquí no hay nada
+  - else
+    - @anuncios.each do |a|
+      = link_to a.id, anunciante_anuncio_path(@anunciante, a), {class: "card"}

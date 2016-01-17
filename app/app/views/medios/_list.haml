@@ -3,8 +3,11 @@
   Nuevo medio
 
 .cards
-  - @medios.each do |medio|
-    = link_to medio, {class: "card"} do
-      = medio.nombre
-      %span.count #{medio.espacios.count} espacios
-      %span.count #{medio.medio_contratos.count} contratos
+  - if @medios.empty?
+    .card.disabled Aquí no hay nada
+  - else
+    - @medios.each do |medio|
+      = link_to medio, {class: "card"} do
+        = medio.nombre
+        %span.count #{medio.espacios.count} espacios
+        %span.count #{medio.medio_contratos.count} contratos

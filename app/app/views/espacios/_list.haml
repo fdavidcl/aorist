@@ -3,6 +3,9 @@
   Nuevo espacio
 
 .cards
-  - @espacios.each do |e|
-    %p
-      = link_to "Espacio #{e.id}", medio_espacio_path(@medio, e), {class: "card"}
+  - if @espacios.empty?
+    .card.disabled Aquí no hay nada
+  - else
+    - @espacios.each do |e|
+      %p
+        = link_to "Espacio #{e.id}", medio_espacio_path(@medio, e), {class: "card"}
