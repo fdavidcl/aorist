@@ -61,7 +61,7 @@ class AnunciosController < ApplicationController
   def allocate_to
     @anuncio = Anuncio.find_by id: params[:id]
     @espacio = Espacio.find_by id: params[:espacio_id]
-    @anuncio.espacios << @espacio unless @anuncio.espacios.find_by id: params[:espacio_id]
+    @anuncio.espacios << @espacio unless @espacio.nil?
 
     redirect_to anunciante_anuncio_path
   end
