@@ -8,4 +8,4 @@
   - else
     - @contratos.each do |c|
       %p
-        = link_to "Contrato #{c.id}", medio_contrato_path(@medio, c), {class: "card"}
+        = link_to "Contrato #{c.id}", {controller: :medio_contratos, action: :show, id: c.id}, {class: "card"}

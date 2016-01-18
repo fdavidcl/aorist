@@ -26,8 +26,10 @@ class MediosController < ApplicationController
   def show
     @medios = Medio.all
     @medio = Medio.find_by id: params[:id]
-    @lista_audiences_asociadas = Medio.audiences
-    @lista_audiences_asociables = Audience.where('nombre NOT IN (?)', @lista_audiencias_asociadas.pluck(:nombre))
+    @lista_audiences_asociadas = @medio.audiences
+    if !@lista_audiencias_asociadas.pluck(:nombre).empty?
+      @lista_audiences_asociables = Audience.where('nombre NOT IN (?)', @lista_audiencias_asociadas.pluck(:nombre))
+    end
   end
 
   def index

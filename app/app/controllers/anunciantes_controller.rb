@@ -27,8 +27,10 @@ class AnunciantesController < ApplicationController
   def show
     @anunciantes = Anunciante.all
     @anunciante = Anunciante.find_by id: params[:id]
-    @lista_audiences_asociadas = Anunciante.audiences
-    @lista_audiences_asociables = Audience.where('nombre NOT IN (?)', @lista_audiencias_asociadas.pluck(:nombre))
+    @lista_audiences_asociadas = @anunciante.audiences
+    if !@lista_audiencias_asociadas.pluck(:nombre).empty?
+      @lista_audiences_asociables = Audience.where('nombre NOT IN (?)', @lista_audiencias_asociadas.pluck(:nombre))
+    end
   end
  
   def index

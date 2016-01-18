@@ -43,7 +43,7 @@ Rails.application.routes.draw do
     resources :anuncios do
       member do
         post 'allocate_to'
-        post 'deallocate_from/:espacio_id', to: :deallocate_from, as: :deallocate_from
+        post 'deallocate_from/:espacio_id', action: :deallocate_from, as: :deallocate_from
       end
     end
     resources :contratos, controller: :anunciante_contratos do
