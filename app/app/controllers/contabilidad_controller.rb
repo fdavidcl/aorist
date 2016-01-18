@@ -12,7 +12,7 @@ class ContabilidadController < ApplicationController
     @lista_por_medio_contrato = Pago.group(:medio_contrato)
     @balance_positivo = Cobro.sum(:importe)
     @balance_negativo = Pago.sum(:importe)
-    @balance_total = balance_positivo - balance_negativo
+    @balance_total = @balance_positivo - @balance_negativo
   end
   
 end
