@@ -14,6 +14,7 @@ class AnunciantesController < ApplicationController
   end
 
   def create
+    @anunciantes = Anunciante.all
     @anunciante = Anunciante.new anunciante_params
 
     if @anunciante.save
