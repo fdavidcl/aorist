@@ -12,3 +12,14 @@
   %p
     = f.label :fecha, "Fecha creación"
     = f.date_select :fecha
+    
+  %p
+    = f.label :fecha, "Fecha finalización"
+    = f.date_select :duracion
+    
+  %p 
+    = f.label :importe, "Importe"
+    = f.text_field :importe
+    
+  %p
+    = f.submit "Crear contrato"
