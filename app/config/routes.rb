@@ -32,10 +32,8 @@ Rails.application.routes.draw do
   #   resources :products
   resources :medios do
     resources :espacios
-    shallow do
-      resources :contratos, controller: :medio_contratos do
+    resources :contratos, controller: :medio_contratos do
         resources :pagos
-      end
     end
   end
 
@@ -48,11 +46,8 @@ Rails.application.routes.draw do
         post 'deallocate_from/:espacio_id', to: :deallocate_from, as: :deallocate_from
       end
     end
-
-    shallow do
-      resources :contratos, controller: :anunciante_contratos do
+    resources :contratos, controller: :anunciante_contratos do
         resources :cobros
-      end
     end
   end
 
