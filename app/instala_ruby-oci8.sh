@@ -1,10 +1,10 @@
 #!/bin/bash
 
-sudo echo <<EOF
+sudo echo "
 [oracle]
 SigLevel = Optional TrustAll
 Server = http://linux.shikadi.net/arch/$repo/$arch
-EOF >> /etc/pacman.conf
+" >> /etc/pacman.conf
 
 sudo pacman -Sys oracle
 sudo pacman -S oracle-instantclient-sqlplus oracle-instantclient-sdk
