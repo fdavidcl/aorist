@@ -1,0 +1,84 @@
+CREATE TABLE Anunciante(ID_anunciante char(9), nombre varchar(30), sitio_web varchar(30), datos_fiscales varchar(30), PRIMARY KEY (ID_anunciante));
+CREATE TABLE Medio(ID_medio char(9), nombre varchar(30), sitio_web varchar(30), datos_fiscales varchar(30), PRIMARY KEY (ID_medio));
+CREATE TABLE Anuncio(ID_anuncio char(9),ida REFERENCES Anunciante(ID_anunciante),contenido varchar(1000), url varchar(1000), PRIMARY KEY (ID_anuncio,ida));
+CREATE TABLE Espacio(ID_espacio char(9),idm REFERENCES Medio(ID_medio),multimedia varchar(1000), tamano int,enlace varchar(1000), PRIMARY KEY (ID_espacio,idm));
+CREATE TABLE Audiencia(ID_audiencia char(9), nombre varchar(30), descripcion varchar(30), PRIMARY KEY (ID_audiencia));
+CREATE TABLE Contrato_anunciante(ID_contrato_anunciante char(9), ida REFERENCES Anunciante(ID_anunciante), fecha date, descripcion varchar(30), PRIMARY KEY (ID_contrato_anunciante,ida));
+CREATE TABLE Cobro(ID_cobro char(9),idca REFERENCES Contrato_anunciante(ID_contrato_anunciante),ida REFERENCES Anunciante(ID_anunciante),importe real, fecha date,PRIMARY KEY(ID_cobro));
+CREATE TABLE Contrato_medio(ID_contrato_medio char(9), idm REFERENCES Medio(ID_medio), fecha date, duracion real ,importe real ,descripcion varchar(30), PRIMARY KEY (ID_contrato_medio,idm));
+CREATE TABLE Pago(ID_pago char(9),idcm REFERENCES Contrato_medio(ID_contrato_medio), idm REFERENCES Medio(ID_medio),importe real, fecha date, PRIMARY KEY (ID_pago ));
+CREATE TABLE Se_asigna(ide REFERENCES Espacio(ID_espacio), idm REFERENCES Medio(ID_medio),idanu REFERENCES Anuncio(ID_anuncio) ,ida REFERENCES Anunciante(ID_anunciante),PRIMARY KEY (ide,idm));
+CREATE TABLE Interesa(ida REFERENCES Anunciante(ID_anunciante),idau REFERENCES Audiencia(ID_audencia),PRIMARY KEY (ida,idau));
+CREATE TABLE Visita(idm REFERENCES Medio(ID_medio),idau REFERENCES Audiencia(ID_audencia),PRIMARY KEY (idau,idm));
+
+INSERT INTO Anunciante VALUES ('aaaaaaaaa', 'rexona', 'www.rexona.es', 'gfdsasdfgfds');
+INSERT INTO Anunciante VALUES ('aaaaaaaab', 'axel', 'www.axel.es', 'todovabien');
+INSERT INTO Anunciante VALUES ('aaaaaaaac', 'ausonia', 'www.ausonia.es', 'todovamal');
+INSERT INTO Anunciante VALUES ('aaaaaaaad', 'asus', 'www.asus.es', 'deben30euros');
+INSERT INTO Anunciante VALUES ('aaaaaaaae', 'hp', 'www.hp.es', '18951649875');
+
+INSERT INTO Medio VALUES ('baaaaaaaa', 'elpais', 'www.elpais.es', '741236589');
+INSERT INTO Medio VALUES ('caaaaaaaa', 'elmundo', 'www.elmundo.es', '9878965321');
+INSERT INTO Medio VALUES ('daaaaaaaa', 'larazon', 'www.larazon.es', '123456798');
+INSERT INTO Medio VALUES ('eaaaaaaaa', 'lemonde', 'www.lemonde.es', '156489465');
+INSERT INTO Medio VALUES ('faaaaaaaa', 'lagaceta', www.lagaceta.es, '98456231');
+
+INSERT INTO Anuncio VALUES ('abaaaaaaa', 'aaaaaaaaa', 'un_hombre_se_echa', 'www.rexona.es');
+INSERT INTO Anuncio VALUES ('acaaaaaaa', 'aaaaaaaab', 'un_hombre_toca_la_cabeza', 'www.axel.es');
+INSERT INTO Anuncio VALUES ('adaaaaaaa', 'aaaaaaaac', 'un_hombre_acaricia_los_labios', 'www.ausiona.es');
+INSERT INTO Anuncio VALUES ('aeaaaaaaa', 'aaaaaaaad', 'un_hombre_hace_ejercicio', 'www.asus.es');
+INSERT INTO Anuncio VALUES ('afaaaaaaa', 'aaaaaaaae', 'un_hombre_corre', 'www.hp.es');
+
+INSERT INTO Espacio VALUES ('aabaaaaaa', 'baaaaaaaa', 'internet', 20, 'www.rexona.es');
+INSERT INTO Espacio VALUES ('aacaaaaaa', 'caaaaaaaa', 'television', 30, 'antena3');
+INSERT INTO Espacio VALUES ('aadaaaaaa', 'daaaaaaaa', 'internet', 40, 'www.ausonia.es');
+INSERT INTO Espacio VALUES ('aaeaaaaaa', 'eaaaaaaaa', 'internet', 50, 'www.asus.es');
+INSERT INTO Espacio VALUES ('aafaaaaaa', 'faaaaaaaa', 'internet', 60, 'www.hp.es');
+
+INSERT INTO Audiencia VALUES ('aaabaaaaa', 'audienciamatinal', 'laaudeinciasube');
+INSERT INTO Audiencia VALUES ('aaabaaaaa', 'audiencianoche', 'laaudeinciabaja');
+INSERT INTO Audiencia VALUES ('aaacaaaaa', 'audienciatarde', 'laaudeinciasemantiene');
+INSERT INTO Audiencia VALUES ('aaadaaaaa', 'audienciamadrugada', 'laaudeinciabaja');
+INSERT INTO Audiencia VALUES ('aaaeaaaaa', 'audienciamatinal', 'laaudeinciasube');
+
+INSERT INTO Contrato_anunciante VALUES ('aaaabaaaa', 'aaaaaaaaa', 20/4/2015, 'contratovalido');
+INSERT INTO Contrato_anunciante VALUES ('aaaacaaaa', 'aaaaaaaab', 10/3/2015, 'contratovalido');
+INSERT INTO Contrato_anunciante VALUES ('aaaadaaaa', 'aaaaaaaac', 30/6/2015, 'contratovalido');
+INSERT INTO Contrato_anunciante VALUES ('aaaaeaaaa', 'aaaaaaaad', 2/4/2015, 'contratovalido');
+INSERT INTO Contrato_anunciante VALUES ('aaaafaaaa', 'aaaaaaaae', 3/4/2015, 'contratovalido');
+
+INSERT INTO Cobro VALUES ('aaaaabaaa', 'aaaabaaaa', 'aaaaaaaaa', 30, 20/4/2015);
+INSERT INTO Cobro VALUES ('aaaaacaaa', 'aaaacaaaa', 'aaaaaaaab', 300, 2/4/2015);
+INSERT INTO Cobro VALUES ('aaaaadaaa', 'aaaadaaaa', 'aaaaaaaac', 40, 15/4/2015);
+INSERT INTO Cobro VALUES ('aaaaaeaaa', 'aaaaeaaaa', 'aaaaaaaad', 70, 23/4/2015);
+INSERT INTO Cobro VALUES ('aaaaafaaa', 'aaaafaaaa', 'aaaaaaaae', 80, 12/4/2015);
+
+INSERT INTO Contrato_medio VALUES ('aaaaabaaa', 'baaaaaaaa', 20/4/2015, 50, 500,'contratovalido');
+INSERT INTO Contrato_medio VALUES ('aaaaacaaa', 'caaaaaaaa', 10/3/2015, 40, 400,'contratovalido');
+INSERT INTO Contrato_medio VALUES ('aaaaadaaa', 'daaaaaaaa', 30/6/2015, 30, 300,'contratovalido');
+INSERT INTO Contrato_medio VALUES ('aaaaaeaaa', 'eaaaaaaaa', 2/4/2015, 20, 200,'contratovalido');
+INSERT INTO Contrato_medio VALUES ('aaaaafaaa', 'faaaaaaaa', 3/4/2015, 12, 100,'contratovalido');
+
+INSERT INTO Cobro VALUES ('aaaaaabaa', 'aaaaabaaa', 'baaaaaaaa', 30, 20/4/2015);
+INSERT INTO Cobro VALUES ('aaaaaacaa', 'aaaaacaaa', 'caaaaaaaa', 300, 2/4/2015);
+INSERT INTO Cobro VALUES ('aaaaaadaa', 'aaaaadaaa', 'daaaaaaaa', 40, 15/4/2015);
+INSERT INTO Cobro VALUES ('aaaaaaeaa', 'aaaaaeaaa', 'eaaaaaaaa', 70, 23/4/2015);
+INSERT INTO Cobro VALUES ('aaaaaafaa', 'aaaaafaaa', 'faaaaaaaa', 80, 12/4/2015);
+
+INSERT INTO Se_asigna VALUES ('aabaaaaaa', 'baaaaaaaa', 'abaaaaaaa', 'aaaaaaaaa');
+INSERT INTO Se_asigna VALUES ('aacaaaaaa', 'caaaaaaaa', 'acaaaaaaa', 'aaaaaaaab');
+INSERT INTO Se_asigna VALUES ('aadaaaaaa', 'daaaaaaaa', 'adaaaaaaa', 'aaaaaaaad');
+INSERT INTO Se_asigna VALUES ('aaeaaaaaa', 'eaaaaaaaa', 'aeaaaaaaa', 'aaaaaaaae');
+INSERT INTO Se_asigna VALUES ('aafaaaaaa', 'faaaaaaaa', 'afaaaaaaa', 'aaaaaaaaf');
+
+INSERT INTO Interesa VALUES ('aaaaaaaaa', 'aaabaaaaa');
+INSERT INTO Interesa VALUES ('aaaaaaaab', 'aaacaaaaa');
+INSERT INTO Interesa VALUES ('aaaaaaaac', 'aaadaaaaa');
+INSERT INTO Interesa VALUES ('aaaaaaaad', 'aaaeaaaaa');
+INSERT INTO Interesa VALUES ('aaaaaaaae', 'aaafaaaaa');
+
+INSERT INTO Visita VALUES ('baaaaaaaa', 'aaabaaaaa');
+INSERT INTO Visita VALUES ('caaaaaaaa', 'aaacaaaaa');
+INSERT INTO Visita VALUES ('daaaaaaaa', 'aaadaaaaa');
+INSERT INTO Visita VALUES ('eaaaaaaaa', 'aaaeaaaaa');
+INSERT INTO Visita VALUES ('faaaaaaaa', 'aaafaaaaa');
