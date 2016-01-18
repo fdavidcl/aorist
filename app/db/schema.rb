@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117172110) do
+ActiveRecord::Schema.define(version: 20160118134513) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
     t.integer  "anunciante_id", precision: 38
@@ -59,6 +59,26 @@ ActiveRecord::Schema.define(version: 20160117172110) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "audiences_anunciantes", force: :cascade do |t|
+    t.integer  "audience_id",   precision: 38
+    t.integer  "anunciante_id", precision: 38
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "audiences_anunciantes", ["anunciante_id"], name: "i_aud_anu_anu_id"
+  add_index "audiences_anunciantes", ["audience_id"], name: "i_aud_anu_aud_id"
+
+  create_table "audiences_medios", force: :cascade do |t|
+    t.integer  "audience_id", precision: 38
+    t.integer  "medio_id",    precision: 38
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "audiences_medios", ["audience_id"], name: "i_audiences_medios_audience_id"
+  add_index "audiences_medios", ["medio_id"], name: "i_audiences_medios_medio_id"
 
   create_table "cobros", force: :cascade do |t|
     t.float    "importe"
@@ -110,6 +130,10 @@ ActiveRecord::Schema.define(version: 20160117172110) do
   add_foreign_key "anuncio_allocations", "anuncios"
   add_foreign_key "anuncio_allocations", "espacios"
   add_foreign_key "anuncios", "anunciantes"
+  add_foreign_key "audiences_anunciantes", "anunciantes"
+  add_foreign_key "audiences_anunciantes", "audiences"
+  add_foreign_key "audiences_medios", "audiences"
+  add_foreign_key "audiences_medios", "medios"
   add_foreign_key "espacios", "medios"
   add_foreign_key "medio_contratos", "medios"
 end
