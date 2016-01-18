@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20160117172110) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
-    t.integer  "anunciante_id"
+    t.integer  "anunciante_id", precision: 38
     t.float    "importe"
-    t.date     "fecha"
+    t.datetime "fecha"
     t.string   "descripcion"
-    t.date     "duracion"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "duracion"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
-  add_index "anunciante_contratos", ["anunciante_id"], name: "index_anunciante_contratos_on_anunciante_id"
+  add_index "anunciante_contratos", ["anunciante_id"], name: "i_anu_con_anu_id"
 
   create_table "anunciantes", force: :cascade do |t|
     t.string   "nombre"
@@ -34,24 +34,24 @@ ActiveRecord::Schema.define(version: 20160117172110) do
   end
 
   create_table "anuncio_allocations", force: :cascade do |t|
-    t.integer  "anuncio_id"
-    t.integer  "espacio_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "anuncio_id", precision: 38
+    t.integer  "espacio_id", precision: 38
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
-  add_index "anuncio_allocations", ["anuncio_id"], name: "index_anuncio_allocations_on_anuncio_id"
-  add_index "anuncio_allocations", ["espacio_id"], name: "index_anuncio_allocations_on_espacio_id"
+  add_index "anuncio_allocations", ["anuncio_id"], name: "i_anu_all_anu_id"
+  add_index "anuncio_allocations", ["espacio_id"], name: "i_anu_all_esp_id"
 
   create_table "anuncios", force: :cascade do |t|
-    t.integer  "anunciante_id"
+    t.integer  "anunciante_id", precision: 38
     t.text     "contenido"
-    t.string   "URL"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "url"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
-  add_index "anuncios", ["anunciante_id"], name: "index_anuncios_on_anunciante_id"
+  add_index "anuncios", ["anunciante_id"], name: "i_anuncios_anunciante_id"
 
   create_table "audiences", force: :cascade do |t|
     t.string   "nombre"
@@ -62,34 +62,34 @@ ActiveRecord::Schema.define(version: 20160117172110) do
 
   create_table "cobros", force: :cascade do |t|
     t.float    "importe"
-    t.date     "fecha"
+    t.datetime "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "espacios", force: :cascade do |t|
-    t.integer  "medio_id"
-    t.boolean  "multimedia"
-    t.boolean  "enlace"
-    t.integer  "ancho"
-    t.integer  "alto"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "medio_id",               precision: 38
+    t.boolean  "multimedia", limit: nil
+    t.boolean  "enlace",     limit: nil
+    t.integer  "ancho",                  precision: 38
+    t.integer  "alto",                   precision: 38
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "espacios", ["medio_id"], name: "index_espacios_on_medio_id"
 
   create_table "medio_contratos", force: :cascade do |t|
-    t.integer  "medio_id"
+    t.integer  "medio_id",    precision: 38
     t.float    "importe"
-    t.date     "fecha"
+    t.datetime "fecha"
     t.string   "descripcion"
-    t.date     "duracion"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "duracion"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "medio_contratos", ["medio_id"], name: "index_medio_contratos_on_medio_id"
+  add_index "medio_contratos", ["medio_id"], name: "i_medio_contratos_medio_id"
 
   create_table "medios", force: :cascade do |t|
     t.string   "nombre"
@@ -101,9 +101,15 @@ ActiveRecord::Schema.define(version: 20160117172110) do
 
   create_table "pagos", force: :cascade do |t|
     t.float    "importe"
-    t.date     "fecha"
+    t.datetime "fecha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "anunciante_contratos", "anunciantes"
+  add_foreign_key "anuncio_allocations", "anuncios"
+  add_foreign_key "anuncio_allocations", "espacios"
+  add_foreign_key "anuncios", "anunciantes"
+  add_foreign_key "espacios", "medios"
+  add_foreign_key "medio_contratos", "medios"
 end
