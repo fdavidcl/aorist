@@ -26,17 +26,17 @@ class AnunciosController < ApplicationController
     @anunciante = find_by_id
     @anuncios = @anunciante.anuncios
     @anuncio = Anuncio.find params[:id]
-    espacios_libres = Espacio.where(
+    @espacios_libres = Espacio.where(
       "NOT EXISTS (SELECT * FROM 'anuncio_allocations' WHERE 'anuncio_allocations'.'espacio_id' = 'espacios'.'id')",
     )
 
-    @available_espacio_pairs = if espacios_libres.empty?
-        []
-      else
-        espacios_libres.collect do |e|
-          ["Espacio #{e.id} (#{e.medio.nombre})", e.id]
-        end
-      end
+    # @available_espacio_pairs = if espacios_libres.empty?
+    #     []
+    #   else
+    #     espacios_libres.collect do |e|
+    #       ["Espacio #{e.id} (#{e.medio.nombre})", e.id]
+    #     end
+    #   end
   end
 
   def create
@@ -61,7 +61,7 @@ class AnunciosController < ApplicationController
   def allocate_to
     @anuncio = Anuncio.find_by id: params[:id]
     @espacio = Espacio.find_by id: params[:espacio_id]
-    @anuncio.espacios << @espacio unless @anuncio.espacios.find_by id: params[:espacio_id]
+    @anuncio.espacios << @espacio unless @espacio.nil?
 
     redirect_to anunciante_anuncio_path
   end
