@@ -18,7 +18,7 @@
 .cards
   - @anuncio.espacios.each do |e|
     .card
-      = link_to "Espacio #{e.id}", [e.medio, e]
+      = link_to "Espacio #{e.id} (#{e.medio.nombre})", [e.medio, e]
       = link_to deallocate_from_anunciante_anuncio_path(id: @anuncio.id, espacio_id: e.id), method: :post, class: "pure-button button-delete" do
         %i.fa.fa-trash
         Eliminar asociación
