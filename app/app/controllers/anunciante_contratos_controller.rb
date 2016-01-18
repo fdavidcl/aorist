@@ -25,7 +25,8 @@ class AnuncianteContratosController < ApplicationController
 
   def create
     @anunciante = find_by_id
-    @contrato = @anunciante.contratos.create anunciante_contrato_params
+    @anunciantes = Anunciante.all
+    @contrato = @anunciante.anunciante_contratos.create anunciante_contrato_params
 
     if @contrato.save
       redirect_to anunciante_contratos_path params[:anunciante_id], @contrato.id

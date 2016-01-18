@@ -1,12 +1,4 @@
 class ContabilidadController < ApplicationController
-  def suma_pagos
-    Pago.sum(:importe)
-  end
-  
-  def suma_cobros
-    Cobro.sum(:importe)
-  end
-  
   def index
   end
   
@@ -14,9 +6,13 @@ class ContabilidadController < ApplicationController
   end
   
   def show
-    @balance_positivo = suma_cobros
-    @balance_negativo = suma_pagos
-    @balance_total = balance_positivo - balance_negativo
+    @lista_cobros = Cobro.order(:importe)
+    @lista_pagos = Pago.order(:importe)
+    @lista_por_anunciante_contrato = Cobro.group(:anunciante_contrato)
+    @lista_por_medio_contrato = Pago.group(:medio_contrato)
+    @balance_positivo = Cobro.sum(:importe)
+    @balance_negativo = Pago.sum(:importe)
+    @balance_total = @balance_positivo - @balance_negativo
   end
   
 end
