@@ -41,6 +41,7 @@ class AnunciosController < ApplicationController
 
   def create
     @anunciante = find_by_id
+    @anuncios = @anunciante.anuncios
     @anuncio = @anunciante.anuncios.create anuncio_params
 
     if @anuncio.save

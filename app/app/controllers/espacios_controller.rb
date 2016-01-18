@@ -30,6 +30,7 @@ class EspaciosController < ApplicationController
 
   def create
     @medio = find_by_id
+    @espacios = @medio.espacios
     @espacio = @medio.espacios.create espacio_params
 
     if @espacio.save

@@ -13,6 +13,7 @@ class AudiencesController < ApplicationController
   end
 
   def create
+    @audiences = Audience.all
     @audience = Audience.new audience_params
 
     if @audience.save

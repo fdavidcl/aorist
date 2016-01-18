@@ -24,6 +24,7 @@ class MedioContratosController < ApplicationController
 
   def create
     @medio = find_by_id
+    @contratos = @medio.medio_contratos
     @contrato = @medio.contratos.create medio_contrato_params
 
     if @contrato.save

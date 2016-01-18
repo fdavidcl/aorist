@@ -13,6 +13,7 @@ class MediosController < ApplicationController
   end
 
   def create
+    @medios = Medio.all
     @medio = Medio.new medio_params
 
     if @medio.save
