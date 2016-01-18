@@ -1,0 +1,25 @@
+%h1
+  = render partial: "common/back", locals: {path: anunciante_contratos_path}
+  Nuevo contrato
+%h3
+  en el anunciante
+  = link_to @anunciante.nombre, @anunciante
+
+= form_for [:anunciante, @contrato], url: anunciante_contratos_path do |f|
+  %p
+    = f.label :descripcion, "Descripción"
+    = f.text_field :descripcion
+  %p
+    = f.label :fecha, "Fecha creación"
+    = f.date_select :fecha
+    
+  %p
+    = f.label :fecha, "Fecha finalización"
+    = f.date_select :duracion
+    
+  %p 
+    = f.label :importe, "Importe"
+    = f.text_field :importe
+    
+  %p
+    = f.submit "Crear contrato"

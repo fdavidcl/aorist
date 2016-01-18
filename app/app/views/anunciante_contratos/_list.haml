@@ -1,0 +1,11 @@
+%a{href: new_anunciante_contrato_path, class: (action_name == "index") ? "pure-button pure-button-primary" : "pure-button"}
+  %i.fa.fa-plus
+  Nuevo contrato
+
+.cards
+  - if @contratos.empty?
+    .card.disabled Aquí no hay nada
+  - else
+    - @contratos.each do |c|
+      %p
+        = link_to "Contrato #{c.id}", {controller: :anunciante_contratos, action: :show, id: c.id}, {class: "card"}
