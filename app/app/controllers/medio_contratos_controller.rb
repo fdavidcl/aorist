@@ -25,10 +25,10 @@ class MedioContratosController < ApplicationController
   def create
     @medio = find_by_id
     @contratos = @medio.medio_contratos
-    @contrato = @medio.contratos.create medio_contrato_params
-
+    @contrato = @medio.medio_contratos.create medio_contrato_params
+    
     if @contrato.save
-      redirect_to medio_contrato_path params[:medio_id], @contrato.id
+      redirect_to medio_contratos_path params[:medio_id], @contrato.id
     else
       render :new
     end
