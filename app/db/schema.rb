@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118134513) do
+ActiveRecord::Schema.define(version: 20160118134514) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
     t.integer  "anunciante_id", precision: 38
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160118134513) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "anunciantes_audiences", force: :cascade do |t|
+    t.integer  "audience_id",   precision: 38
+    t.integer  "anunciante_id", precision: 38
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "anunciantes_audiences", ["anunciante_id"], name: "i_anu_aud_anu_id"
+  add_index "anunciantes_audiences", ["audience_id"], name: "i_anu_aud_aud_id"
 
   create_table "anuncio_allocations", force: :cascade do |t|
     t.integer  "anuncio_id", precision: 38
@@ -59,16 +69,6 @@ ActiveRecord::Schema.define(version: 20160118134513) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  create_table "audiences_anunciantes", force: :cascade do |t|
-    t.integer  "audience_id",   precision: 38
-    t.integer  "anunciante_id", precision: 38
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
-  add_index "audiences_anunciantes", ["anunciante_id"], name: "i_aud_anu_anu_id"
-  add_index "audiences_anunciantes", ["audience_id"], name: "i_aud_anu_aud_id"
 
   create_table "audiences_medios", force: :cascade do |t|
     t.integer  "audience_id", precision: 38
@@ -127,11 +127,11 @@ ActiveRecord::Schema.define(version: 20160118134513) do
   end
 
   add_foreign_key "anunciante_contratos", "anunciantes"
+  add_foreign_key "anunciantes_audiences", "anunciantes"
+  add_foreign_key "anunciantes_audiences", "audiences"
   add_foreign_key "anuncio_allocations", "anuncios"
   add_foreign_key "anuncio_allocations", "espacios"
   add_foreign_key "anuncios", "anunciantes"
-  add_foreign_key "audiences_anunciantes", "anunciantes"
-  add_foreign_key "audiences_anunciantes", "audiences"
   add_foreign_key "audiences_medios", "audiences"
   add_foreign_key "audiences_medios", "medios"
   add_foreign_key "espacios", "medios"
