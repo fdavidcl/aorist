@@ -10,7 +10,7 @@
         .card.disabled Aquí no hay nada
       - else
         - @pendientes.each do |a|
-          = link_to "#{a.contenido} (#{a.id})", anunciante_anuncio_path(@anunciante, a), {class: "card"}
+          = link_to "#{a.contenido} (#{a.id})", anunciante_anuncio_path(current_anunciante, a), {class: "card"}
 
   %div{class: action_name == "index" ? "pure-u-1 pure-u-lg-2-24" : "pure-u-1"}
 
@@ -21,4 +21,4 @@
         .card.disabled Aquí no hay nada
       - else
         - @en_marcha.each do |a|
-          = link_to "#{a.contenido} (#{a.id})", anunciante_anuncio_path(@anunciante, a), {class: "card"}
+          = link_to "#{a.contenido} (#{a.id})", anunciante_anuncio_path(current_anunciante, a), {class: "card"}

@@ -1,6 +1,6 @@
 %h1
   = render partial: "common/back", locals: {path: anunciantes_path}
   Anuncios del anunciante
-  = link_to @anunciante.nombre, @anunciante
+  = link_to current_anunciante.nombre, current_anunciante
 
 = render partial: "list"

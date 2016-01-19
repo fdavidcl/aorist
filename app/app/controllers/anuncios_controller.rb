@@ -1,5 +1,6 @@
 class AnunciosController < ApplicationController
   layout "with_side", except: [:index]
+  helper_method :current_anunciante
 
   private
   def anuncio_params
@@ -17,18 +18,15 @@ class AnunciosController < ApplicationController
 
   public
   def index
-    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
   end
 
   def new
-    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.new
   end
 
   def show
-    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.find params[:id]
 
@@ -37,9 +35,8 @@ class AnunciosController < ApplicationController
   end
 
   def create
-    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
-    @anuncio = @anunciante.anuncios.create anuncio_params
+    @anuncio = current_anunciante.anuncios.create anuncio_params
 
     if @anuncio.save
       redirect_to anunciante_anuncio_path params[:anunciante_id], @anuncio.id

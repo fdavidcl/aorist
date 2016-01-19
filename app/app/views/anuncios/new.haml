@@ -3,7 +3,7 @@
   Nuevo anuncio
 %h3
   del anunciante
-  = link_to @anunciante.nombre, @anunciante
+  = link_to current_anunciante.nombre, current_anunciante
 
 = form_for [:anunciante, @anuncio], url: anunciante_anuncios_path do |f|
   %p
