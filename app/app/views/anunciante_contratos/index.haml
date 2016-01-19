@@ -1,0 +1,6 @@
+%h1
+  = render partial: "common/back", locals: {path: anunciantes_path}
+  Contratos con el anunciante
+  = link_to @anunciante.nombre, @anunciante
+
+= render partial: "list"

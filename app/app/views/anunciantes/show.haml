@@ -6,6 +6,9 @@
   = link_to anunciante_anuncios_path(@anunciante), {class: "pure-button"} do
     %i.fa.fa-shopping-bag
     Anuncios (#{@anunciante.anuncios.count})
+  = link_to anunciante_contratos_path(@anunciante), {class: "pure-button"} do
+    %i.fa.fa-file-text
+    Contratos (#{@anunciante.anunciante_contratos.count})
 
   = link_to anunciante_path(@anunciante), method: :delete, data: {confirm: "Confirma que quieres borrar el anunciante '#{@anunciante.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
     %i.fa.fa-trash
