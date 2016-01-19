@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :medios do
+    member do
+      post 'audiences/:audience_id', action: :associate_audience, as: :associate_audience
+      delete 'audiences/:audience_id', action: :dissociate_audience, as: :dissociate_audience
+    end
+    
     resources :espacios
     resources :contratos, controller: :medio_contratos do
         resources :pagos
