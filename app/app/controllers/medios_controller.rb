@@ -28,7 +28,7 @@ class MediosController < ApplicationController
     @medio = Medio.find_by id: params[:id]
 
     @lista_audiences_asociables = if @medio.audiences.empty?
-      []
+      Audience.all
     else
       Audience.where('nombre NOT IN (?)', @medio.audiences.pluck(:nombre))
     end
@@ -50,6 +50,14 @@ class MediosController < ApplicationController
     @audience = Audience.find_by id: params[:audience_id]
     @medio = Medio.find_by id: params[:id]
     @medio.audiences << @audience
+  end
+  
+  def dissociate_audience
+    @audience = Audience.find_by id: params[:audience_id]
+    @medio = Medio.find_by id: params[:id]
+    @medio.audiences.delete @audience
+
+    redirect_to @medio
   end
 
 
