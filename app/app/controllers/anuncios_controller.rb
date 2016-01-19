@@ -10,38 +10,35 @@ class AnunciosController < ApplicationController
     Anunciante.find_by id: params[:anunciante_id]
   end
 
+  def separar_anuncios
+    # Agrupa los anuncios según estén o no asignados a espacios
+    find_by_id.anuncios.find_each.partition { |a| a.espacios.empty? }
+  end
+
   public
   def index
     @anunciante = find_by_id
-    @anuncios = @anunciante.anuncios
+    @pendientes, @en_marcha = separar_anuncios
   end
 
   def new
     @anunciante = find_by_id
-    @anuncios = @anunciante.anuncios
+    @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.new
   end
 
   def show
     @anunciante = find_by_id
-    @anuncios = @anunciante.anuncios
+    @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.find params[:id]
-    @espacios_libres = Espacio.where(
-      "NOT EXISTS (SELECT * FROM 'anuncio_allocations' WHERE 'anuncio_allocations'.'espacio_id' = 'espacios'.'id')",
-    )
 
-    # @available_espacio_pairs = if espacios_libres.empty?
-    #     []
-    #   else
-    #     espacios_libres.collect do |e|
-    #       ["Espacio #{e.id} (#{e.medio.nombre})", e.id]
-    #     end
-    #   end
+    # Buscamos los espacios que no tienen aún un anuncio asignado
+    @espacios_libres = Espacio.find_each.reject &:anuncio
   end
 
   def create
     @anunciante = find_by_id
-    @anuncios = @anunciante.anuncios
+    @pendientes, @en_marcha = separar_anuncios
     @anuncio = @anunciante.anuncios.create anuncio_params
 
     if @anuncio.save

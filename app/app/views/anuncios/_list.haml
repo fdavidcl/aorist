@@ -2,9 +2,23 @@
   %i.fa.fa-plus
   Nuevo anuncio
 
-.cards
-  - if @anuncios.empty?
-    .card.disabled Aquí no hay nada
-  - else
-    - @anuncios.each do |a|
-      = link_to a.id, anunciante_anuncio_path(@anunciante, a), {class: "card"}
+.pure-g
+  %div{class: action_name == "index" ? "pure-u-1 pure-u-lg-11-24" : "pure-u-1"}
+    %h4 Anuncios pendientes
+    .cards
+      - if @pendientes.empty?
+        .card.disabled Aquí no hay nada
+      - else
+        - @pendientes.each do |a|
+          = link_to "#{a.contenido} (#{a.id})", anunciante_anuncio_path(@anunciante, a), {class: "card"}
+
+  %div{class: action_name == "index" ? "pure-u-1 pure-u-lg-2-24" : "pure-u-1"}
+
+  %div{class: action_name == "index" ? "pure-u-1 pure-u-lg-11-24" : "pure-u-1"}
+    %h4 Anuncios puestos en marcha
+    .cards
+      - if @en_marcha.empty?
+        .card.disabled Aquí no hay nada
+      - else
+        - @en_marcha.each do |a|
+          = link_to "#{a.contenido} (#{a.id})", anunciante_anuncio_path(@anunciante, a), {class: "card"}
