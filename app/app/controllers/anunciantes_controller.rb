@@ -27,14 +27,14 @@ class AnunciantesController < ApplicationController
   def show
     @anunciantes = Anunciante.all
     @anunciante = Anunciante.find_by id: params[:id]
-    
-    @lista_audiences_asociables = if @anunciante.audiences.empty?
-      []
-    else 
+
+    @audiences_asociables = if @anunciante.audiences.empty?
+      Audience.all
+    else
       Audience.where('nombre NOT IN (?)', @anunciante.audiences.pluck(:nombre))
     end
   end
- 
+
   def index
     @anunciantes = Anunciante.all
   end
@@ -46,10 +46,19 @@ class AnunciantesController < ApplicationController
     redirect_to anunciantes_path
   end
 
-  def asociate_audience
+  def associate_audience
     @audience = Audience.find_by id: params[:audience_id]
     @anunciante = Anunciante.find_by id: params[:id]
-    @anunciante.audiences << @audience
+    @anunciante.audiences << @audience unless @anunciante.audiences.member? @audience
+
+    redirect_to @anunciante
   end
 
+  def dissociate_audience
+    @audience = Audience.find_by id: params[:audience_id]
+    @anunciante = Anunciante.find_by id: params[:id]
+    @anunciante.audiences.delete @audience
+
+    redirect_to @anunciante
+  end
 end

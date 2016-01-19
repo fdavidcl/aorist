@@ -38,7 +38,10 @@ Rails.application.routes.draw do
   end
 
   resources :anunciantes do
-    #get 'associate', on: member, to: asociate_audience
+    member do
+      post 'audiences/:audience_id', action: :associate_audience, as: :associate_audience
+      delete 'audiences/:audience_id', action: :dissociate_audience, as: :dissociate_audience
+    end
 
     resources :anuncios do
       member do
