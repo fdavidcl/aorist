@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118134514) do
+ActiveRecord::Schema.define(version: 20160119161133) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
     t.integer  "anunciante_id"
@@ -83,9 +83,12 @@ ActiveRecord::Schema.define(version: 20160118134514) do
   create_table "cobros", force: :cascade do |t|
     t.float    "importe"
     t.date     "fecha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "anunciante_contrato_id"
   end
+
+  add_index "cobros", ["anunciante_contrato_id"], name: "index_cobros_on_anunciante_contrato_id"
 
   create_table "espacios", force: :cascade do |t|
     t.integer  "medio_id"
@@ -122,8 +125,11 @@ ActiveRecord::Schema.define(version: 20160118134514) do
   create_table "pagos", force: :cascade do |t|
     t.float    "importe"
     t.date     "fecha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "medio_contrato_id"
   end
+
+  add_index "pagos", ["medio_contrato_id"], name: "index_pagos_on_medio_contrato_id"
 
 end
