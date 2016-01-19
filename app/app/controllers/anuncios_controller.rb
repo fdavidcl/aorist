@@ -6,29 +6,29 @@ class AnunciosController < ApplicationController
     params.require(:anuncio).permit(:contenido, :URL)
   end
 
-  def find_by_id
+  def current_anunciante
     Anunciante.find_by id: params[:anunciante_id]
   end
 
   def separar_anuncios
     # Agrupa los anuncios según estén o no asignados a espacios
-    find_by_id.anuncios.find_each.partition { |a| a.espacios.empty? }
+    current_anunciante.anuncios.find_each.partition { |a| a.espacios.empty? }
   end
 
   public
   def index
-    @anunciante = find_by_id
+    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
   end
 
   def new
-    @anunciante = find_by_id
+    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.new
   end
 
   def show
-    @anunciante = find_by_id
+    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.find params[:id]
 
@@ -37,7 +37,7 @@ class AnunciosController < ApplicationController
   end
 
   def create
-    @anunciante = find_by_id
+    @anunciante = current_anunciante
     @pendientes, @en_marcha = separar_anuncios
     @anuncio = @anunciante.anuncios.create anuncio_params
 
