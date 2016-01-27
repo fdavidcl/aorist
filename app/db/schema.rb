@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119161133) do
+ActiveRecord::Schema.define(version: 20160119161134) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
     t.integer  "anunciante_id"
