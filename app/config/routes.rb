@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       post 'audiences/:audience_id', action: :associate_audience, as: :associate_audience
       delete 'audiences/:audience_id', action: :dissociate_audience, as: :dissociate_audience
     end
-    
+
     resources :espacios
     resources :contratos, controller: :medio_contratos do
         resources :pagos
@@ -50,8 +50,8 @@ Rails.application.routes.draw do
 
     resources :anuncios do
       member do
-        post 'allocate_to'
-        post 'deallocate_from/:espacio_id', action: :deallocate_from, as: :deallocate_from
+        post 'espacios/:espacio_id', action: :allocate_to, as: :allocate_to
+        delete 'espacios/:espacio_id', action: :deallocate_from, as: :deallocate_from
       end
     end
     resources :contratos, controller: :anunciante_contratos do
