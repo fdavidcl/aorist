@@ -27,7 +27,7 @@
       = link_to dissociate_audience_anunciante_path(@anunciante, a), method: :delete, class: "pure-button button-delete" do
         %i.fa.fa-times
         Quitar
-      = link_to a.nombre, @audience
+      = link_to a.nombre, a
 
 %h4 Asociar nuevas audiencias
 .cards
@@ -36,4 +36,4 @@
       = link_to associate_audience_anunciante_path(@anunciante, a), method: :post, class: "pure-button pure-button-primary" do
         %i.fa.fa-plus
         Asociar
-      = link_to a.nombre, @audience
+      = link_to a.nombre, a
