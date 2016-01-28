@@ -30,5 +30,6 @@
     .cards
       - order_date[1].each do |pago|
         .card
-          %strong.in-red #{pago.importe} €
-          %span.count= pago.importe
+          %strong.in-red #{pago.importe} 
+          €
+          %span.count= pago.fecha
