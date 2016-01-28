@@ -17,7 +17,7 @@ class AnunciosController < ApplicationController
   end
   
   def espacios_permitidos anuncio
-    if anuncio.URL.nil? 
+    if anuncio.URL.empty? 
       @espacios = Espacio.find_each.reject &:anuncio 
     else 
       @espacios = Espacio.find_each.reject {|e| e.anuncio.nil? || !e.enlace}
