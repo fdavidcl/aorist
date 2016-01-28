@@ -2,17 +2,21 @@
   = render partial: "common/back", locals: {path: anunciante_contratos_path}
   Contrato #{@contrato.id}
 
-
+%h4 Datos
 %p
+  Descripción:
   = @contrato.descripcion
 
 %p
+  Fecha de inicio:
   = @contrato.fecha
 
 %p
+  Fecha de fin:
   = @contrato.duracion
 
 %p
+  Importe:
   = @contrato.importe
 
 %h4 Realizar un cobro
