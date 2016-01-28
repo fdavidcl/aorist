@@ -4,15 +4,15 @@ helper_method :order_amount, :order_date, :group_contract, :group_owner
   private
   def order_amount
     [
-      Cobro.order(:importe),
-      Pago.order(:importe)
+      Cobro.order(importe: :desc),
+      Pago.order(importe: :desc)
     ]
   end
 
   def order_date
     [
-      Cobro.order(:fecha),
-      Pago.order(:fecha)
+      Cobro.order(fecha: :desc),
+      Pago.order(fecha: :desc)
     ]
   end
 
@@ -35,6 +35,13 @@ helper_method :order_amount, :order_date, :group_contract, :group_owner
     @balance_positivo = Cobro.sum(:importe)
     @balance_negativo = Pago.sum(:importe)
     @balance_total = @balance_positivo - @balance_negativo
+
+    order = params[:order] || "date"
+    @cobros, @pagos = if order == "date"
+      order_date
+    elsif order == "amount"
+      order_amount
+    end
   end
 
 end

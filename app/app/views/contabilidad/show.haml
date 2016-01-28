@@ -1,5 +1,5 @@
 %h1 Contabilidad
-%h4 Balance
+%h2 Balance
 .cards.cards-table
   .pure-g
     .cards-col.pure-u-1.pure-u-lg-2-3
@@ -13,22 +13,31 @@
       .card
         Total pagos:
         %strong.in-red #{@balance_negativo} €
+%h2 Detalles
+
+= link_to "Ordenar por fecha", {order: :date}, class: "pure-button"
+= link_to "Ordenar por importe", {order: :amount}, class: "pure-button"
+= link_to "Agrupar por contrato", {order: :contract}, class: "pure-button"
+= link_to "Agrupar por empresa", {order: :owner}, class: "pure-button"
+
 
 .pure-g
   .pure-u-1.pure-u-lg-11-24
     %h4 Todos los cobros
     .cards
-      - order_date[0].each do |cobro|
+      - @cobros.each do |cobro|
         .card
           %strong= cobro.importe
           €
           %span.count= cobro.fecha
+          %span.count (Contrato #{cobro.anunciante_contrato.id} - #{cobro.anunciante_contrato.anunciante.nombre})
 
   .pure-u-1.pure-u-lg-2-24
   .pure-u-1.pure-u-lg-11-24
     %h4 Todos los pagos
     .cards
-      - order_date[1].each do |pago|
+      - @pagos.each do |pago|
         .card
           %strong.in-red #{pago.importe} €
           %span.count= pago.importe
+          %span.count (Contrato #{pago.medio_contrato.id} - #{pago.medio_contrato.medio.nombre})
