@@ -16,10 +16,14 @@
         %strong.in-red.float-right #{@balance_negativo} €
 %h2 Detalles
 
-= link_to "Ordenar por fecha", {order: :date}, class: "pure-button"
-= link_to "Ordenar por importe", {order: :amount}, class: "pure-button"
-= link_to "Agrupar por contrato", {order: :contract}, class: "pure-button"
-= link_to "Agrupar por empresa", {order: :owner}, class: "pure-button"
+%p
+  Ordenar por:
+  = link_to "fecha", {order: :date}, class: ["amount", "contract", "owner"].member?(params[:order]) ? "pure-button" : "pure-button button-selected"
+  = link_to "importe", {order: :amount}, class: params[:order] == "amount" ? "pure-button button-selected" : "pure-button"
+
+  Agrupar por:
+  = link_to "contrato", {order: :contract}, class: params[:order] == "contract" ? "pure-button button-selected" : "pure-button"
+  = link_to "empresa", {order: :owner}, class: params[:order] == "owner" ? "pure-button button-selected" : "pure-button"
 
 .pure-g
   .pure-u-1.pure-u-lg-11-24
@@ -30,9 +34,11 @@
           .card
             .float-left
               - if key.is_a? AnuncianteContrato
-                Contrato #{key.id} (#{key.descripcion} - #{key.anunciante.nombre})
+                = link_to "Contrato #{key.id}", anunciante_contrato_path(key.anunciante, key)
+                %span.count #{key.descripcion}
+                %span.count= link_to key.anunciante.nombre, key.anunciante
               - elsif key.is_a? Anunciante
-                = key.nombre
+                = link_to key.nombre, key
             %strong.float-right #{suma} €
     - else
       %h4 Todos los cobros
@@ -41,8 +47,13 @@
           .card
             .float-left
               =cobro.fecha
-              %span.count (Contrato #{cobro.anunciante_contrato.id} - #{cobro.anunciante_contrato.anunciante.nombre})
+              %span.count
+                = link_to "Contrato #{cobro.anunciante_contrato.id}", anunciante_contrato_path(cobro.anunciante_contrato.anunciante, cobro.anunciante_contrato)
+              %span.count
+                = link_to cobro.anunciante_contrato.anunciante.nombre, cobro.anunciante_contrato.anunciante
             %strong.float-right #{cobro.importe} €
+        .card.multiline.center.disabled
+          Para realizar un nuevo cobro, dirígete al contrato al que quieres asociarlo.
 
   .pure-u-1.pure-u-lg-2-24
   .pure-u-1.pure-u-lg-11-24
@@ -53,10 +64,13 @@
           .card
             .float-left
               - if key.is_a? MedioContrato
-                Contrato #{key.id} (#{key.descripcion} - #{key.medio.nombre})
+                = link_to "Contrato #{key.id}", medio_contrato_path(key.medio, key)
+                %span.count #{key.descripcion}
+                %span.count= link_to key.medio.nombre, key.medio
               - elsif key.is_a? Medio
-                = key.nombre
+                = link_to key.nombre, key
             %strong.in-red.float-right #{suma} €
+
     - else
       %h4 Todos los pagos
       .cards
@@ -64,5 +78,10 @@
           .card
             .float-left
               = pago.fecha
-              %span.count (Contrato #{pago.medio_contrato.id} - #{pago.medio_contrato.medio.nombre})
+              %span.count
+                = link_to "Contrato #{pago.medio_contrato.id}", medio_contrato_path(pago.medio_contrato.medio, pago.medio_contrato)
+              %span.count
+                = link_to pago.medio_contrato.medio.nombre, pago.medio_contrato.medio
             %strong.in-red.float-right #{pago.importe} €
+        .card.multiline.center.disabled
+          Para realizar un nuevo pago, dirígete al contrato al que quieres asociarlo.

@@ -121,12 +121,6 @@ body
       a + .pure-button
         margin-left: $hmargin
 
-      &.flush-right
-        text-align: right
-
-      &.center
-        text-align: center
-
       .big, .super-big
         font-size: 300%
         display: inline-block
@@ -142,10 +136,17 @@ body
         float: left
       .float-right
         float: right
-
         &:after
           float: none
           clear: both
+
+      &.flush-right
+        text-align: right
+      &.center
+        text-align: center
+
+      &.multiline
+        white-space: normal
 
       &.disabled
         background: mix($card-background, $foreground, 85%)
@@ -181,3 +182,8 @@ body
     &.button-delete
       background-color: $red
       color: white
+
+    &.button-selected
+      background: transparent
+      cursor: default
+      color: $link
