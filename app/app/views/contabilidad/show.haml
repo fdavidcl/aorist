@@ -1,1 +1,30 @@
 %h1 Contabilidad
+.cards.cards-table
+  .pure-g
+    .cards-col.pure-u-1.pure-u-lg-2-3
+      .card.flush-right
+        %strong Balance:
+        %span.super-big=@balance_total
+    .cards-col.pure-u-1.pure-u-lg-1-3
+      .card
+        %strong Total cobros:
+        %span.in_blue=@balance_positivo
+      .card
+        %strong Total pagos:
+        %span.in_red=@balance_negativo
+
+.pure-g
+  .pure-u-1.pure-u-lg-11-24
+    %h4 Todos los cobros
+    .cards
+      - order_date[0].each do |cobro|
+        .card
+          %strong= cobro.importe
+
+  .pure-u-1.pure-u-lg-2-24
+  .pure-u-1.pure-u-lg-11-24
+    %h4 Todos los pagos
+    .cards
+      - order_date[1].each do |cobro|
+        .card
+          %strong= cobro.importe

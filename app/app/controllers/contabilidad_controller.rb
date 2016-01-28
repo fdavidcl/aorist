@@ -3,23 +3,31 @@ helper_method :order_amount, :order_date, :group_contract, :group_owner
 
   private
   def order_amount
-    @lista_cobros = Cobro.order(:importe)
-    @lista_pagos = Pago.order(:importe)
+    [
+      Cobro.order(:importe),
+      Pago.order(:importe)
+    ]
   end
 
   def order_date
-    @cobros_date = Cobro.order(:fecha)
-    @pagos_date = Pago.order(:fecha)
+    [
+      Cobro.order(:fecha),
+      Pago.order(:fecha)
+    ]
   end
 
   def group_contract
-    @cobros_contrato = Cobro.group(:anunciante_contrato)
-    @pagos_contrato = Pago.group(:medio_contrato)
+    [
+      Cobro.group(:anunciante_contrato),
+      Pago.group(:medio_contrato)
+    ]
   end
 
   def group_owner
-    @cobros_anunciante = Cobro.group(:anunciante)
-    @cobros_medio = Pago.group(:medio)
+    [
+      Cobro.group(:anunciante),
+      Pago.group(:medio)
+    ]
   end
 
   public

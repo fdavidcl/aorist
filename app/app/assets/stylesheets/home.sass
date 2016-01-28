@@ -114,6 +114,18 @@ body
       a + .pure-button
         margin-left: $hmargin
 
+      &.flush-right
+        text-align: right
+
+      &.center
+        text-align: center
+
+      .super-big
+        display: inline-block
+        vertical-align: middle
+        margin: 0 $hmargin/3
+        font-size: 422%
+
       &.disabled
         background: mix($card-background, $foreground, 85%)
         border: 1px solid mix($card-background, $foreground, 75%)
@@ -128,8 +140,10 @@ body
         border-color: mix($link, $card-background, 40%)
         background: mix($link, $card-background, 5%)
 
-    &:empty:before
-      content: "Aquí no hay nada"
+    &.cards-table
+      .card
+        margin: $vmargin/2
+        margin-left: 0
 
   .pure-button
     background-color: mix($link, $background, 20%)

@@ -9,6 +9,9 @@
     Eliminar
 
 %p
+  = @contrato.descripcion
+
+%p
   = @contrato.fecha
 
 %p
@@ -16,3 +19,18 @@
 
 %p
   = @contrato.importe
+
+%h4 Realizar un cobro
+= form_for [@anunciante, @contrato, @cobro], url: anunciante_contrato_cobros_path(contrato_id: @contrato.id), method: :post do |f|
+  = f.label :importe, "Importe"
+  = f.number_field :importe, min: 0, value: 0
+  = f.date_select :fecha
+  = f.submit "Realizar cobro"
+
+%h4 Cobros realizados
+.cards
+  - @contrato.cobros.each do |c|
+    .card
+      %strong= c.importe
+      €
+      %span.count= c.fecha

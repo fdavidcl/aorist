@@ -40,6 +40,7 @@ class AnuncianteContratosController < ApplicationController
     @anunciante = find_by_id
     @contratos = @anunciante.anunciante_contratos
     @contrato = AnuncianteContrato.find_by id: params[:id]
+    @cobro = Cobro.new
   end
 
 
