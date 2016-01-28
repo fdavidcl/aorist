@@ -39,5 +39,5 @@
       - @pagos.each do |pago|
         .card
           %strong.in-red #{pago.importe} €
-          %span.count= pago.importe
+          %span.count= pago.fecha
           %span.count (Contrato #{pago.medio_contrato.id} - #{pago.medio_contrato.medio.nombre})
