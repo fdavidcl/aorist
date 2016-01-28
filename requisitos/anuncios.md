@@ -160,10 +160,10 @@ Ninguna
 
 A un espacio publicitario sólo se puede asignar un anuncio, pero un anuncio se puede asignar a más de un espacio.
 
-\rs{Anuncios y empresas}
+\rs{Anuncios y anunciantes}
 
-Un anuncio *debe* asociarse con una (y sólo una) empresa. *Puede* haber varios anuncios asociados
-a la misma empresa
+Un anuncio *debe* asociarse con una (y sólo una) anunciante. *Puede* haber varios anuncios asociados
+al mismo anunciante.
 
 \rs{Anuncios y espacios incompatibles}
 
