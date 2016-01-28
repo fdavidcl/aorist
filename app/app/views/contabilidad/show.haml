@@ -37,8 +37,8 @@
             .float-left
               - if key.is_a? AnuncianteContrato
                 = link_to "Contrato #{key.id}", anunciante_contrato_path(key.anunciante, key)
-                %span.count #{key.descripcion}
                 %span.count= link_to key.anunciante.nombre, key.anunciante
+                %span.count #{key.descripcion}
               - elsif key.is_a? Anunciante
                 = link_to key.nombre, key
             %strong.float-right #{suma} €
@@ -67,8 +67,8 @@
             .float-left
               - if key.is_a? MedioContrato
                 = link_to "Contrato #{key.id}", medio_contrato_path(key.medio, key)
-                %span.count #{key.descripcion}
                 %span.count= link_to key.medio.nombre, key.medio
+                %span.count #{key.descripcion}
               - elsif key.is_a? Medio
                 = link_to key.nombre, key
             %strong.in-red.float-right #{suma} €
