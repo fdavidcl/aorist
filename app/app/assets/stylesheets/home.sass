@@ -5,6 +5,7 @@
 // Palette
 $red: #f44336
 $teal: #006064
+$blue: $teal
 
 $background: #f0f0f0
 $card-background: #ffffff
@@ -83,6 +84,12 @@ body
     &:not(.pure-button):not(.button):not(.card):hover
       text-decoration: underline
 
+  .in-red
+    color: $red
+
+  .in-blue
+    color: $blue
+
   .cards
     margin: $vmargin 0
 
@@ -120,11 +127,14 @@ body
       &.center
         text-align: center
 
-      .super-big
+      .big, .super-big
+        font-size: 300%
         display: inline-block
         vertical-align: middle
-        margin: 0 $hmargin/3
-        font-size: 422%
+
+        &.super-big
+          font-size: 422%
+          margin: 0 $hmargin/3
 
       &.disabled
         background: mix($card-background, $foreground, 85%)

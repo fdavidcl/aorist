@@ -39,6 +39,7 @@ class MedioContratosController < ApplicationController
     @medio = find_by_id
     @contratos = @medio.medio_contratos
     @contrato = MedioContrato.find_by id: params[:id]
+    @pago = Pago.new
   end
 
   # def destroy

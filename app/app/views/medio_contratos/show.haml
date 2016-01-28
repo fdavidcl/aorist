@@ -11,3 +11,17 @@
 
 %p
   = @contrato.importe
+
+%h4 Realizar un pago
+= form_for [@medio, @contrato, @pago], url: medio_contrato_pagos_path(contrato_id: @contrato.id), method: :post do |f|
+  = f.label :importe, "Importe"
+  = f.number_field :importe, min: 0, value: 0
+  = f.date_select :fecha
+  = f.submit "Realizar pago"
+
+%h4 Pago realizados
+.cards
+  - @contrato.pagos.each do |p|
+    .card
+      %strong.in-red #{p.importe} €
+      %span.count= p.fecha
