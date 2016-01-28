@@ -19,10 +19,12 @@
 %h2 Detalles
 
 %p
+  %i.fa.fa-navicon
   Ordenar por:
   = link_to "fecha", {order: :date}, class: ["amount", "contract", "owner"].member?(params[:order]) ? "pure-button" : "pure-button button-selected"
   = link_to "importe", {order: :amount}, class: params[:order] == "amount" ? "pure-button button-selected" : "pure-button"
 
+  %i.fa.fa-indent
   Agrupar por:
   = link_to "contrato", {order: :contract}, class: params[:order] == "contract" ? "pure-button button-selected" : "pure-button"
   = link_to "empresa", {order: :owner}, class: params[:order] == "owner" ? "pure-button button-selected" : "pure-button"
