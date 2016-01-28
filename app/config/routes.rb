@@ -37,8 +37,8 @@ Rails.application.routes.draw do
     end
 
     resources :espacios
-    resources :contratos, controller: :medio_contratos do
-        resources :pagos
+    resources :contratos, controller: :medio_contratos, except: [:destroy, :update, :edit] do
+        resources :pagos, only: :create
     end
   end
 
@@ -54,8 +54,8 @@ Rails.application.routes.draw do
         delete 'espacios/:espacio_id', action: :deallocate_from, as: :deallocate_from
       end
     end
-    resources :contratos, controller: :anunciante_contratos do
-        resources :cobros
+    resources :contratos, controller: :anunciante_contratos, except: [:destroy, :update, :edit] do
+        resources :cobros, only: :create
     end
   end
 
