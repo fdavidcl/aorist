@@ -1,6 +1,6 @@
 class AnunciosController < ApplicationController
   layout "with_side", except: [:index]
-  helper_method :current_anunciante, :espacios_permitidos
+  helper_method :current_anunciante, :espacios_permitidos, :separar_anuncios
 
   private
   def anuncio_params
@@ -26,21 +26,17 @@ class AnunciosController < ApplicationController
   
   public
   def index
-    @pendientes, @en_marcha = separar_anuncios
   end
 
   def new
-    @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.new
   end
 
   def show
-    @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.find params[:id]
   end
 
   def create
-    @pendientes, @en_marcha = separar_anuncios
     @anuncio = current_anunciante.anuncios.create anuncio_params
 
     if @anuncio.save

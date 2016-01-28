@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119161134) do
+ActiveRecord::Schema.define(version: 20160128115732) do
 
   create_table "anunciante_contratos", force: :cascade do |t|
     t.integer  "anunciante_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160119161134) do
     t.string   "fiscales"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "disabled"
   end
 
   create_table "pagos", force: :cascade do |t|
