@@ -2,11 +2,6 @@
   = render partial: "common/back", locals: {path: anunciante_contratos_path}
   Contrato #{@contrato.id}
 
-%p
-
-  = link_to anunciante_contrato_path(@anunciante, @contrato), method: :delete, data: {confirm: "Confirma que quieres borrar el contrato '#{@contrato.id}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
-    %i.fa.fa-trash
-    Eliminar
 
 %p
   = @contrato.descripcion

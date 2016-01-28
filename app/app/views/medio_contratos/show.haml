@@ -2,11 +2,6 @@
   = render partial: "common/back", locals: {path: medio_contratos_path}
   Contrato #{@contrato.id}
 
-%p
-
-  = link_to medio_contrato_path(@medio, @contrato), method: :delete, data: {confirm: "Confirma que quieres borrar el contrato '#{@contrato.id}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
-    %i.fa.fa-trash
-    Eliminar
 
 %p
   = @contrato.fecha
