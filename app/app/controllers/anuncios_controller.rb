@@ -15,12 +15,12 @@ class AnunciosController < ApplicationController
     # Agrupa los anuncios según estén o no asignados a espacios
     current_anunciante.anuncios.find_each.partition { |a| a.espacios.empty? }
   end
-  
+
   def espacios_permitidos anuncio
-    if anuncio.URL.empty? 
-      @espacios = Espacio.find_each.reject &:anuncio 
-    else 
-      @espacios = Espacio.find_each.reject {|e| e.anuncio.nil? || !e.enlace}
+    if anuncio.URL.empty?
+      Espacio.find_each.reject &:anuncio
+    else
+      Espacio.find_each.select {|e| e.anuncio.nil? && e.enlace}
     end
   end
 
@@ -37,9 +37,6 @@ class AnunciosController < ApplicationController
   def show
     @pendientes, @en_marcha = separar_anuncios
     @anuncio = Anuncio.find params[:id]
-
-    # Buscamos los espacios que no tienen aún un anuncio asignado
-    @espacios_libres = Espacio.find_each.reject &:anuncio
   end
 
   def create
