@@ -1,6 +1,6 @@
 class AnunciosController < ApplicationController
   layout "with_side", except: [:index]
-  helper_method :current_anunciante
+  helper_method :current_anunciante, :espacios_permitidos
 
   private
   def anuncio_params
@@ -14,6 +14,14 @@ class AnunciosController < ApplicationController
   def separar_anuncios
     # Agrupa los anuncios según estén o no asignados a espacios
     current_anunciante.anuncios.find_each.partition { |a| a.espacios.empty? }
+  end
+  
+  def espacios_permitidos anuncio
+    if anuncio.URL.nil? 
+      @espacios = Espacio.find_each.reject &:anuncio 
+    else 
+      @espacios = Espacio.find_each.reject {|e| e.anuncio.nil? || !e.enlace}
+    end
   end
 
   public
