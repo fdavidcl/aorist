@@ -23,7 +23,7 @@ class AnunciosController < ApplicationController
       Espacio.find_each.select {|e| e.anuncio.nil? && e.enlace}
     end
   end
-
+  
   public
   def index
     @pendientes, @en_marcha = separar_anuncios
