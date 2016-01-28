@@ -44,11 +44,11 @@ class AnuncianteContratosController < ApplicationController
   end
 
 
-  def destroy
-    @contrato = AnuncianteContrato.find_by id: params[:id]
-    @contrato.destroy
-
-    redirect_to anunciante_contratos_path
-  end
+  # def destroy
+  #   @contrato = AnuncianteContrato.find_by id: params[:id]
+  #   @contrato.destroy
+  #
+  #   redirect_to anunciante_contratos_path
+  # end
 
 end
