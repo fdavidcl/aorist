@@ -18,15 +18,15 @@ helper_method :order_amount, :order_date, :group_contract, :group_owner
 
   def group_contract
     [
-      Cobro.group(:anunciante_contrato),
-      Pago.group(:medio_contrato)
+      Cobro.group(:anunciante_contrato).sum(:importe),
+      Pago.group(:medio_contrato).sum(:importe)
     ]
   end
 
   def group_owner
     [
-      Cobro.group(:anunciante),
-      Pago.group(:medio)
+      AnuncianteContrato.joins(:cobros).group(:anunciante).sum("cobros.importe"),
+      MedioContrato.joins(:pagos).group(:medio).sum("pagos.importe")
     ]
   end
 
@@ -37,10 +37,15 @@ helper_method :order_amount, :order_date, :group_contract, :group_owner
     @balance_total = @balance_positivo - @balance_negativo
 
     order = params[:order] || "date"
-    @cobros, @pagos = if order == "date"
-      order_date
-    elsif order == "amount"
+    @cobros, @pagos = case order
+    when "amount"
       order_amount
+    when "contract"
+      group_contract
+    when "owner"
+      group_owner
+    else
+      order_date
     end
   end
 

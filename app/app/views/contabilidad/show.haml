@@ -20,24 +20,45 @@
 = link_to "Agrupar por contrato", {order: :contract}, class: "pure-button"
 = link_to "Agrupar por empresa", {order: :owner}, class: "pure-button"
 
-
 .pure-g
   .pure-u-1.pure-u-lg-11-24
-    %h4 Todos los cobros
-    .cards
-      - @cobros.each do |cobro|
-        .card
-          %strong= cobro.importe
-          €
-          %span.count= cobro.fecha
-          %span.count (Contrato #{cobro.anunciante_contrato.id} - #{cobro.anunciante_contrato.anunciante.nombre})
+    - if @cobros.is_a? Hash
+      %h4 Suma de cobros
+      .cards
+        - @cobros.each do |key, suma|
+          .card
+            - if key.is_a? AnuncianteContrato
+              Contrato #{key.id} (#{key.descripcion} - #{key.anunciante.nombre})
+            - elsif key.is_a? Anunciante
+              = key.nombre
+            %strong #{suma} €
+    - else
+      %h4 Todos los cobros
+      .cards
+        - @cobros.each do |cobro|
+          .card
+            %strong= cobro.importe
+            €
+            %span.count= cobro.fecha
+            %span.count (Contrato #{cobro.anunciante_contrato.id} - #{cobro.anunciante_contrato.anunciante.nombre})
 
   .pure-u-1.pure-u-lg-2-24
   .pure-u-1.pure-u-lg-11-24
-    %h4 Todos los pagos
-    .cards
-      - @pagos.each do |pago|
-        .card
-          %strong.in-red #{pago.importe} €
-          %span.count= pago.fecha
-          %span.count (Contrato #{pago.medio_contrato.id} - #{pago.medio_contrato.medio.nombre})
+    - if @pagos.is_a? Hash
+      %h4 Suma de pagos
+      .cards
+        - @pagos.each do |key, suma|
+          .card
+            - if key.is_a? MedioContrato
+              Contrato #{key.id} (#{key.descripcion} - #{key.medio.nombre})
+            - elsif key.is_a? Medio
+              = key.nombre
+            %strong.in-red #{suma} €
+    - else
+      %h4 Todos los pagos
+      .cards
+        - @pagos.each do |pago|
+          .card
+            %strong.in-red #{pago.importe} €
+            %span.count= pago.fecha
+            %span.count (Contrato #{pago.medio_contrato.id} - #{pago.medio_contrato.medio.nombre})
