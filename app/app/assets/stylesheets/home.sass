@@ -131,10 +131,21 @@ body
         font-size: 300%
         display: inline-block
         vertical-align: middle
+        // Sorry
+        margin-top: .25em
 
         &.super-big
           font-size: 422%
           margin: 0 $hmargin/3
+
+      .float-left
+        float: left
+      .float-right
+        float: right
+
+        &:after
+          float: none
+          clear: both
 
       &.disabled
         background: mix($card-background, $foreground, 85%)
