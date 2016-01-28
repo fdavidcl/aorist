@@ -55,7 +55,7 @@ A partir de fecha busca cobros \autoref{rdtrans4} y pagos \autoref{rdtrans3}, ob
 Salida:  
 Lista de transacciones con su importe y contrato asociado y balance total.
 
-\rf{Obtener pagos ordenados por importe}
+\rf{Obtener transacciones ordenadas por importe}
 
 Actor:  
 Empleado de contabilidad
@@ -64,52 +64,40 @@ Entrada:
 Ninguna.
 
 Procedimiento:  
-Obtiene los pagos y ordena de mayor a menor por importe.
+Obtiene los pagos y los cobros y los ordena de mayor a menor por importe.
 
 Salida:  
-El pago y el valor que tiene asociado.
+Lista de pagos y cobros y el valor que tienen asociado.
 
-\rf{Obtener cobros ordenados por importe}
+
+\rf{Gasto por anunciante y medio}
 
 Actor:  
 Empleado de contabilidad
 
 Entrada:  
-Ninguna.
+ID de anunciante (RD 1) e ID de medio (RD 4).
 
 Procedimiento:  
-Obtiene los cobros y ordena de mayor a menor por importe.
+Se buscan dentro de la tabla de cobros contratos asociados al id del anunciante y se suman los importes. De igual forma operamos para los pagos asociados a cada medio.
 
 Salida:  
-El cobro y el valor que tiene asociado.
+Cobros realizados a cada anunciante y suma del dinero gastado para cada uno de ellos. Pagos realizados a cada anunciante y suma del dinero invertido en cada uno de ellos.
 
-\rf{Gasto por anunciantes}
+
+\rf{Gasto por contrato}
 
 Actor:  
 Empleado de contabilidad
 
 Entrada:  
-ID de anunciante (RD 1).
+Ninguna
 
 Procedimiento:  
-Se buscan dentro de la tabla de cobros contratos asociados al id del anunciante y se suman los importes.
+Agrupamos los pagos y los cobros ordenados por cada contrato y los mostramos por pantalla. 
 
 Salida:  
-Valor total del dinero gastado por el anunciante.
-
-\rf{Gasto en cada medio}
-
-Actor:  
-Empleado de contabilidad
-
-Entrada:  
-ID de medio (RD 4).
-
-Procedimiento:  
-Se buscan dentro de la tabla de pagos contratos asociados al id del medio y se suman los importes.
-
-Salida:  
-Valor total que ha ganado el medio.
+Cobros y pagos agrupados por contrato.
 
 # Requisitos de datos
 
@@ -117,26 +105,31 @@ Valor total que ha ganado el medio.
 \label{rdtrans1}
 
 - ID contrato (RD 6)
-- importe [valor real]
+- Importe [valor real]
+- Fecha del pago
 
 \rd{Datos requeridos para cobro a anunciante}
 \label{rdtrans2}
 
 - ID contrato (RD 3)
-- importe [valor real]
+- Importe [valor real]
+- Fecha del cobro
 
 \rd{Datos almacenados de pago}
 \label{rdtrans3}
 
 - ID contrato (RD 6)
-- fecha transacción [fecha]
-- importe [valor real]
+- Importe [valor real]
+- Fecha del pago
 
 \rd{Datos almacenados de cobro}
 \label{rdtrans4}
 
 - ID contrato (RD 3)
-- fecha transacción [fecha]
-- importe [valor real]
+- Importe [valor real]
+- Fecha del cobro
 
 # Restricciones semánticas
+
+\rs{Pagos}
+La suma de todos los pagos relacionados con un contrato no superará en ningún momento el importe total especificado en el contrato.

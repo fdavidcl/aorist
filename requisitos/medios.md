@@ -47,10 +47,10 @@ Actor:
 Empleado encargado de contrataciones.
 
 Entrada:  
-Identificador (o identificadores) del medio.
+Identificador del medio.
 
 Procesamiento:  
-Buscar y mostrar los datos de los medios requeridos y sus contratos asociados (\autoref{rdmedio3}).
+Buscar y mostrar los datos de los medios requeridos y sus audiencias y contratos asociados (\autoref{rdmedio3}).
 
 Salida:  
 Datos de los medios.
@@ -92,16 +92,16 @@ Ninguna.
 
    - ID contrato
    - ID medio
-   - Fecha
-   - Duración del contrato (cadena de caracteres)
+   - Fecha inicio
+   - Fecha finalización
    - Importe (número real)
    - Descripción (cadena de caracteres)
 
 
 # Restricciones semánticas
 
-\rs{Audiencia}
-Todo medio tendrá al menos una audiencia asociada, pudiendo tener varias.
+\rs{Contratos}
+Los contratos deben contener, al menos, el identificador del contrato, una fecha, el importe y el identificador del medio.
 
 \rs{Contratos}
-Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del medio.
+La fecha de finalización de un contrato será posterior a la fecha de inicio.

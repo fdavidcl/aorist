@@ -66,7 +66,7 @@ Entrada:
 ID empresa
 
 Procesamiento:  
-Buscar y mostrar los datos de la empresa anunciante y sus contratos asociados (\autoref{rdanun3}).
+Buscar y mostrar los datos de la empresa anunciante y sus audiencias y contratos asociados (\autoref{rdanun3}).
 
 Salida:  
 \autoref{rdanun1}
@@ -92,12 +92,15 @@ Salida:
 
  - ID contrato
  - ID empresa anunciante
- - ID's audiencias (cadena de ID's audiencias)
- - Fecha
+ - Fecha inicio
+ - Fecha finalización
  - Importe (numero real)
  - Descripción (cadena de caracteres)
 
 # Restricciones semánticas
 
 \rs{Contratos}
-Los contratos deben contener, al menos, una audiencia, el identificador del contrato, una fecha, el precio y el identificador del anunciante.
+Los contratos deben contener, al menos, el identificador del contrato, una fecha, el importe y el identificador del anunciante.
+
+\rs{Contratos}
+La fecha de finalización de un contrato será posterior a la fecha de inicio.
