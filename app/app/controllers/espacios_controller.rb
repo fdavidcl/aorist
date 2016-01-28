@@ -31,9 +31,10 @@ class EspaciosController < ApplicationController
   def create
     @medio = find_by_id
     @espacios = @medio.espacios
-    @espacio = @medio.espacios.create espacio_params
+    @espacio = Espacio.new espacio_params
 
     if @espacio.save
+      @medio.espacios << @espacio
       redirect_to medio_espacio_path params[:medio_id], @espacio.id
     else
       render :new

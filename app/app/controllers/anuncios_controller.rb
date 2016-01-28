@@ -23,7 +23,7 @@ class AnunciosController < ApplicationController
       Espacio.find_each.select {|e| e.anuncio.nil? && e.enlace}
     end
   end
-  
+
   public
   def index
   end
@@ -37,9 +37,10 @@ class AnunciosController < ApplicationController
   end
 
   def create
-    @anuncio = current_anunciante.anuncios.create anuncio_params
+    @anuncio = Anuncio.new anuncio_params
 
     if @anuncio.save
+      current_anunciante.anuncios << @anuncio
       redirect_to anunciante_anuncio_path params[:anunciante_id], @anuncio.id
     else
       render :new
