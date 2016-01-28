@@ -41,7 +41,8 @@ class MediosController < ApplicationController
 
   def destroy
     @medio = Medio.find_by id: params[:id]
-    @medio.destroy
+    @medio.disable = true
+    @medio.espacios.destroy
 
     redirect_to medios_path
   end
