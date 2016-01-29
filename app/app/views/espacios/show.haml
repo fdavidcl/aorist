@@ -5,6 +5,11 @@
   del medio
   = link_to @medio.nombre, @medio
 
+%p
+  = link_to medio_espacio_path, method: :delete, data: {confirm: "Confirma que quieres borrar el espacio '#{@espacio.id}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
+    %i.fa.fa-trash
+    Eliminar
+
 %h4 Dimensiones
 %ul
   %li Ancho: #{@espacio.ancho}
@@ -24,5 +29,3 @@
     - else
       No puede
     enlazar a un sitio web.
-
-= link_to "Eliminar", medio_espacio_path(@medio, @espacio), method: :delete, class: "pure-button button-delete"
