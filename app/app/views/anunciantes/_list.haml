@@ -3,10 +3,10 @@
   Nuevo anunciante
 
 .cards
-  - if @anunciantes.empty?
+  - if anunciantes.empty?
     .card.disabled Aquí no hay nada
   - else
-    - @anunciantes.each do |anunciante|
+    - anunciantes.each do |anunciante|
       = link_to anunciante, {class: "card"} do
         = anunciante.nombre
         %span.count #{anunciante.anuncios.count} anuncios

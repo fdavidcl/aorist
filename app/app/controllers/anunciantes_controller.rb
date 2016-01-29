@@ -1,20 +1,23 @@
 class AnunciantesController < ApplicationController
   layout "with_side", except: [:index]
+  helper_method :anunciantes
 
   private
   def anunciante_params
     params.require(:anunciante).permit(:nombre, :web, :fiscales)
   end
 
+  def anunciantes
+    Anunciante.where disabled: false
+  end
+
   public
 
   def new
-    @anunciantes = Anunciante.all
     @anunciante = Anunciante.new
   end
 
   def create
-    @anunciantes = Anunciante.all
     @anunciante = Anunciante.new anunciante_params
 
     if @anunciante.save
@@ -25,7 +28,6 @@ class AnunciantesController < ApplicationController
   end
 
   def show
-    @anunciantes = Anunciante.all
     @anunciante = Anunciante.find_by id: params[:id]
 
     @audiences_asociables = if @anunciante.audiences.empty?
@@ -36,12 +38,12 @@ class AnunciantesController < ApplicationController
   end
 
   def index
-    @anunciantes = Anunciante.all
   end
 
   def destroy
     @anunciante = Anunciante.find_by id: params[:id]
     @anunciante.disabled = true
+    @anunciante.save
     @anunciante.anuncios.destroy
 
     redirect_to anunciantes_path
