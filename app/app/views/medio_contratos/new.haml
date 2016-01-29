@@ -5,21 +5,19 @@
   en el medio
   = link_to @medio.nombre, @medio
 
-= form_for [:medio, @contrato], url: medio_contratos_path do |f|
+= form_for [:medio, @contrato], url: medio_contratos_path, html: {class: "pure-form"} do |f|
   %p
-    = f.label :descripcion, "Descripción"
-    = f.text_field :descripcion
+    = f.text_area :descripcion, placeholder: "Descripción"
   %p
     = f.label :fecha, "Fecha creación"
     = f.date_select :fecha
-    
+
   %p
     = f.label :fecha, "Fecha finalización"
     = f.date_select :duracion
-    
-  %p 
-    = f.label :importe, "Importe"
-    = f.text_field :importe
-    
+
   %p
-    = f.submit "Crear contrato"
+    = f.text_field :importe, placeholder: "Importe"
+
+  %p
+    = f.submit "Crear contrato", class: "pure-button pure-button-primary"

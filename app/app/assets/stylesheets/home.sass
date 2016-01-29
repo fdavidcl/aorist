@@ -137,7 +137,7 @@ body
         max-width: 80%
         overflow: hidden
         text-overflow: ellipsis
-        
+
       .float-right
         float: right
         &:after
@@ -191,3 +191,15 @@ body
       background: transparent
       cursor: default
       color: $link
+
+  .pure-form
+    input[type="text"]
+      min-width: 50%
+
+    textarea
+      min-width: 70%
+      height: 10em
+
+    .field_with_errors
+      input, select
+        border-color: $red !important

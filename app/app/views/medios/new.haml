@@ -2,18 +2,15 @@
   = render partial: "common/back", locals: {path: medios_path}
   Crear un nuevo medio
 
-= form_for :medio, url: medios_path do |f|
+= form_for :medio, url: medios_path, html: {class: "pure-form"} do |f|
   %p
-    = f.label :nombre
-    = f.text_field :nombre
+    = f.text_field :nombre, placeholder: "Nombre"
 
   %p
-    = f.label :web
-    = f.text_field :web
+    = f.text_field :web, placeholder: "Web"
 
   %p
-    = f.label :fiscales
-    = f.text_field :fiscales
+    = f.text_field :fiscales, placeholder: "Datos fiscales"
 
   %p
-    = f.submit "Crear medio"
+    = f.submit "Crear medio", class: "pure-button pure-button-primary"

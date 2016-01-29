@@ -2,14 +2,12 @@
   = render partial: "common/back", locals: {path: audiences_path}
   Crear una nueva audiencia
 
-= form_for :audience, url: audiences_path do |f|
+= form_for :audience, url: audiences_path, html: {class: "pure-form"} do |f|
   %p
-    = f.label :nombre
-    = f.text_field :nombre
+    = f.text_field :nombre, placeholder: "Nombre"
 
   %p
-    = f.label :descripcion
-    = f.text_field :descripcion
+    = f.text_area :descripcion, placeholder: "Descripción"
 
   %p
-    = f.submit
+    = f.submit "Crear audiencia", class: "pure-button pure-button-primary"

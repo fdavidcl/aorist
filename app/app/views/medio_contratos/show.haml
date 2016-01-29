@@ -20,11 +20,10 @@
   = @contrato.importe
 
 %h4 Realizar un pago
-= form_for [@medio, @contrato, @pago], url: medio_contrato_pagos_path(contrato_id: @contrato.id), method: :post do |f|
-  = f.label :importe, "Importe"
-  = f.number_field :importe, min: 0, value: 0
+= form_for [@medio, @contrato, @pago], url: medio_contrato_pagos_path(contrato_id: @contrato.id), method: :post, html: {class: "pure-form"} do |f|
+  = f.number_field :importe, min: 0, placeholder: "Importe"
   = f.date_select :fecha
-  = f.submit "Realizar pago"
+  = f.submit "Realizar pago", class: "pure-button pure-button-primary"
 
 %h4 Pagos realizados
 .cards

@@ -5,14 +5,12 @@
   del anunciante
   = link_to current_anunciante.nombre, current_anunciante
 
-= form_for [:anunciante, @anuncio], url: anunciante_anuncios_path do |f|
+= form_for [:anunciante, @anuncio], url: anunciante_anuncios_path, html: {class: "pure-form"} do |f|
   %p
-    = f.label :contenido
-    = f.text_field :contenido
+    = f.text_field :contenido, placeholder: "Contenido"
 
   %p
-    = f.label :URL
-    = f.text_field :URL
+    = f.text_field :URL, placeholder: "URL"
 
   %p
-    = f.submit
+    = f.submit "Crear anuncio", class: "pure-button pure-button-primary"
