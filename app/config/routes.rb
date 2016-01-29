@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
+
   get 'contabilidad/index'
 
   get 'anunciante_contratos/index'
@@ -58,6 +60,9 @@ Rails.application.routes.draw do
   end
 
   resources :audiences, except: [:update, :edit]
+
+
+  match '*unmatched_route', :to => 'application#raise_not_found!', :via => :all
 
   # Example resource route with options:
   #   resources :products do
