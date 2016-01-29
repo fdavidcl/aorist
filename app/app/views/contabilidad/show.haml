@@ -57,6 +57,8 @@
                 = link_to cobro.anunciante_contrato.anunciante.nombre, cobro.anunciante_contrato.anunciante
             %strong.float-right #{cobro.importe} €
         .card.multiline.center.disabled
+          .float-left
+            %i.fa.fa-info
           Para realizar un nuevo cobro, dirígete al contrato al que quieres asociarlo.
 
   .pure-u-1.pure-u-lg-2-24
@@ -88,4 +90,6 @@
                 = link_to pago.medio_contrato.medio.nombre, pago.medio_contrato.medio
             %strong.in-red.float-right #{pago.importe} €
         .card.multiline.center.disabled
+          .float-left
+            %i.fa.fa-info
           Para realizar un nuevo pago, dirígete al contrato al que quieres asociarlo.

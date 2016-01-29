@@ -5,7 +5,9 @@
 - if @anunciante.disabled
   .cards
     .card.disabled
-      Este medio está eliminado.
+      .float-left
+        %i.fa.fa-times
+      Este anunciante está eliminado.
 - else
   %p
     = link_to anunciante_anuncios_path(@anunciante), {class: "pure-button"} do
@@ -30,18 +32,24 @@
 - unless @anunciante.disabled
   %h4 Audiencias asociadas
   .cards
-    - @anunciante.audiences.each do |a|
-      .card
-        = link_to dissociate_audience_anunciante_path(@anunciante, a), method: :delete, class: "pure-button button-delete" do
-          %i.fa.fa-times
-          Quitar
-        = link_to a.nombre, a
+    - if @anunciante.audiences.empty?
+      .card.disabled Aquí no hay nada
+    - else
+      - @anunciante.audiences.each do |a|
+        .card
+          = link_to dissociate_audience_anunciante_path(@anunciante, a), method: :delete, class: "pure-button button-delete" do
+            %i.fa.fa-times
+            Quitar
+          = link_to a.nombre, a
 
   %h4 Asociar nuevas audiencias
   .cards
-    - @audiences_asociables.each do |a|
-      .card
-        = link_to associate_audience_anunciante_path(@anunciante, a), method: :post, class: "pure-button pure-button-primary" do
-          %i.fa.fa-plus
-          Asociar
-        = link_to a.nombre, a
+    - if @audiences_asociables.empty?
+      .card.disabled Aquí no hay nada
+    - else
+      - @audiences_asociables.each do |a|
+        .card
+          = link_to associate_audience_anunciante_path(@anunciante, a), method: :post, class: "pure-button pure-button-primary" do
+            %i.fa.fa-plus
+            Asociar
+          = link_to a.nombre, a

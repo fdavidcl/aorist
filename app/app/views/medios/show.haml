@@ -6,6 +6,8 @@
 - if @medio.disabled
   .cards
     .card.disabled
+      .float-left
+        %i.fa.fa-times
       Este medio está eliminado.
 - else
   %p
@@ -44,9 +46,12 @@
 
   %h4 Asociar nuevas audiencias
   .cards
-    - @lista_audiences_asociables.each do |a|
-      .card
-        = link_to associate_audience_medio_path(@medio, a), method: :post, class: "pure-button pure-button-primary" do
-          %i.fa.fa-plus
-          Asociar
-        = link_to a.nombre, a
+    - if @lista_audiences_asociables.empty?
+      .card.disabled Aquí no hay nada
+    - else
+      - @lista_audiences_asociables.each do |a|
+        .card
+          = link_to associate_audience_medio_path(@medio, a), method: :post, class: "pure-button pure-button-primary" do
+            %i.fa.fa-plus
+            Asociar
+          = link_to a.nombre, a
