@@ -3,18 +3,23 @@
   = render partial: "common/back", locals: {path: medios_path}
   = @medio.nombre
 
-%p
-  = link_to medio_espacios_path(@medio), {class: "pure-button"} do
-    %i.fa.fa-square-o
-    Espacios (#{@medio.espacios.count})
+- if @medio.disabled
+  .cards
+    .card.disabled
+      Este medio está eliminado.
+- else
+  %p
+    = link_to medio_espacios_path(@medio), {class: "pure-button"} do
+      %i.fa.fa-square-o
+      Espacios (#{@medio.espacios.count})
 
-  = link_to medio_contratos_path(@medio), {class: "pure-button"} do
-    %i.fa.fa-file-text
-    Contratos (#{@medio.medio_contratos.count})
+    = link_to medio_contratos_path(@medio), {class: "pure-button"} do
+      %i.fa.fa-file-text
+      Contratos (#{@medio.medio_contratos.count})
 
-  = link_to medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
-    %i.fa.fa-trash
-    Eliminar
+    = link_to medio_path(@medio), method: :delete, data: {confirm: "Confirma que quieres borrar el medio '#{@medio.nombre}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
+      %i.fa.fa-trash
+      Eliminar
 
 %h4 Propiedades
 %p
@@ -24,20 +29,24 @@
   Datos fiscales:
   = @medio.fiscales
 
-%h4 Audiencias asociadas
-.cards
-  - @medio.audiences.each do |a|
-    .card
-      = link_to dissociate_audience_medio_path(@medio, a), method: :delete, class: "pure-button button-delete" do
-        %i.fa.fa-times
-        Quitar
-      = link_to a.nombre, a
+- unless @medio.disabled
+  %h4 Audiencias asociadas
+  .cards
+    - if @medio.audiences.empty?
+      .card.disabled Aquí no hay nada
+    - else
+      - @medio.audiences.each do |a|
+        .card
+          = link_to dissociate_audience_medio_path(@medio, a), method: :delete, class: "pure-button button-delete" do
+            %i.fa.fa-times
+            Quitar
+          = link_to a.nombre, a
 
-%h4 Asociar nuevas audiencias
-.cards
-  - @lista_audiences_asociables.each do |a|
-    .card
-      = link_to associate_audience_medio_path(@medio, a), method: :post, class: "pure-button pure-button-primary" do
-        %i.fa.fa-plus
-        Asociar
-      = link_to a.nombre, a
+  %h4 Asociar nuevas audiencias
+  .cards
+    - @lista_audiences_asociables.each do |a|
+      .card
+        = link_to associate_audience_medio_path(@medio, a), method: :post, class: "pure-button pure-button-primary" do
+          %i.fa.fa-plus
+          Asociar
+        = link_to a.nombre, a
