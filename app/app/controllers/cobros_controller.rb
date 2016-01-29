@@ -8,7 +8,7 @@ class CobrosController < ApplicationController
   public
   def create
     @cobro = Cobro.new cobro_params
-    @contrato = AnuncianteContrato.find_by id: params[:contrato_id]
+    @contrato = AnuncianteContrato.find_by! id: params[:contrato_id]
 
     if @cobro.save
       @contrato.cobros << @cobro

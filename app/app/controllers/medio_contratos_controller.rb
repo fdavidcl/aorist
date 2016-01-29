@@ -7,7 +7,7 @@ class MedioContratosController < ApplicationController
   end
 
   def find_by_id
-    Medio.find_by id: params[:medio_id]
+    Medio.find_by! id: params[:medio_id]
   end
 
   public
@@ -38,12 +38,12 @@ class MedioContratosController < ApplicationController
   def show
     @medio = find_by_id
     @contratos = @medio.medio_contratos
-    @contrato = MedioContrato.find_by id: params[:id]
+    @contrato = MedioContrato.find_by! id: params[:id]
     @pago = Pago.new
   end
 
   # def destroy
-  #   @contrato = MedioContrato.find_by id: params[:id]
+  #   @contrato = MedioContrato.find_by! id: params[:id]
   #   @contrato.destroy
   #
   #   redirect_to medio_contratos_path

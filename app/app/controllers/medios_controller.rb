@@ -27,7 +27,7 @@ class MediosController < ApplicationController
   end
 
   def show
-    @medio = Medio.find_by id: params[:id]
+    @medio = Medio.find_by! id: params[:id]
 
     @lista_audiences_asociables = if @medio.audiences.empty?
       Audience.all
@@ -41,7 +41,7 @@ class MediosController < ApplicationController
 
 
   def destroy
-    @medio = Medio.find_by id: params[:id]
+    @medio = Medio.find_by! id: params[:id]
     @medio.disabled = true
     @medio.save
     @medio.espacios.destroy
@@ -50,16 +50,16 @@ class MediosController < ApplicationController
   end
 
   def associate_audience
-    @audience = Audience.find_by id: params[:audience_id]
-    @medio = Medio.find_by id: params[:id]
+    @audience = Audience.find_by! id: params[:audience_id]
+    @medio = Medio.find_by! id: params[:id]
     @medio.audiences << @audience unless @medio.audiences.member? @audience
 
     redirect_to @medio
   end
 
   def dissociate_audience
-    @audience = Audience.find_by id: params[:audience_id]
-    @medio = Medio.find_by id: params[:id]
+    @audience = Audience.find_by! id: params[:audience_id]
+    @medio = Medio.find_by! id: params[:id]
     @medio.audiences.delete @audience
 
     redirect_to @medio

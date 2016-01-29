@@ -7,7 +7,7 @@ class AnuncianteContratosController < ApplicationController
   end
 
   def find_by_id
-    Anunciante.find_by id: params[:anunciante_id]
+    Anunciante.find_by! id: params[:anunciante_id]
   end
 
   public
@@ -40,13 +40,13 @@ class AnuncianteContratosController < ApplicationController
   def show
     @anunciante = find_by_id
     @contratos = @anunciante.anunciante_contratos
-    @contrato = AnuncianteContrato.find_by id: params[:id]
+    @contrato = AnuncianteContrato.find_by! id: params[:id]
     @cobro = Cobro.new
   end
 
 
   # def destroy
-  #   @contrato = AnuncianteContrato.find_by id: params[:id]
+  #   @contrato = AnuncianteContrato.find_by! id: params[:id]
   #   @contrato.destroy
   #
   #   redirect_to anunciante_contratos_path

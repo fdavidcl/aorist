@@ -7,7 +7,7 @@ class EspaciosController < ApplicationController
   end
 
   def find_by_id
-    Medio.find_by id: params[:medio_id]
+    Medio.find_by! id: params[:medio_id]
   end
 
   public
@@ -25,7 +25,7 @@ class EspaciosController < ApplicationController
   def show
     @medio = find_by_id
     @espacios = @medio.espacios
-    @espacio = Espacio.find_by id: params[:id]
+    @espacio = Espacio.find_by! id: params[:id]
   end
 
   def create
@@ -42,7 +42,7 @@ class EspaciosController < ApplicationController
   end
 
   def destroy
-    @espacio = Espacio.find_by id: params[:id]
+    @espacio = Espacio.find_by! id: params[:id]
     @espacio.destroy
 
     redirect_to medio_espacios_path

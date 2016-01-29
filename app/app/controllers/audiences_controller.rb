@@ -25,7 +25,7 @@ class AudiencesController < ApplicationController
 
   def show
     @audiences = Audience.all
-    @audience = Audience.find_by id: params[:id]
+    @audience = Audience.find_by! id: params[:id]
   end
 
   def index
@@ -33,7 +33,7 @@ class AudiencesController < ApplicationController
   end
 
   def destroy
-    @audience = Audience.find_by id: params[:id]
+    @audience = Audience.find_by! id: params[:id]
     @audience.destroy
 
     redirect_to audiences_path

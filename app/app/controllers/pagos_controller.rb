@@ -8,7 +8,7 @@ class PagosController < ApplicationController
   public
   def create
     @pago = Pago.new pago_params
-    @contrato = MedioContrato.find_by id: params[:contrato_id]
+    @contrato = MedioContrato.find_by! id: params[:contrato_id]
 
     if @pago.save
       @contrato.pagos << @pago

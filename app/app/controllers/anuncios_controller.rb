@@ -8,7 +8,7 @@ class AnunciosController < ApplicationController
   end
 
   def current_anunciante
-    Anunciante.find_by id: params[:anunciante_id]
+    Anunciante.find_by! id: params[:anunciante_id]
   end
 
   def separar_anuncios
@@ -48,23 +48,23 @@ class AnunciosController < ApplicationController
   end
 
   def destroy
-    @anuncio = Anuncio.find_by id: params[:id]
+    @anuncio = Anuncio.find_by! id: params[:id]
     @anuncio.destroy
 
     redirect_to anuncios_path
   end
 
   def allocate_to
-    @anuncio = Anuncio.find_by id: params[:id]
-    @espacio = Espacio.find_by id: params[:espacio_id]
+    @anuncio = Anuncio.find_by! id: params[:id]
+    @espacio = Espacio.find_by! id: params[:espacio_id]
     @anuncio.espacios << @espacio unless @espacio.nil?
 
     redirect_to anunciante_anuncio_path
   end
 
   def deallocate_from
-    @anuncio = Anuncio.find_by id: params[:id]
-    @espacio = Espacio.find_by id: params[:espacio_id]
+    @anuncio = Anuncio.find_by! id: params[:id]
+    @espacio = Espacio.find_by! id: params[:espacio_id]
     @anuncio.espacios.delete @espacio
 
     redirect_to anunciante_anuncio_path

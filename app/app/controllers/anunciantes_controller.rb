@@ -28,7 +28,7 @@ class AnunciantesController < ApplicationController
   end
 
   def show
-    @anunciante = Anunciante.find_by id: params[:id]
+    @anunciante = Anunciante.find_by! id: params[:id]
 
     @audiences_asociables = if @anunciante.audiences.empty?
       Audience.all
@@ -41,7 +41,7 @@ class AnunciantesController < ApplicationController
   end
 
   def destroy
-    @anunciante = Anunciante.find_by id: params[:id]
+    @anunciante = Anunciante.find_by! id: params[:id]
     @anunciante.disabled = true
     @anunciante.save
     @anunciante.anuncios.destroy
@@ -50,16 +50,16 @@ class AnunciantesController < ApplicationController
   end
 
   def associate_audience
-    @audience = Audience.find_by id: params[:audience_id]
-    @anunciante = Anunciante.find_by id: params[:id]
+    @audience = Audience.find_by! id: params[:audience_id]
+    @anunciante = Anunciante.find_by! id: params[:id]
     @anunciante.audiences << @audience unless @anunciante.audiences.member? @audience
 
     redirect_to @anunciante
   end
 
   def dissociate_audience
-    @audience = Audience.find_by id: params[:audience_id]
-    @anunciante = Anunciante.find_by id: params[:id]
+    @audience = Audience.find_by! id: params[:audience_id]
+    @anunciante = Anunciante.find_by! id: params[:id]
     @anunciante.audiences.delete @audience
 
     redirect_to @anunciante
