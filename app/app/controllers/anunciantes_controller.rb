@@ -41,7 +41,7 @@ class AnunciantesController < ApplicationController
 
   def destroy
     @anunciante = Anunciante.find_by id: params[:id]
-    @anunciante.disable = true
+    @anunciante.disabled = true
     @anunciante.anuncios.destroy
 
     redirect_to anunciantes_path
