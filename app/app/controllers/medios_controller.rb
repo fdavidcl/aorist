@@ -1,19 +1,22 @@
 class MediosController < ApplicationController
   layout "with_side", except: [:index]
+  helper_method :medios
 
   private
   def medio_params
     params.require(:medio).permit(:nombre, :web, :fiscales)
   end
 
+  def medios
+    Medio.where disabled: false
+  end
+
   public
   def new
-    @medios = Medio.all
     @medio = Medio.new
   end
 
   def create
-    @medios = Medio.all
     @medio = Medio.new medio_params
 
     if @medio.save
@@ -24,7 +27,6 @@ class MediosController < ApplicationController
   end
 
   def show
-    @medios = Medio.all
     @medio = Medio.find_by id: params[:id]
 
     @lista_audiences_asociables = if @medio.audiences.empty?
@@ -35,13 +37,13 @@ class MediosController < ApplicationController
   end
 
   def index
-    @medios = Medio.all
   end
 
 
   def destroy
     @medio = Medio.find_by id: params[:id]
-    @medio.disable = true
+    @medio.disabled = true
+    @medio.save
     @medio.espacios.destroy
 
     redirect_to medios_path
@@ -51,10 +53,10 @@ class MediosController < ApplicationController
     @audience = Audience.find_by id: params[:audience_id]
     @medio = Medio.find_by id: params[:id]
     @medio.audiences << @audience unless @medio.audiences.member? @audience
-    
+
     redirect_to @medio
   end
-  
+
   def dissociate_audience
     @audience = Audience.find_by id: params[:audience_id]
     @medio = Medio.find_by id: params[:id]
