@@ -28,21 +28,19 @@ Rails.application.routes.draw do
 
   get 'contabilidad' => 'contabilidad#show'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-  resources :medios do
+  resources :medios, except: [:update, :edit] do
     member do
       post 'audiences/:audience_id', action: :associate_audience, as: :associate_audience
       delete 'audiences/:audience_id', action: :dissociate_audience, as: :dissociate_audience
     end
 
-    resources :espacios
+    resources :espacios, except: [:update, :edit]
     resources :contratos, controller: :medio_contratos, except: [:destroy, :update, :edit] do
         resources :pagos, only: :create
     end
   end
 
-  resources :anunciantes do
+  resources :anunciantes, except: [:update, :edit] do
     member do
       post 'audiences/:audience_id', action: :associate_audience, as: :associate_audience
       delete 'audiences/:audience_id', action: :dissociate_audience, as: :dissociate_audience
@@ -59,7 +57,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :audiences
+  resources :audiences, except: [:update, :edit]
 
   # Example resource route with options:
   #   resources :products do
