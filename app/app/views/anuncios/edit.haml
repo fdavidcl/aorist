@@ -1,0 +1,16 @@
+%h1
+  = render partial: "common/back", locals: {path: anunciante_anuncios_path}
+  Editando anuncio #{@anuncio.id}
+%h3
+  del anunciante
+  = link_to current_anunciante.nombre, current_anunciante
+
+= form_for [:anunciante, @anuncio], url: anunciante_anuncio_path, method: :patch, html: {class: "pure-form"} do |f|
+  %p
+    = f.text_field :contenido, placeholder: "Contenido"
+
+  %p
+    = f.text_field :URL, placeholder: "URL"
+
+  %p
+    = f.submit "Guardar anuncio", class: "pure-button pure-button-primary"

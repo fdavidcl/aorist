@@ -5,8 +5,15 @@
   del anunciante
   = link_to current_anunciante.nombre, current_anunciante
 
-%h4 Propiedades
+%p
+  = link_to edit_anunciante_anuncio_path, class: "pure-button" do
+    %i.fa.fa-pencil
+    Editar
+  = link_to anunciante_anuncio_path, method: :delete, data: {confirm: "Confirma que quieres borrar el anuncio '#{@anuncio.id}'. Esta acción no se puede deshacer"}, class: "pure-button button-delete" do
+    %i.fa.fa-trash
+    Eliminar
 
+%h4 Propiedades
 %p
   Contenido:
   = @anuncio.contenido

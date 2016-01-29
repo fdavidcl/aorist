@@ -36,6 +36,10 @@ class AnunciosController < ApplicationController
     @anuncio = Anuncio.find params[:id]
   end
 
+  def edit
+    @anuncio = Anuncio.find params[:id]
+  end
+
   def create
     @anuncio = Anuncio.new anuncio_params
 
@@ -47,11 +51,21 @@ class AnunciosController < ApplicationController
     end
   end
 
+  def update
+    @anuncio = Anuncio.find params[:id]
+
+    if @anuncio.update anuncio_params
+      redirect_to [@anuncio.anunciante, @anuncio]
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @anuncio = Anuncio.find_by! id: params[:id]
     @anuncio.destroy
 
-    redirect_to anuncios_path
+    redirect_to anunciante_anuncios_path
   end
 
   def allocate_to
