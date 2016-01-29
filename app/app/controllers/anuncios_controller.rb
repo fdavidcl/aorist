@@ -20,7 +20,7 @@ class AnunciosController < ApplicationController
     if anuncio.URL.empty?
       Espacio.find_each.reject &:anuncio
     else
-      Espacio.find_each.select {|e| e.anuncio.nil? && e.enlace}
+      Espacio.find_each.select { |e| e.anuncio.nil? && e.enlace }
     end
   end
 
@@ -34,6 +34,10 @@ class AnunciosController < ApplicationController
 
   def show
     @anuncio = Anuncio.find params[:id]
+    @cuentas_audiencias = espacios_permitidos(@anuncio).collect do |e|
+      # Cuenta los elementos en la intersección de ambas listas de audiencias
+      (e.medio.audiences & @anuncio.anunciante.audiences).length
+    end
   end
 
   def edit
