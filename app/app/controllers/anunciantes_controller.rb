@@ -33,7 +33,7 @@ class AnunciantesController < ApplicationController
     @audiences_asociables = if @anunciante.audiences.empty?
       Audience.all
     else
-      Audience.where('nombre NOT IN (?)', @anunciante.audiences.pluck(:nombre))
+      Audience.where.not nombre: @anunciante.audiences.pluck(:nombre)
     end
   end
 

@@ -32,7 +32,7 @@ class MediosController < ApplicationController
     @lista_audiences_asociables = if @medio.audiences.empty?
       Audience.all
     else
-      Audience.where('nombre NOT IN (?)', @medio.audiences.pluck(:nombre))
+      Audience.where.not nombre: @medio.audiences.pluck(:nombre)
     end
   end
 
