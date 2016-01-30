@@ -1,8 +1,17 @@
 %h1 Inicio
-
-.content-wrapper.pure-g
-  .cards.pure-u-1.pure-u-lg-3-4
+%h4 Navegación
+.cards.cards-table.pure-g
+  .pure-u-1.pure-u-lg-1-2
     %a.card{href: anunciantes_path} Gestión de anunciantes
     %a.card{href: medios_path} Gestión de medios
+  .pure-u-1.pure-u-lg-1-2
     %a.card{href: audiences_path} Gestión de audiencias
     %a.card{href: contabilidad_path} Contabilidad
+
+%h4 Opciones avanzadas
+= link_to delete_path, method: :post, class: "pure-button button-delete", data: {confirm: "¿Borrar todos los datos de la aplicación? Esta acción no se puede deshacer"} do
+  %i.fa.fa-trash
+  Borrar todos los datos
+= link_to reset_path, method: :post, class: "pure-button pure-button-primary", data: {confirm: "Esta acción sustituirá los datos existentes y no se puede deshacer"} do
+  %i.fa.fa-certificate
+  Crear datos de ejemplo

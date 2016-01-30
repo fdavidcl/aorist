@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
 
-  get 'contabilidad/index'
-
   get 'anunciante_contratos/index'
 
   get 'medio_contratos/index'
@@ -29,6 +27,9 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   get 'contabilidad' => 'contabilidad#show'
+
+  post 'delete' => 'application#delete_all'
+  post 'reset' => 'application#reset_data'
 
   resources :medios, except: [:update, :edit] do
     member do
