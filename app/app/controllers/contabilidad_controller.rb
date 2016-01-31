@@ -36,12 +36,17 @@ helper_method :order_amount, :order_date, :group_contract, :group_owner
     @balance_negativo = Pago.sum(:importe)
     @balance_total = @balance_positivo - @balance_negativo
 
-    @cobros, @pagos = case params[:order]
-                      when "amount" order_amount
-                      when "contract" group_contract
-                      when "owner" group_owner
-                      else order_date
-                      end
+    order = params[:order] || "date"
+    @cobros, @pagos = case order
+    when "amount"
+      order_amount
+    when "contract"
+      group_contract
+    when "owner"
+      group_owner
+    else
+      order_date
+    end
   end
 
 end
