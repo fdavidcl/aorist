@@ -138,10 +138,9 @@ Desarrollados en el documento asociado: *Requisitos de Transacciones Económicas
 \rf{Hacer un pago a medio}
 \rf{Hacer un cobro a anunciante}
 \rf{Obtener balance}
-\rf{Obtener pagos ordenados por importe}
-\rf{Obtener cobros ordenados por importe}
-\rf{Gasto por anunciantes}
-\rf{Gasto en cada medio}
+\rf{Obtener transacciones ordenadas por importe}
+\rf{Gasto por anunciante y medio}
+\rf{Gasto por contrato}
 
 ## Funcionalidad "Audiencia"
 
@@ -212,10 +211,12 @@ Desarrollados en *Requisitos de Audiencia*:
 Desarrolladas en *Requisitos de Gestión de Anunciantes*:
 
 \rs{Contratos}
+\rs{Fecha contratos}
 
 Desarrolladas en *Requisitos de Gestión de Medios*:
 
-\rs{Audiencia}
+\rs{Contratos medio}
+\rs{Fecha contratos medio}
 
 Desarrolladas en *Requisitos de Anuncios*:
 
@@ -223,6 +224,11 @@ Desarrolladas en *Requisitos de Anuncios*:
 \rs{Anuncios y empresas}
 \rs{Anuncios y espacios incompatibles}
 
-Desarrollados en *Requisitos de Audiencia*:
+Desarrolladas en *Requisitos de Transacciones Económicas*
+
+\rs{Pagos}
+\rs{Fecha}
+
+Desarrolladas en *Requisitos de Audiencia*:
 
 \rs{Medios y anunciantes}

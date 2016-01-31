@@ -6,9 +6,9 @@ language: spanish
 
 mainfont: Droid Serif
 header-includes:
-  - \setcounter{rf}{23}
-  - \setcounter{rd}{12}
-  - \setcounter{rs}{5}
+  - \setcounter{rf}{22}
+  - \setcounter{rd}{14}
+  - \setcounter{rs}{9}
 ---
 
 # Requisitos funcionales
@@ -22,10 +22,10 @@ Entrada:
 \autoref{rdaudi}
 
 Procesamiento:  
-Crear una nueva entrada de tipo de audiencia.
+Crear una nueva entrada de tipo de audiencia
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Asociar un medio frecuentado por una audiencia}
 
@@ -33,13 +33,13 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-Identificador del medio a asociar con la audiencia, identificador de la audiencia.
+Identificador del medio a asociar con la audiencia, identificador de la audiencia
 
 Procesamiento:  
-Añadir el identificador de este medio a la lista de medios asociados de la audiencia.
+Añadir el identificador de este medio a la lista de medios asociados de la audiencia
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Asociar una audiencia preferida por un anunciante}
 
@@ -47,13 +47,13 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-Identificador del anunciante a asociar con la audiencia, identificador de la audiencia.
+Identificador del anunciante a asociar con la audiencia, identificador de la audiencia
 
 Procesamiento:  
-Añadir el identificador de este anunciante a la lista de medios asociados de la audiencia.
+Añadir el identificador de este anunciante a la lista de medios asociados de la audiencia
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Desasociar un medio frecuentado por una audiencia}
 
@@ -61,13 +61,13 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-Identificador del medio asociado con la audiencia, identificador de la audiencia.  
+Identificador del medio asociado con la audiencia, identificador de la audiencia
 
 Procesamiento:  
-Eliminar el identificador de este medio de la lista de medios asociados de la audiencia.
+Eliminar el identificador de este medio de la lista de medios asociados de la audiencia
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Desasociar una audiencia preferida por un anunciante}
 
@@ -75,13 +75,13 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-Identificador del anunciante asociado con la audiencia, identificador de la audiencia.  
+Identificador del anunciante asociado con la audiencia, identificador de la audiencia
 
 Procesamiento:  
-Eliminar el identificador de este anunciante de la lista de medios asociados de la audiencia.
+Eliminar el identificador de este anunciante de la lista de medios asociados de la audiencia
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Mostrar información sobre las audiencias disponibles}
 
@@ -89,20 +89,21 @@ Actor:
 Empleado gestor de productos
 
 Entrada:  
-Ninguna.
+Ninguna
 
 Procesamiento:  
-Recolectar la información pertinente sobre los medios y anunciantes de cada una y generar un resumen de audiencias.
+Mostrar los datos relacionados con una audiencia
 
 Salida:  
-Datos de las audiencias.
+Datos de las audiencias
 
 # Requisitos de datos
 
 \rd{Datos almacenados de Audiencia}
 \label{rdaudi}
 
-   - Descripción
+   - Identificador
+   - Descripción (cadena de caracteres)
    - Medios que frecuenta
    - Anunciantes interesados
 

@@ -8,7 +8,7 @@ mainfont: Droid Serif
 header-includes:
   - \setcounter{rf}{4}
   - \setcounter{rd}{3}
-  - \setcounter{rs}{1}
+  - \setcounter{rs}{2}
 ---
 
 # Requisitos funcionales
@@ -16,16 +16,16 @@ header-includes:
 \rf{Dar de alta un nuevo medio}
 
 Actor:  
-Empleado encargado de contrataciones.
+Empleado encargado de contrataciones
 
 Entrada:  
-\autoref{rdmedio1}
+\autoref{rdmedio2}
 
 Procesamiento:  
-Crear un nuevo medio.
+Crear un nuevo medio y almacenarlo en el sistema
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Dar de baja un medio}
 
@@ -33,41 +33,44 @@ Actor:
 Empleado encargado de contrataciones
 
 Entrada:  
-Identificador del medio a dar de baja.
+Identificador del medio
 
 Procesamiento:  
-Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilidad.
+Eliminamos los datos del medio, aunque conservamos lo relacionado con contabilidad
 
 Salida:  
-Ninguna.
+Ninguna
 
 \rf{Mostrar los datos de un medio}
 
 Actor:  
-Empleado encargado de contrataciones.
+Empleado encargado de contrataciones
 
 Entrada:  
-Identificador del medio.
+Identificador del medio
 
 Procesamiento:  
-Buscar y mostrar los datos de los medios requeridos y sus audiencias y contratos asociados (\autoref{rdmedio3}).
+Buscar y mostrar los datos del medio, junto a sus contratos, espacios y audiencias asociadas
 
 Salida:  
-Datos de los medios.
+
+  - \autoref{rdmedio1}
+  - Audiencias asociadas
+  - Espacios asociados
 
 \rf{Realizar contrato con un medio}
 
 Actor:  
-Empleado encargado de contrataciones.
+Empleado encargado de contrataciones
 
 Entrada:  
 \autoref{rdmedio3}
 
 Procesamiento:  
-Crear el contrato en el sistema.
+Crear el contrato en el sistema
 
 Salida:  
-Ninguna.
+Ninguna
 
 
 # Requisitos de datos
@@ -79,6 +82,7 @@ Ninguna.
    - Nombre (cadena de caracteres)
    - Sitio web (cadena de caracteres)
    - Datos fiscales (lista de cadenas de caracteres)
+   - Lista de contratos firmados (cadena de ID's contratos)
 
 \rd{Datos necesarios para almacenar un Medio}
 \label{rdmedio2}

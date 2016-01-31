@@ -22,7 +22,7 @@ Entrada:
 \autoref{rdanun2}
 
 Procesamiento:  
-Crear nueva empresa, con identificador RD1
+Crear un nuevo anunciante en el sistema
 
 Salida:  
 Ninguna
@@ -33,10 +33,10 @@ Actor:
 Empleado encargado de contrataciones
 
 Entrada:  
-ID empresa
+Identificador del anunciante
 
 Procesamiento:  
-Eliminar los datos almacenados con dicha empresa
+Eliminar los datos almacenados de dicha empresa
 
 Salida:  
 Ninguna
@@ -47,12 +47,10 @@ Actor:
 Empleado encargado de contrataciones
 
 Entrada:  
-
- - ID empresa
- - ID's audiencias
+\autoref{rdanun3}
 
 Procesamiento:  
-Se establece un contrato que vincula una empresa a un conjunto de audiencias
+Se establece un contrato con el anunciante que queda almacenado en el sistema
 
 Salida:  
 Ninguna
@@ -63,29 +61,34 @@ Actor:
 Empleado encargado de contrataciones
 
 Entrada:  
-ID empresa
+Identificador del anunciante
 
 Procesamiento:  
-Buscar y mostrar los datos de la empresa anunciante y sus audiencias y contratos asociados (\autoref{rdanun3}).
+Buscar y mostrar los datos de la empresa anunciante, sus contratos, sus anuncios y sus audiencias asociadas
 
 Salida:  
-\autoref{rdanun1}
+
+  - \autoref{rdanun1}
+  - Audiencias asociadas
+  - Anuncios asociados
 
 # Requisitos de datos
 
 \rd{Datos almacenados de empresa anunciante}
 \label{rdanun1}
 
- - ID empresa anunciante
+ - Identificador
  - Nombre de la empresa anunciante (cadena de caracteres)
  - Sitio web (cadena de caracteres)
+ - Datos fiscales (cadena de caracteres)
  - Lista de contratos firmados (cadena de ID's contratos)
 
 \rd{Datos requeridos para registrar una empresa anunciante}
 \label{rdanun2}
 
- - Nombre de la empresa anunciante 	(cadena de caracteres)
- - Sitio web (cadena de caracteres)
+ - Nombre de la empresa anunciante
+ - Sitio web
+ - Datos fiscales
 
 \rd{Datos almacenados de un contrato con un anunciante}
 \label{rdanun3}

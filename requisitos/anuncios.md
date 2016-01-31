@@ -9,7 +9,7 @@ mainfont: Droid Serif
 header-includes:
   - \setcounter{rf}{8}
   - \setcounter{rd}{6}
-  - \setcounter{rs}{2}
+  - \setcounter{rs}{4}
 ---
 
 # Requisitos funcionales
@@ -126,8 +126,8 @@ Ninguna
 
 - ID espacio
 - Medio asociado [RD 4]
-- Acepta formato multimedia [valor booleano]
 - Tamaño [pareja de enteros]
+- Acepta formato multimedia [valor booleano]
 - Puede enlazar [valor booleano]
 
 \rd{Datos almacenados para Anuncio}
@@ -142,8 +142,8 @@ Ninguna
 \label{rdtipo2}
 
 - ID espacio
-- Acepta formato multimedia [valor booleano]
 - Tamaño [pareja de enteros]
+- Acepta formato multimedia [valor booleano]
 - Puede enlazar [valor booleano]
 
 \rd{Datos requeridos para crear Anuncio}
@@ -162,7 +162,7 @@ A un espacio publicitario sólo se puede asignar un anuncio, pero un anuncio se 
 
 \rs{Anuncios y anunciantes}
 
-Un anuncio *debe* asociarse con una (y sólo una) anunciante. *Puede* haber varios anuncios asociados
+Un anuncio *debe* asociarse con un (y solo un) anunciante. *Puede* haber varios anuncios asociados
 al mismo anunciante.
 
 \rs{Anuncios y espacios incompatibles}
