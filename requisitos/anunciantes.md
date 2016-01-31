@@ -105,5 +105,5 @@ Salida:
 \rs{Contratos}
 Los contratos deben contener, al menos, el identificador del contrato, una fecha, el importe y el identificador del anunciante.
 
-\rs{Contratos}
+\rs{Fecha contratos}
 La fecha de finalización de un contrato será posterior a la fecha de inicio.

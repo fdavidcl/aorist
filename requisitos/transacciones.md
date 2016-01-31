@@ -125,7 +125,7 @@ Cobros y pagos agrupados por contrato.
 \rd{Datos almacenados de cobro}
 \label{rdtrans4}
 
-- ID contrato 
+- ID contrato
 - Importe
 - Fecha del cobro
 

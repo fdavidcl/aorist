@@ -104,8 +104,8 @@ Ninguna
 
 # Restricciones semánticas
 
-\rs{Contratos}
+\rs{Contratos medio}
 Los contratos deben contener, al menos, el identificador del contrato, una fecha, el importe y el identificador del medio.
 
-\rs{Contratos}
+\rs{Fecha contratos medio}
 La fecha de finalización de un contrato será posterior a la fecha de inicio.
