@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160129142118) do
   create_table "anuncios", force: :cascade do |t|
     t.integer  "anunciante_id"
     t.text     "contenido"
-    t.string   "URL"
+    t.string   "url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

@@ -4,7 +4,7 @@ class AnunciosController < ApplicationController
 
   private
   def anuncio_params
-    params.require(:anuncio).permit(:contenido, :URL)
+    params.require(:anuncio).permit(:contenido, :url)
   end
 
   def current_anunciante
@@ -17,7 +17,7 @@ class AnunciosController < ApplicationController
   end
 
   def espacios_permitidos anuncio
-    if anuncio.URL.empty?
+    if anuncio.url.nil? || anuncio.url.empty?
       Espacio.find_each.reject &:anuncio
     else
       Espacio.find_each.select { |e| e.anuncio.nil? && e.enlace }

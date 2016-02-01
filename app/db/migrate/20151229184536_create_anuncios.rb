@@ -3,7 +3,7 @@ class CreateAnuncios < ActiveRecord::Migration
     create_table :anuncios do |t|
       t.references :anunciante, index: true, foreign_key: true
       t.text :contenido
-      t.string :URL
+      t.string :url
 
       t.timestamps null: false
     end
