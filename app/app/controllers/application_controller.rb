@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def delete_records
     [Anunciante, Anuncio, AnuncioAllocation, AnuncianteContrato, Cobro,
-    Medio, Espacio, MedioContrato, Pago, Audience].map &:delete_all
+    Medio, Espacio, MedioContrato, Pago, Audience].map &:destroy_all
   end
 
   public
@@ -71,24 +71,29 @@ class ApplicationController < ActionController::Base
     Anunciante.find_each.each_with_index { |a,i| a.audiences << Audience.find(i / 2 + Audience.take.id) }
     Medio.find_each.each_with_index { |m,i| m.audiences << Audience.find(i + Audience.take.id) }
 
-    Anunciante.take.anuncios.create contenido: "Sonic The Hedgehog 2016", URL: ""
-    Anunciante.take(2)[1].anuncios.create contenido: "Super Smash Bros 3Ds", URL: "http://www.smashbros.com"
-    Anunciante.take.anunciante_contratos.create descripcion: "Anunciar Sonic '16", fecha: Time.now, duracion: 2.years.from_now, importe: 10000
-    Anunciante.take(2)[1].anunciante_contratos.create descripcion: "Anunciar Smash Bros", fecha: Time.now, duracion: 2.years.from_now, importe: 6280
-    Anunciante.take.anunciante_contratos.take.cobros.create importe: 250, fecha: Time.now
-    Anunciante.take.anunciante_contratos.take.cobros.create importe: 360, fecha: Time.now
-    Anunciante.take(2)[1].anunciante_contratos.take.cobros.create importe: 222, fecha: Time.now
-    Anunciante.take(2)[1].anunciante_contratos.take.cobros.create importe: 100, fecha: Time.now
+    anunciante_uno = Anunciante.take
+    anunciante_dos = Anunciante.take(2)[1]
 
-    Medio.take.espacios.create ancho: 256, alto: 512, multimedia: true, enlace: false
-    Medio.take.espacios.create ancho: 256, alto: 512, multimedia: true, enlace: true
-    Medio.take.espacios.create ancho: 1024, alto: 512, multimedia: false, enlace: false
-    Medio.take.espacios.create ancho: 512, alto: 512, multimedia: true, enlace: true
-    Medio.take.medio_contratos.create descripcion: "Anunciar videojuegos", fecha: Time.now, duracion: 2.years.from_now, importe: 12000
-    Medio.take.medio_contratos.take.pagos.create importe: 1000, fecha: Time.now
+    anun_uno = anunciante_uno.anuncios.create! contenido: "Sonic The Hedgehog 2016", url: ""
+    anun_dos = anunciante_dos.anuncios.create! contenido: "Super Smash Bros 3Ds", url: "http://www.smashbros.com"
+    cont_uno = anunciante_uno.anunciante_contratos.create! descripcion: "Anunciar Sonic '16", fecha: 2.days.ago, duracion: 2.years.from_now, importe: 10000
+    cont_dos = anunciante_dos.anunciante_contratos.create! descripcion: "Anunciar Smash Bros", fecha: 2.days.ago, duracion: 2.years.from_now, importe: 6280
+    cont_uno.cobros.create! importe: 250, fecha: 1.day.ago
+    cont_uno.cobros.create! importe: 360, fecha: 1.day.ago
+    cont_dos.cobros.create! importe: 222, fecha: 1.day.ago
+    cont_dos.cobros.create! importe: 100, fecha: 1.day.ago
 
-    Anuncio.take.espacios << Espacio.take
-    Anuncio.take(2)[1].espacios << Espacio.take(2)[1]
+    medio_uno = Medio.take
+
+    medio_uno.espacios.create! ancho: 256, alto: 512, multimedia: true, enlace: false
+    medio_uno.espacios.create! ancho: 256, alto: 512, multimedia: true, enlace: true
+    medio_uno.espacios.create! ancho: 1024, alto: 512, multimedia: false, enlace: false
+    medio_uno.espacios.create! ancho: 512, alto: 512, multimedia: true, enlace: true
+    cont_tres = medio_uno.medio_contratos.create! descripcion: "Anunciar videojuegos", fecha: 2.days.ago, duracion: 2.years.from_now, importe: 12000
+    cont_tres.pagos.create! importe: 1000, fecha: 1.day.ago
+
+    anun_uno.espacios << Espacio.take
+    anun_dos.espacios << Espacio.take(2)[1]
 
     redirect_to :root
   end
