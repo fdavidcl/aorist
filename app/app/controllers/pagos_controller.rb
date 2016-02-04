@@ -8,13 +8,10 @@ class PagosController < ApplicationController
 
   public
   def create
-    @pago = Pago.new pago_params
     @contrato = MedioContrato.find_by! id: params[:contrato_id]
 
     begin
-      if @pago.save
-        @contrato.pagos << @pago
-      end
+      @contrato.pagos.create! pago_params
 
       redirect_to controller: :medio_contratos, action: :show, medio_id: @contrato.medio.id, id: @contrato.id
     rescue ActiveRecord::StatementInvalid => error
