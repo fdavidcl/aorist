@@ -34,7 +34,7 @@ BEGIN
   suma := suma + :NEW.importe;
 
   IF suma > importe THEN
-    raise_application_error(-20001, 'Cobros inválidos');
+    raise_application_error(-20001, 'Cobros incorrectos');
   END IF;
 END;
 /
@@ -60,7 +60,7 @@ BEGIN
   suma := suma + :NEW.importe;
 
   IF suma > importe THEN
-    raise_application_error(-20002, 'Pagos inválidos');
+    raise_application_error(-20002, 'Pagos incorrectos');
   END IF;
 
 END;
