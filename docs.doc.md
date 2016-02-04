@@ -73,16 +73,11 @@ Cómo divide Rails los archivos.
 
 -->
 
-
 # Uso de Aorist
 
-Vamos a detallar el uso de cada parte de Aorist.
+Aorist cuenta de cuatro partes: Gestión de anunciantes, Gestión de medios, Gestión de audiencias y Contabilidad. En la pantalla de inicio de la aplicación podremos acceder a cada una de ellas, además de hacer una gestión básica de los datos almacenados en la base de datos; podemos eliminar todo lo que hay almacenado, dejando la base de datos limpia, y podemos crear unos datos de ejemplo. Esta opción ha sido creada en vistas a una exposición de la aplicación, para no tener que introducir manualmente datos necesarios para visualizar el funcionamiento de la aplicación. En la Figura 1 podemos ver cómo es la pantalla de inicio de Aorist.
 
 ![](./Imagenes/InicioAorist.png)
-
-<!--
-Pantalla de inicio. Hablar de las opciones. Creación y destrucción de datos.
--->
 
 ## Gestión de anunciantes
 
@@ -90,17 +85,17 @@ Pantalla de inicio. Hablar de las opciones. Creación y destrucción de datos.
 Algunas imágenes pendientes de incluir. Se modelará para que las menos relevantes estén unidas y no ocupen demasiado espacio.
 -->
 
-Al acceder al menú de Gestión de anunciantes, nos encontramos una pantalla con el listado de los anunciantes almacenados en el sistema, junto a la opción de crear un nuevo anunciante. Podemos verlo en la Figura 1.
+Al acceder al menú de Gestión de anunciantes, nos encontramos una pantalla con el listado de los anunciantes almacenados en el sistema, junto a la opción de crear un nuevo anunciante. Podemos verlo en la Figura 2.
 
 ![](./Imagenes/AnuncianteShow.png)
 
-Si accedemos al menú de creación de un nuevo anunciante, nos encontramos un formulario para rellenar los datos del nuevo anunciante: el nombre, la web y los datos fiscales. Además, a la izquierda podemos ver los anunciantes ya creados en el sistema, y podemos acceder a ellos pinchando en su recuadro. Esto puede ser visto en la Figura 2.
+Si accedemos al menú de creación de un nuevo anunciante, nos encontramos un formulario para rellenar los datos del nuevo anunciante: el nombre, la web y los datos fiscales. Además, a la izquierda podemos ver los anunciantes ya creados en el sistema, y podemos acceder a ellos pinchando en su recuadro. Esto puede ser visto en la Figura 3.
 
 ![](./Imagenes/AnuncianteNew.png)
 
 Si hacemos click en cualquier anunciante, accedemos a su ficha. En ella vemos todos sus datos y tenemos enlaces para ver sus anuncios, sus contratos y eliminar el anunciante, además de la lista de audiencias que tiene asociadas y las que no. Es posible asociarle una nueva audiencia con la opción que aparece al lado de cada una de las que no tiene asociadas.
 
-Para acceder a los detalles de sus anuncios y contratos deberemos hacer click en la opción correspondiente. Podemos ver la ficha completa en la Figura 3.
+Para acceder a los detalles de sus anuncios y contratos deberemos hacer click en la opción correspondiente. Podemos ver la ficha completa en la Figura 4.
 
 ![](./Imagenes/AnuncianteView.png)
 
