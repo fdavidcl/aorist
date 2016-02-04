@@ -32,6 +32,10 @@ BEGIN
   WHERE anunciante_contrato_id = :NEW.anunciante_contrato_id;
 
   suma := suma + :NEW.importe;
+
+  IF suma > importe THEN
+    raise_application_error(-20001, 'Cobros inválidos');
+  END IF;
 END;
 /
 
@@ -54,6 +58,10 @@ BEGIN
   WHERE medio_contrato_id = :NEW.medio_contrato_id;
 
   suma := suma + :NEW.importe;
+
+  IF suma > importe THEN
+    raise_application_error(-20002, 'Pagos inválidos');
+  END IF;
 
 END;
 /
