@@ -20,6 +20,12 @@
   = @contrato.importe
 
 %h4 Realizar un pago
+- unless params[:error].nil?
+  .cards
+    .card.disabled
+      %i.fa.fa-times
+      Se produjo un error al realizar el pago:
+      = params[:error]
 = form_for [@medio, @contrato, @pago], url: medio_contrato_pagos_path(contrato_id: @contrato.id), method: :post, html: {class: "pure-form"} do |f|
   = f.number_field :importe, min: 0, placeholder: "Importe"
   = f.date_select :fecha

@@ -62,6 +62,5 @@ BEGIN
   IF suma > importe THEN
     raise_application_error(-20002, 'Pagos incorrectos');
   END IF;
-
 END;
 /
