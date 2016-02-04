@@ -132,4 +132,14 @@ Para los contratos asociados a un medio, nos econtraremos la misma funcionalidad
 
 ## Gestión de audiencias
 
+Al acceder al menú de Gestión de audiencias, nos encontramos un listado con todas las audiencias creadas en el sistema. Tenemos la posibilidad de crear una nueva audiencia, para la que especificaremos un nombre y una descripción detallada, que nos será útil en caso de consultas futuras. Accediendo a cada audiencia podemos ver sus datos, si bien no se pueden establecer relaciones entre las audiencias y las empresas; estas se harán en el apartado de gestión de cada una de estas empresas. Vemos en la siguientes Figuras un ejemplo del listado de las audiencias, el formulario de creación de una nueva y la ficha de una de ellas, desde donde podremos también eliminarla del sistema.
+
+![](./Imagenes/Audiencias.png)
+
 ## Contabilidad
+
+La sección de contabilidad nos lleva a una pantalla que recoge todos los datos relacionados con los cobros y los pagos asociados a los contratos. Podemos ver un balance total, que suma todos los cobrs realizados y le resta los pagos, y se mostrará en rojo en caso de estar en negativo. A la derecha tendremos la suma de los cobros y los pagos por separado, que estarán detallados en la parte inferior de la sección. Tendremos todos los cobros y los pagos en dos columnas (una para cada tipo), donde se especificará la fecha, el contrato asociado, la empresa asociada y el importe de la transacción. Podremos acceder al contrato o la empresa desde la misma transacción, con un enlace situado en ella.
+
+Es posible ordenar o agrupar las transacciones siguiendo distintos criterios. Inicialmente estarán ordenadas por fecha, apareciendo primero las más recientes. Podemos ordenar también por importe, donde situaremos primero aquellas transcciones con mayor cuantía. Para agruparlas, podremos hacerlo por contrato, donde mostraremos el importe total y la empresa a la que está asociada, o hacerlo directamente por empresa, viendo la cantidad invertida o recibida de cada una de ellas. Podemos ver esta pantalla resumida en la siguiente Figura.
+
+![](./Imagenes/Contabilidad.png)
