@@ -1,4 +1,5 @@
 class PagosController < ApplicationController
+  layout "with_side", except: [:index]
 
   private
   def pago_params
@@ -10,11 +11,14 @@ class PagosController < ApplicationController
     @pago = Pago.new pago_params
     @contrato = MedioContrato.find_by! id: params[:contrato_id]
 
-    if @pago.save
-      @contrato.pagos << @pago
+    begin
+      if @pago.save
+        @contrato.pagos << @pago
+      end
+
+      redirect_to controller: :medio_contratos, action: :show, medio_id: @contrato.medio.id, id: @contrato.id
+    rescue ActiveRecord::StatementInvalid => error
+      redirect_to controller: :medio_contratos, action: :show, medio_id: @contrato.medio.id, id: @contrato.id, error: "Pago supera límite importe"
     end
-
-    redirect_to controller: :medio_contratos, action: :show, medio_id: @contrato.medio.id, id: @contrato.id
   end
-
 end
