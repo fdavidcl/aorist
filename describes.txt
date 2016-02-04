@@ -1,0 +1,124 @@
+SQL> describe anunciante_contratos
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ ANUNCIANTE_ID					    NUMBER(38)
+ IMPORTE					    BINARY_FLOAT
+ FECHA						    DATE
+ DESCRIPCION					    VARCHAR2(255 CHAR)
+ DURACION					    DATE
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+
+SQL> describe anunciantes
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ NOMBRE 					    VARCHAR2(255 CHAR)
+ WEB						    VARCHAR2(255 CHAR)
+ FISCALES					    VARCHAR2(255 CHAR)
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+ DISABLED					    NUMBER(1)
+
+SQL> describe anunciantes_audiences
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ AUDIENCE_ID					    NUMBER(38)
+ ANUNCIANTE_ID					    NUMBER(38)
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+
+SQL> describe anuncio_allocations
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ ANUNCIO_ID					    NUMBER(38)
+ ESPACIO_ID					    NUMBER(38)
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+
+SQL> describe anuncios
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ ANUNCIANTE_ID					    NUMBER(38)
+ CONTENIDO					    CLOB
+ URL						    VARCHAR2(255 CHAR)
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+
+SQL> describe audiences
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ NOMBRE 					    VARCHAR2(255 CHAR)
+ DESCRIPCION					    VARCHAR2(255 CHAR)
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+
+SQL> describe audiences_medios
+ Name					   Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID					   NOT NULL NUMBER(38)
+ AUDIENCE_ID					    NUMBER(38)
+ MEDIO_ID					    NUMBER(38)
+ CREATED_AT				   NOT NULL DATE
+ UPDATED_AT				   NOT NULL DATE
+
+
+ SQL> describe cobros
+  Name					   Null?    Type
+  ----------------------------------------- -------- ----------------------------
+  ID					   NOT NULL NUMBER(38)
+  IMPORTE					    BINARY_FLOAT
+  FECHA						    DATE
+  CREATED_AT				   NOT NULL DATE
+  UPDATED_AT				   NOT NULL DATE
+  ANUNCIANTE_CONTRATO_ID 			    NUMBER(38)
+
+ SQL> describe espacios
+  Name					   Null?    Type
+  ----------------------------------------- -------- ----------------------------
+  ID					   NOT NULL NUMBER(38)
+  MEDIO_ID					    NUMBER(38)
+  MULTIMEDIA					    NUMBER(1)
+  ENLACE 					    NUMBER(1)
+  ANCHO						    NUMBER(38)
+  ALTO						    NUMBER(38)
+  CREATED_AT				   NOT NULL DATE
+  UPDATED_AT				   NOT NULL DATE
+
+ SQL> describe medio_contratos
+  Name					   Null?    Type
+  ----------------------------------------- -------- ----------------------------
+  ID					   NOT NULL NUMBER(38)
+  MEDIO_ID					    NUMBER(38)
+  IMPORTE					    BINARY_FLOAT
+  FECHA						    DATE
+  DESCRIPCION					    VARCHAR2(255 CHAR)
+  DURACION					    DATE
+  CREATED_AT				   NOT NULL DATE
+  UPDATED_AT				   NOT NULL DATE
+
+ SQL> describe medios
+  Name					   Null?    Type
+  ----------------------------------------- -------- ----------------------------
+  ID					   NOT NULL NUMBER(38)
+  NOMBRE 					    VARCHAR2(255 CHAR)
+  WEB						    VARCHAR2(255 CHAR)
+  FISCALES					    VARCHAR2(255 CHAR)
+  CREATED_AT				   NOT NULL DATE
+  UPDATED_AT				   NOT NULL DATE
+  DISABLED					    NUMBER(1)
+
+ SQL> describe pagos
+  Name					   Null?    Type
+  ----------------------------------------- -------- ----------------------------
+  ID					   NOT NULL NUMBER(38)
+  IMPORTE					    BINARY_FLOAT
+  FECHA						    DATE
+  CREATED_AT				   NOT NULL DATE
+  UPDATED_AT				   NOT NULL DATE
+  MEDIO_CONTRATO_ID				    NUMBER(38)
