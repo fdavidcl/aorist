@@ -1,4 +1,4 @@
--- 
+-- Eliminar la asociación Anuncio - Espacio si se introduce una URL al anuncio y el espacio no las permite.
 CREATE OR REPLACE TRIGGER enforce_space_compatibility
   AFTER
     UPDATE OF url
@@ -55,6 +55,5 @@ BEGIN
 
   suma := suma + :NEW.importe;
 
-  IF suma > importe;
 END;
 /
