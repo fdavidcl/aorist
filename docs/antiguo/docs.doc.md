@@ -10,9 +10,11 @@ author:
 toc: true
 numbersections: true
 lang: spanish
+
+mainfont: Droid Serif
 ---
 
-# Introducción
+# Descripción
 Aorist (Ad Oriented Information System) es un sistema de gestión dirigido a empresas de publicidad, principalmente orientado a la publicidad online. El sistema modela las empresas anunciantes y los medios de forma que se puedan relacionar mediante los anuncios de las primeras y los espacios publicitarios de los segundos. Además, se facilita la segmentación del mercado y la asociación entre anunciantes y medios con audiencias afines.
 
 ## Áreas funcionales
@@ -33,7 +35,170 @@ Permite tramitar los cobros a las empresas anunciantes, y los pagos a los medios
 Administra los distintos perfiles de visitantes que se ofertan a los anunciantes y en función de los cuáles se distribuyen los anuncios a los medios.
 
 
-# Instalación
+\pagebreak
+
+# Funcionalidades del sistema
+
+## Funcionalidad "Gestión de anunciantes"
+
+### Descripción
+La gestión de anunciantes permite registras nuevas empresas anunciantes que quieren promocionar sus productos mediante anuncios. Cada anuncio está dirigido a uno o varios sectores del mercado.
+
+
+### Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Gestión de Anunciantes*.
+
+\rf{Dar de alta una empresa anunciante}
+\rf{Dar de baja una empresa anunciante}
+\rf{Realizar contrato}
+\rf{Mostrar los datos de una empresa anunciante}
+
+## Funcionalidad "Gestión de medios"
+
+### Descripción
+La gestión de medios permite registrar nuevos medios en los que podemos publicar anuncios. Asociado a cada medio tendremos uno o varios temas de interés, los cuales nos servirán para enviarles anuncios que se adecuen a la temática de cada medio. Debemos poder añadir nuevos medios y añadir o eliminar temáticas.
+
+### Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Gestión de Medios*.
+
+\rf{Dar de alta un nuevo medio}
+\rf{Dar de baja un medio}
+\rf{Mostrar los datos de un medio}
+\rf{Realizar contrato con un medio}
+
+## Funcionalidad "Anuncios"
+
+### Descripción
+
+Incluye la creación de distintos tipos de anuncios que después se podrán ofertar a los anunciantes. La gestión de anuncios incluye recuentos de impresiones y clicks, y permite reunir estadísticas sobre el éxito de los anuncios en cada medio.
+
+### Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Anuncios*.
+
+\rf{Dar de alta nuevo espacio publicitario}
+\rf{Eliminar espacio publicitario}
+\rf{Dar de alta nuevo anuncio}
+\rf{Obtener anuncio}
+\rf{Modificar anuncio}
+\rf{Asignar anuncio a espacio publicitario}
+\rf{Mostrar anuncios puestos en marcha}
+\rf{Eliminar anuncio}
+
+## Funcionalidad "Transacciones económicas"
+
+
+###Descripción
+Las transacciones económicas permiten llevar todas las acciones relacionadas con la contabilidad dentro de la empresa, desde el gasto generado por la compra de espacios publicitarios a medios hasta la cantidad de dinero que nos ha dado un anunciante por contratar nuestros servicios. También nos permite ver cuáles son nuestros mejores clientes y cuáles son los espacios publicitarios donde nos hemos gastado más dinero.
+
+###Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Transacciones Económicas*.
+
+\rf{Hacer un pago a medio}
+\rf{Hacer un cobro a anunciante}
+\rf{Obtener balance}
+\rf{Obtener transacciones ordenadas por importe}
+\rf{Gasto por anunciante y medio}
+\rf{Gasto por contrato}
+
+## Funcionalidad "Audiencia"
+
+### Descripción
+
+Los perfiles de audiencia consisten en distintos tipos de posibles compradores a los que que pueden ir dirigidos los anuncios y sobre los que pueden especializarse los medios.
+
+### Requisitos funcionales
+
+Desarrollados en el documento asociado: *Requisitos de Audiencia*.
+
+\rf{Insertar un nuevo tipo de audiencia}
+\rf{Asociar un medio frecuentado por una audiencia}
+\rf{Asociar una audiencia preferida por un anunciante}
+\rf{Desasociar un medio frecuentado por una audiencia}
+\rf{Desasociar una audiencia preferida por un anunciante}
+\rf{Mostrar información sobre las audiencias disponibles}
+
+# Requisitos de datos
+
+Desarrollados en *Requisitos de Gestión de Anunciantes*:
+
+\rd{Datos almacenados de empresa anunciante}
+\label{rdanun1}
+\rd{Datos requeridos para registrar una empresa anunciante}
+\label{rdanun2}
+\rd{Datos almacenados de un contrato con un anunciante}
+\label{rdanun3}
+
+Desarrollados en *Requisitos de Gestión de Medios*:
+
+\rd{Datos almacenados de Medio}
+\label{rdmedio1}
+\rd{Datos necesarios para almacenar un Medio}
+\label{rdmedio2}
+\rd{Datos almacenados de un contrato con un medio}
+\label{rdmedio3}
+
+Desarrollados en *Requisitos de Anuncios*:
+
+\rd{Datos almacenados para Espacio publicitario}
+\label{rdtipo}
+\rd{Datos almacenados para Anuncio}
+\label{rdanuncio}
+\rd{Datos requeridos para crear Espacio publicitario}
+\label{rdtipo2}
+\rd{Datos requeridos para crear Anuncio}
+\label{rdanuncio2}
+
+Desarrollados en *Requisitos de Transacciones Económicas*:
+
+\rd{Datos requeridos para pago a medio}
+\label{rdtrans1}
+\rd{Datos requeridos para cobro a anunciante}
+\label{rdtrans2}
+\rd{Datos almacenados de pago}
+\label{rdtrans3}
+\rd{Datos almacenados de cobro}
+\label{rdtrans4}
+
+Desarrollados en *Requisitos de Audiencia*:
+
+\rd{Datos almacenados de Audiencia}
+\label{rdaudi}
+
+# Restricciones semánticas
+
+Desarrolladas en *Requisitos de Gestión de Anunciantes*:
+
+\rs{Contratos}
+\rs{Fecha contratos}
+
+Desarrolladas en *Requisitos de Gestión de Medios*:
+
+\rs{Contratos medio}
+\rs{Fecha contratos medio}
+
+Desarrolladas en *Requisitos de Anuncios*:
+
+\rs{Espacios y anuncios}
+\rs{Anuncios y empresas}
+\rs{Anuncios y espacios incompatibles}
+
+Desarrolladas en *Requisitos de Transacciones Económicas*
+
+\rs{Pagos}
+\rs{Fecha}
+
+Desarrolladas en *Requisitos de Audiencia*:
+
+\rs{Medios y anunciantes}
+
+
+# Implementación
+
+## Instalación
 
 Esta es una guía para instalar Aorist en un sistema operativo con kernel Linux, creada y seguida desde Ubuntu 14.04.
 
@@ -68,15 +233,15 @@ Instaladas las gemas, hemos de migrar la base de datos. Para ello, ejecutamos `r
 
 # Implementación
 
-Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos como gestiona Rails cada parte, y qué hemos de implementar nosotros en cada una de ellas.
+Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos como gestiona Rails cada parte, y qué hemos implementado nosotros en cada una de ellas.
 
 ## Modelo
 
-El modelo es la realización del diseño conceptual en forma de base de datos, que almacenará los datos que utilicemos en nuestra aplicación. Para generar un modelo, lo haremos desde consola, con el comando `rails generate model Nombre Atributo:Tipo`. Esto generará dos archivos: un archivo de código en Ruby llamado *nombre.rb* y un archivo de migración que Rails se encargará de llevar a código SQL más adelante. Dicho archivo puede ser modificado para incluir más datos a nuestro modelo, así que no debemos preocuparnos si olvidamos algún atributo en el comando.
+El modelo es la realización del diseño conceptual en forma clases que se comunican con la base de datos. Cada modelo corresponde al menos a dos archivos: un archivo de código Ruby en *models/nombre.rb* y un archivo de migración que Rails utiliza para ejecutar el código SQL necesario al llevar el modelo a la base de datos. Dicho archivo puede ser modificado para incluir más datos a nuestro modelo, así que no debemos preocuparnos si olvidamos algún atributo en el comando, y en ningún caso es necesario escribir sentencias de definición de datos en SQL.
 
-En el archivo *nombre.rb* podremos especificar las relaciones de nuestro modelo con otros, mediante distintas asociaciones como *has_many* (uno a muchos, con el uno en el modelo actual), *belongs_to* (uno a muchos, con el uno en el otro modelo), *has_one* (uno a uno), etc... Esto creará una relación entre los dos modelos, que se trasladará a las tablas en la base de datos, creando las claves externas en caso de ser necesarias y métodos para operar con los atributos relacionados de otro modelo que podremos usar en el controlador (por ejemplo, obtener todos los elementos hijos desde una entidad padre). Dentro de este archivo podemos definir también validaciones, que son pequeñas comprobaciones que se hacen a la hora de insertar datos, como puede ser la presencia obligatoria de un dato, exigir que un valor numérico esté en un rango determinado, etc...
+En el archivo *models/nombre.rb* podremos especificar las relaciones de nuestro modelo con otros, mediante distintas asociaciones como *has_many* (uno a muchos, con el uno en el modelo actual), *belongs_to* (uno a muchos, con el uno en el otro modelo), *has_one* (uno a uno), etc... Esto creará automáticamente métodos para operar con los atributos relacionados de otro modelo que podremos usar en el controlador (por ejemplo, obtener todos los elementos de una entidad débil desde un elemento de la entidad fuerte). Dentro de este archivo podemos definir también validaciones, que son pequeñas comprobaciones que se hacen a la hora de insertar datos, como puede ser la presencia obligatoria de un dato, exigir que un valor numérico esté en un rango determinado, etc...
 
-Generaremos un modelo para cada entidad en nuestro diagrama conceptual, y en ocasiones, en las relaciones muchos a muchos será necesario crear un modelo para la relación (esto depende de la asociación elegida, queda como decisión del programador). Dicha relación contendrá las claves externas de los elementos relacionados y cualquiera adicional que pueda existir.
+Generaremos un modelo para cada entidad en nuestro diagrama conceptual, y en ocasiones, en las relaciones muchos a muchos será necesario crear un modelo para la relación (esto depende de la asociación elegida, queda como decisión del programador). Dicha relación contendrá las claves externas de los elementos relacionados y cualquier atributo de la relación que pueda existir.
 
 Una vez creados los modelos, hemos de migrar los archivos para que se modifique el esquema de la base de datos, con la creación de nuevas tablas y asociaciones. Dicha migración se hará con el comando de consola `rake db:migrate`, y hará que Rails interprete el código originado al crear el modelo y lo lleve a SQL. Una vez realizada la migración no podremos modificar los archivos que se han usado para esta, pero si queremos hacer cambios en la base de datos podemos crear una nueva migración y hacer los cambios dentro del archivo generado, en código Ruby. Para crear una migración, usaremos el comando `rails generate migration Nombre`.
 
