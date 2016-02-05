@@ -67,11 +67,25 @@ Instaladas las gemas, hemos de migrar la base de datos. Para ello, ejecutamos `r
 
 # Implementación
 
-<!--
-Usamos MVC. Modelo: Migraciones. Rails genera la BBDD. Vista: Escrito en haml. Controladores: En Ruby.
-Cómo divide Rails los archivos.
+Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos como gestiona Rails cada parte, y qué hemos de implementar nosotros en cada una de ellas.
 
--->
+## Modelo
+
+El modelo es la realización del diseño conceptual en forma de base de datos, que almacenará los datos que utilicemos en nuestra aplicación. Para generar un modelo, lo haremos desde consola, con el comando `rails generate model Nombre Atributo:Tipo`. Esto generará dos archivos: un archivo de código en Ruby llamado *nombre.rb* y un archivo de migración que Rails se encargará de llevar a código SQL más adelante. Dicho archivo puede ser modificado para incluir más datos a nuestro modelo, así que no debemos preocuparnos si olvidamos algún atributo en el comando.
+
+En el archivo *nombre.rb* podremos especificar las relaciones de nuestro modelo con otros, mediante distintas asociaciones como *has_many* (uno a muchos, con el uno en el modelo actual), *belongs_to* (uno a muchos, con el uno en el otro modelo), *has_one* (uno a uno), etc... Esto creará una relación entre los dos modelos, que se trasladará a las tablas en la base de datos, creando las claves externas en caso de ser necesarias y métodos para operar con los atributos relacionados de otro modelo que podremos usar en el controlador (por ejemplo, obtener todos los elementos hijos desde una entidad padre). Dentro de este archivo podemos definir también validaciones, que son pequeñas comprobaciones que se hacen a la hora de insertar datos, como puede ser la presencia obligatoria de un dato, exigir que un valor numérico esté en un rango determinado, etc...
+
+Generaremos un modelo para cada entidad en nuestro diagrama conceptual, y en ocasiones, en las relaciones muchos a muchos será necesario crear un modelo para la relación (esto depende de la asociación elegida, queda como decisión del programador). Dicha relación contendrá las claves externas de los elementos relacionados y cualquiera adicional que pueda existir.
+
+Una vez creados los modelos, hemos de migrar los archivos para que se modifique el esquema de la base de datos, con la creación de nuevas tablas y asociaciones. Dicha migración se hará con el comando de consola `rake db:migrate`, y hará que Rails interprete el código originado al crear el modelo y lo lleve a SQL. Una vez realizada la migración no podremos modificar los archivos que se han usado para esta, pero si queremos hacer cambios en la base de datos podemos crear una nueva migración y hacer los cambios dentro del archivo generado, en código Ruby. Para crear una migración, usaremos el comando `rails generate migration Nombre`.
+
+
+## Vistas
+
+Las vistas de la aplicación son código en formato Haml (HTML Abstraction Markup Language).
+
+## Controladores
+
 
 # Uso de Aorist
 
@@ -109,6 +123,7 @@ En la ficha de cada anuncio tenemos sus datos y las opciones de editar dichos da
 
 Entrando ahora en los contratos de cada anunciante, nos encontramos de nuevo un listado con los contratos creados, con la posibilidad de acceder a un menú para crear uno nuevo proporcionando sus datos. Dentro de la ficha de cada contrato nos encontramos con todos sus datos, junto a sus cobros asociados y la posibilidad de registrar uno nuevo. Para ello simplemente especificaremos la fecha y el importe del cobro. Podemos ver estos menús en la Figura.
 
+![](./Imagenes/ContratoAnuncianteShow.png)
 
 ## Gestión de medios
 
