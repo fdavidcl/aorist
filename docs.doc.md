@@ -9,6 +9,7 @@ author:
   - José Ramón Trillo Vilchez
 toc: true
 numbersections: true
+lang: spanish
 ---
 
 # Introducción
