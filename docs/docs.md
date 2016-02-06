@@ -12,6 +12,9 @@ toc-depth: 2
 numbersections: true
 
 mainfont: Droid Serif
+monofont: Source Code Pro
+
+geometry: "a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm"
 
 header-includes:
   - \usepackage{graphicx}
@@ -302,13 +305,13 @@ En el archivo `tablas.sql` asociado se especifican las sentencias DDL que se pue
 
 ### Disparadores PL/SQL
 
-Hemos incluido tres disparadores PL/SQL en nuestra implementación (archivo `triggers.sql`), que detallamos a continuación:
+Hemos creado tres disparadores PL/SQL en nuestra implementación (se encuentran en el archivo `triggers.sql`), que detallamos a continuación:
 
-- Disparador para cobros: En el momento en el que intentamos insertar un nuevo cobro, antes de insertarlo comprobamos que el importe de todos los cobros sumados al nuevo no superen el importe especificado en el contrato. De ser así, el cobro no será insertado.
+- Disparador para anuncios (preserva **RS7**): Este disparador se activará al modificar un anuncio, de forma que si añadimos una URL a un anuncio asociado a un espacio que no las permite, la asociación se elimine.
 
-- Disparador para pagos: Idéntico al anterior, solo que se lanzará cuando intentemos insertar un pago.
+- Disparador para cobros (preserva **RS9**): En el momento en el que intentamos insertar un nuevo cobro, antes de insertarlo comprobamos que el importe conjunto con los demás cobros del mismo contrato no superen el importe especificado en el contrato. De ser así, el cobro no será insertado y se lanzará una excepción.
 
-- Disparador para anuncios: Este disparador se activará al modificar un anuncio, de forma que si añadimos una URL a un anuncio asociado a un espacio que no las permite, la asociación se elimine.
+- Disparador para pagos (preserva **RS8**): Idéntico al anterior, solo que se lanzará cuando intentemos insertar un pago.
 
 
 # Implementación
@@ -368,11 +371,24 @@ En el código del modelo especificamos sus relaciones con otros, mediante distin
 
 Hemos generado un modelo para cada entidad en nuestro diagrama conceptual, y en ocasiones, en las relaciones muchos a muchos añadimos un modelo adicional representando la asociación. Una vez creados los modelos, se ejecutan las migraciones para que se modifique el esquema de la base de datos, con la creación de nuevas tablas y asociaciones. Dicha migración se realiza con el comando de consola `rake db:migrate`. Las migraciones se asocian a un sello temporal, de forma que el esquema de la base de datos se puede modificar progresivamente y cada vez que se ejecutan migraciones solo se realizan aquellas que no estaban aplicadas.
 
+A continuación mostramos la lista completa de clases utilizadas para el modelo:
+
+- `Anunciante`
+- `AnuncianteContrato`
+- `Cobro`
+- `Anuncio`
+- `AnuncioAllocation` (representa la asignación de un anuncio a un espacio)
+- `Medio`
+- `MedioContrato`
+- `Pago`
+- `Espacio`
+- `Audience`
+
 ### Controladores
 
 Los controladores de la aplicación gestionan los datos que proporcionan los modelos y los preparan para mostrarlos en las vistas, a la vez que tramitan las peticiones que envían los usuarios. Se encuentran en el directorio `app/controllers`.
 
-La arquitectura de un controlador en Rails es sencilla: cada controlador es una clase, que contiene métodos que corresponden a acciones. La mayoría de las acciones tienen una vista asociada, aunque otras pueden redirigir a otra acción. Además, las acciones permiten organizar la forma en que se responde a las rutas pedidas por el navegador del usuario. Por ejemplo, si tenemos definida la ruta `GET "contabilidad/show"`, al acceder a dicha dirección Rails ejecutará el método `show` del controlador `ContabilidadController`.
+La arquitectura de un controlador en Rails es sencilla: cada controlador es una clase, que contiene métodos que corresponden a acciones. La mayoría de las acciones tienen una vista asociada, aunque otras pueden redirigir a otra acción. Además, las acciones permiten organizar la forma en que se responde a las rutas pedidas por el navegador del usuario. Por ejemplo, si tenemos definida la ruta `GET 'contabilidad/show'`, al acceder a dicha dirección Rails ejecutará el método `show` del controlador `ContabilidadController`.
 
 Todas las entidades del diseño conceptual tienen un controlador asociado, que responde a rutas siguiendo la convención REST (Representational State Transfer). Por ejemplo:
 
@@ -384,11 +400,27 @@ get    '/anunciantes/:id' => AnunciantesController#show
 delete '/anunciantes/:id' => AnunciantesController#destroy
 ~~~
 
-Asimismo, algunos controladores adicionales añaden funcionalidad a la aplicación, en concreto `HomeController` proporciona una página de inicio y `ContabilidadController` da acceso a la contabilidad. Las rutas se especifican y se configuran con más detalle en el archivo `config/routes.rb`.
+Asimismo, algunos controladores adicionales añaden funcionalidad a la aplicación, en concreto `HomeController` proporciona una página de inicio y `ContabilidadController` da acceso a la contabilidad. Las rutas se especifican y se configuran con más detalle en el archivo `config/routes.rb`. La lista completa de controladores es la siguiente:
+
+- `ApplicationController`
+- `HomeController`
+- `AnunciantesController`
+- `AnuncianteContratosController`
+- `CobrosController`
+- `AnunciosController`
+- `MediosController`
+- `MedioContratosController`
+- `PagosController`
+- `EspaciosController`
+- `AudiencesController`
+- `ContabilidadController`
+- `ErrorsController`
 
 ### Vistas
 
 Las vistas de la aplicación son archivos de código en lenguaje Haml (HTML Abstraction Markup Language), que residen bajo el directorio `app/views`, con un nombre que referencia la acción del controlador a la que están asociadas. Haml permite referenciar a variables que haya definido dicha acción, y ejecutar métodos auxiliares definidos en el controlador como `helper_method`.
+
+Todas las vistas tienen como plantilla principal al archivo `application.haml` del directorio `layouts`, y algunas utilizan `with_side.haml` para mostrar una barra lateral. Además, el estilo de las páginas viene definido en Sass (lenguaje que compila a CSS) en el archivo `home.sass` del directorio `app/assets/stylesheets`.
 
 ### Otros archivos
 
