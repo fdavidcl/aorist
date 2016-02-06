@@ -36,7 +36,7 @@ Incluye la creación de distintos tipos de espacios que después se podrán ocup
 * Transacciones económicas:
 Permite tramitar los cobros a las empresas anunciantes, y los pagos a los medios.
 
-* Audiencia:
+* Audiencias:
 Administra los distintos perfiles de visitantes que se ofertan a los anunciantes y en función de los cuáles se distribuyen los anuncios a los medios.
 
 
@@ -191,7 +191,7 @@ Desarrolladas en *Requisitos de Audiencia*:
 
 #### Esquemas externos para el diagrama armazón F
 
-\begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/externos_armazonF.png}\end{center}
+\begin{center}\includegraphics[width=0.65\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/externos_armazonF.png}\end{center}
 
 #### Diagrama armazón D
 
@@ -398,7 +398,7 @@ Los directorios `public` y `test` contienen código auxiliar para páginas de er
 
 ## Uso de Aorist
 
-Aorist cuenta de cuatro partes: Gestión de anunciantes, Gestión de medios, Gestión de audiencias y Contabilidad. En la pantalla de inicio de la aplicación podremos acceder a cada una de ellas, además de hacer una gestión básica de los datos almacenados en la base de datos; podemos eliminar todo lo que hay almacenado, dejando la base de datos limpia, y podemos crear unos datos de ejemplo. Esta opción ha sido creada en vistas a una exposición de la aplicación, para no tener que introducir manualmente datos necesarios para visualizar el funcionamiento de la aplicación. En la Figura 1 podemos ver cómo es la pantalla de inicio de Aorist.
+Aorist consta de cuatro partes: Gestión de anunciantes, Gestión de medios, Gestión de audiencias y Contabilidad. En la pantalla de inicio de la aplicación podremos acceder a cada una de ellas, además de hacer una gestión básica de los datos almacenados en la base de datos; podemos eliminar todo lo que hay almacenado, dejando la base de datos limpia, y podemos crear unos datos de ejemplo. Esta opción ha sido creada en vistas a una exposición de la aplicación, para no tener que introducir manualmente datos necesarios para visualizar el funcionamiento de la misma. En la Figura 1 podemos ver cómo es la pantalla de inicio de Aorist.
 
 \begin{figure}[H]
 \centering
@@ -416,7 +416,7 @@ Al acceder al menú de Gestión de anunciantes, nos encontramos una pantalla con
 \caption{Lista de anunciantes}
 \end{figure}
 
-Si accedemos al menú de creación de un nuevo anunciante, nos encontramos un formulario para rellenar los datos del nuevo anunciante: el nombre, la web y los datos fiscales. Además, a la izquierda podemos ver los anunciantes ya creados en el sistema, y podemos acceder a ellos pinchando en su recuadro. Esto puede ser visto en la Figura 3.
+Si accedemos al menú de creación de un nuevo anunciante, nos encontramos un formulario para rellenar los datos del nuevo anunciante: el nombre, la web y los datos fiscales. Además, a la izquierda podemos ver los anunciantes ya creados en el sistema, y podemos acceder a ellos pinchando en su recuadro. Lo observamos en la Figura 3.
 
 \begin{figure}[H]
 \centering
@@ -484,7 +484,7 @@ Si nos vamos a los espacios asociados a cada medio, encontramos un listado de lo
 \caption{Espacios}
 \end{figure}
 
-Para los contratos asociados a un medio, nos econtraremos la misma funcionalidad que en los asociados a los anunciantes: tendremos un listado de los contratos, la posibilidad de crear uno nuevo, y en su ficha podremos visualizar sus datos y crear un nuevo pago asociado a dicho contrato. Podemos ver esto en la siguiente Figura.
+Para los contratos asociados a un medio, nos encontraremos la misma funcionalidad que en los asociados a los anunciantes: tendremos un listado de los contratos, la posibilidad de crear uno nuevo, y en su ficha podremos visualizar sus datos y crear un nuevo pago asociado a dicho contrato. Podemos ver esto en la siguiente Figura.
 
 \begin{figure}[H]
 \centering
