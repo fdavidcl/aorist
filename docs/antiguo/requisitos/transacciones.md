@@ -134,5 +134,8 @@ Cobros y pagos agrupados por contrato.
 \rs{Pagos}
 La suma de todos los pagos relacionados con un contrato no superará en ningún momento el importe total especificado en el contrato.
 
+\rs{Cobros}
+La suma de todos los cobros relacionados con un contrato con un anunciante no superará en ningún momento el importe total especificado en el contrato. 
+
 \rs{Fecha}
 Al crear un pago o un cobro, la fecha de la transacción no será nunca posterior a la fecha actual.  
