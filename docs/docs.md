@@ -390,6 +390,12 @@ Las vistas de la aplicación son archivos de código en lenguaje Haml (HTML Abst
 
 ### Otros archivos
 
+En el directorio `config` se encuentran diversos archivos de configuración de la aplicación, en particular `routes.rb` define las rutas aceptadas, `database.yml` especifica parámetros para la conexión a las bases de datos y los archivos bajo el directorio `environments` configuran la aplicación según el entorno en que se ejecute (desarrollo, test o producción).
+
+El directorio `db` contiene los archivos de migración (bajo `migrate`), el esquema de la base de datos en `schema.rb` y, en el caso del SGBD SQLite, el archivo que contiene la base de datos.
+
+Los directorios `public` y `test` contienen código auxiliar para páginas de error y tests unitarios, respectivamente, que es creado automáticamente por Rails sin intervención del desarrollador.
+
 ## Uso de Aorist
 
 Aorist cuenta de cuatro partes: Gestión de anunciantes, Gestión de medios, Gestión de audiencias y Contabilidad. En la pantalla de inicio de la aplicación podremos acceder a cada una de ellas, además de hacer una gestión básica de los datos almacenados en la base de datos; podemos eliminar todo lo que hay almacenado, dejando la base de datos limpia, y podemos crear unos datos de ejemplo. Esta opción ha sido creada en vistas a una exposición de la aplicación, para no tener que introducir manualmente datos necesarios para visualizar el funcionamiento de la aplicación. En la Figura 1 podemos ver cómo es la pantalla de inicio de Aorist.
