@@ -274,7 +274,7 @@ Contrato_anunciante(\underline{ID contrato anunciante, ID anunciante}, Fecha, Im
 *FK*: ID anunciante $\rightarrow$ Anunciante.ID anunciante
 
 Cobro(\underline{ID cobro}, ID contrato anunciante, ID anunciante, Importe, Fecha) (Fusión de tablas)  
-*FK*: ID contrato anunciante $\rightarrow$ Contrato_anunciante.ID contrato anunciante
+*FK*: ID contrato anunciante $\rightarrow$ Contrato_anunciante.ID contrato anunciante  
 *FK*: ID anunciante $\rightarrow$ Anunciante.ID anunciante
 
 Contrato_medio(\underline{ID contrato medio, ID medio}, Fecha, Duración, Importe, Descripción)  
@@ -356,7 +356,7 @@ Instaladas las gemas, hemos de migrar la base de datos. Para ello, ejecutamos `r
 
 ## Arquitectura de la implementación
 
-Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos como gestiona Rails cada parte, y qué hemos implementado nosotros en cada una de ellas.
+Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección, detallaremos como gestiona Rails cada parte, y qué hemos implementado nosotros en cada una de ellas.
 
 ### Modelo
 
