@@ -1,6 +1,6 @@
 ---
 title: "Aorist: Sistema de información orientado a la publicidad"
-subtitle: "Descripción del proyecto"
+subtitle: "Documentación del proyecto"
 author:
   - Óscar Bermúdez Garrido
   - Luis Castro Martín
