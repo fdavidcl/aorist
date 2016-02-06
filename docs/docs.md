@@ -10,9 +10,12 @@ author:
 toc: true
 toc-depth: 2
 numbersections: true
-lang: spanish
+language: spanish
 
 mainfont: Droid Serif
+
+header-includes:
+  - \usepackage{graphicx}
 ---
 
 # Descripción
@@ -163,6 +166,7 @@ Desarrolladas en *Requisitos de Anuncios*:
 Desarrolladas en *Requisitos de Transacciones Económicas*
 
 \rs{Pagos}
+\rs{Cobros}
 \rs{Fecha}
 
 Desarrolladas en *Requisitos de Audiencia*:
@@ -293,6 +297,16 @@ Visita(\underline{ID medio, ID audiencia})
 *FK*: ID medio $\rightarrow$ Medio.ID medio  
 *FK*: ID audiencia $\rightarrow$ Audiencia.ID audiencia
 
+### Disparadores PL/SQL
+
+Hemos incluido tres disparadores PL/SQL en nuestra implementación, que detallamos a continuación:
+
+- Disparador para cobros: En el momento en el que intentamos insertar un nuevo cobro, antes de insertarlo comprobamos que el importe de todos los cobros sumados al nuevo no superen el importe especificado en el contrato. De ser así, el cobro no será insertado.
+
+- Disparador para pagos: Idéntico al anterior, solo que se lanzará cuando intentemos insertar un pago.
+
+- Disparador para anuncios: Este disparador se activará al modificar un anuncio, de forma que si añadimos una URL a un anuncio asociado a un espacio que no las permite, la asociación se elimine.
+
 
 # Implementación
 
@@ -355,7 +369,10 @@ Las vistas de la aplicación son código en formato Haml (HTML Abstraction Marku
 
 Aorist cuenta de cuatro partes: Gestión de anunciantes, Gestión de medios, Gestión de audiencias y Contabilidad. En la pantalla de inicio de la aplicación podremos acceder a cada una de ellas, además de hacer una gestión básica de los datos almacenados en la base de datos; podemos eliminar todo lo que hay almacenado, dejando la base de datos limpia, y podemos crear unos datos de ejemplo. Esta opción ha sido creada en vistas a una exposición de la aplicación, para no tener que introducir manualmente datos necesarios para visualizar el funcionamiento de la aplicación. En la Figura 1 podemos ver cómo es la pantalla de inicio de Aorist.
 
-![](img/capturas/InicioAorist.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/InicioAorist.png}
+\caption{Inicio de Aorist}
+\end{figure}
 
 ### Gestión de anunciantes
 
@@ -365,55 +382,99 @@ Algunas imágenes pendientes de incluir. Se modelará para que las menos relevan
 
 Al acceder al menú de Gestión de anunciantes, nos encontramos una pantalla con el listado de los anunciantes almacenados en el sistema, junto a la opción de crear un nuevo anunciante. Podemos verlo en la Figura 2.
 
-![](img/capturas/AnuncianteShow.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/AnuncianteShow.png}
+\caption{Lista de anunciantes}
+\end{figure}
 
 Si accedemos al menú de creación de un nuevo anunciante, nos encontramos un formulario para rellenar los datos del nuevo anunciante: el nombre, la web y los datos fiscales. Además, a la izquierda podemos ver los anunciantes ya creados en el sistema, y podemos acceder a ellos pinchando en su recuadro. Esto puede ser visto en la Figura 3.
 
-![](img/capturas/AnuncianteNew.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/AnuncianteNew.png}
+\caption{Nuevo anunciante}
+\end{figure}
 
 Si hacemos click en cualquier anunciante, accedemos a su ficha. En ella vemos todos sus datos y tenemos enlaces para ver sus anuncios, sus contratos y eliminar el anunciante, además de la lista de audiencias que tiene asociadas y las que no. Es posible asociarle una nueva audiencia con la opción que aparece al lado de cada una de las que no tiene asociadas.
 
 Para acceder a los detalles de sus anuncios y contratos deberemos hacer click en la opción correspondiente. Podemos ver la ficha completa en la Figura 4.
 
-![](img/capturas/AnuncianteView.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/AnuncianteView.png}
+\caption{Datos de anunciante}
+\end{figure}
 
 Si accedemos a los anuncios de nuestro anunciante, se mostrarán dos listados: aquellos anuncios que están puestos en marcha (es decir, ya tengan un espacio asociado) y aquellos que no lo estén. Además, tendremos la opción de crear un nuevo anuncio asociado al anunciante, especificando su contenido y su URL, en caso de tenerla. De nuevo tendremos un listado de los anuncios ya existentes a la izquierda, como teníamos en los anunciantes.
 
-![](img/capturas/AnuncioNew.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/AnuncioNew.png}
+\caption{Nuevo anuncio}
+\end{figure}
 
 En la ficha de cada anuncio tenemos sus datos y las opciones de editar dichos datos, lo que nos lleva a un formulario similar al de creación de un nuevo anuncio, y eliminarlo completamente del sistema. Además, podemos ver un listado de los espacios que tiene asociados (en caso de tener alguno) y de aquellos que no pero es posible establecer dicha asociación, con la posibilidad de realizarla. En estos espacios también se muestra el número de audiencias en común entre el anunciante y el medio, criterio a tener en cuenta a la hora de asociar el anuncio a algún espacio. Podemos verlo de forma detallada en la siguiente Figura.
 
-![](img/capturas/AnuncioView.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/AnuncioView.png}
+\caption{Datos de anuncio}
+\end{figure}
 
 Entrando ahora en los contratos de cada anunciante, nos encontramos de nuevo un listado con los contratos creados, con la posibilidad de acceder a un menú para crear uno nuevo proporcionando sus datos. Dentro de la ficha de cada contrato nos encontramos con todos sus datos, junto a sus cobros asociados y la posibilidad de registrar uno nuevo. Para ello simplemente especificaremos la fecha y el importe del cobro. Podemos ver estos menús en la Figura.
 
-![](img/capturas/ContratoAnuncianteShow.png)
+\begin{figure}[hbt]
+\includegraphics{img/capturas/ContratoAnuncianteShow.png}
+\caption{Datos contrato}
+\end{figure}
+
 
 ### Gestión de medios
 
 El menú de Gestion de medios es similar al de Gestión de anunciantes. Inicialmente, nos encontramos un listado de todos los medios y la posibilidad de crear uno nuevo, accediendo a una pantalla donde especificar su nombre, web y datos fiscales. Dentro de la ficha de cada medio encontraremos sus datos, un enlace a sus contratos y a sus espacios, sus audiencias asociadas y las no asociadas (con la posibilidad de asociarle nuevas), y una opción de eliminar el medio del sistema. Podemos ver todo esto en las siguientes Figuras.
 
-![](img/capturas/MedioShow.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/MedioShow.png}
+\caption{Lista de medios}
+\end{figure}
+
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/MedioNew.png}
+\caption{Nuevo medio}
+\end{figure}
+
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/MedioView.png}
+\caption{Datos de medio}
+\end{figure}
 
 Si nos vamos a los espacios asociados a cada medio, encontramos un listado de los ya creados. Accediendo a cualquiera de ellos podemos ver sus datos y tenemos la posibilidad de eliminarlo del sistema. Al contrario que en los anuncios, los datos de los espacios no pueden ser editados, por tanto no nos encontraremos dicha opción.
 
-![](img/capturas/EspacioView.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/EspacioView.png}
+\caption{Espacios}
+\end{figure}
 
 Para los contratos asociados a un medio, nos econtraremos la misma funcionalidad que en los asociados a los anunciantes: tendremos un listado de los contratos, la posibilidad de crear uno nuevo, y en su ficha podremos visualizar sus datos y crear un nuevo pago asociado a dicho contrato. Podemos ver esto en la siguiente Figura.
 
-![](img/capturas/ContratoMedioShow.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/ContratoMedioShow.png}
+\caption{Contrato con medio}
+\end{figure}
 
 
 ### Gestión de audiencias
 
 Al acceder al menú de Gestión de audiencias, nos encontramos un listado con todas las audiencias creadas en el sistema. Tenemos la posibilidad de crear una nueva audiencia, para la que especificaremos un nombre y una descripción detallada, que nos será útil en caso de consultas futuras. Accediendo a cada audiencia podemos ver sus datos, si bien no se pueden establecer relaciones entre las audiencias y las empresas; estas se harán en el apartado de gestión de cada una de estas empresas. Vemos en la siguientes Figuras un ejemplo del listado de las audiencias, el formulario de creación de una nueva y la ficha de una de ellas, desde donde podremos también eliminarla del sistema.
 
-![](img/capturas/Audiencias.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/Audiencias.png}
+\caption{Audiencias}
+\end{figure}
 
 ### Contabilidad
 
-La sección de contabilidad nos lleva a una pantalla que recoge todos los datos relacionados con los cobros y los pagos asociados a los contratos. Podemos ver un balance total, que suma todos los cobrs realizados y le resta los pagos, y se mostrará en rojo en caso de estar en negativo. A la derecha tendremos la suma de los cobros y los pagos por separado, que estarán detallados en la parte inferior de la sección. Tendremos todos los cobros y los pagos en dos columnas (una para cada tipo), donde se especificará la fecha, el contrato asociado, la empresa asociada y el importe de la transacción. Podremos acceder al contrato o la empresa desde la misma transacción, con un enlace situado en ella.
+La sección de contabilidad nos lleva a una pantalla que recoge todos los datos relacionados con los cobros y los pagos asociados a los contratos. Podemos ver un balance total, que suma todos los cobros realizados y le resta los pagos, y se mostrará en rojo en caso de estar en negativo. A la derecha tendremos la suma de los cobros y los pagos por separado, que estarán detallados en la parte inferior de la sección. Tendremos todos los cobros y los pagos en dos columnas (una para cada tipo), donde se especificará la fecha, el contrato asociado, la empresa asociada y el importe de la transacción. Podremos acceder al contrato o la empresa desde la misma transacción, con un enlace situado en ella.
 
 Es posible ordenar o agrupar las transacciones siguiendo distintos criterios. Inicialmente estarán ordenadas por fecha, apareciendo primero las más recientes. Podemos ordenar también por importe, donde situaremos primero aquellas transcciones con mayor cuantía. Para agruparlas, podremos hacerlo por contrato, donde mostraremos el importe total y la empresa a la que está asociada, o hacerlo directamente por empresa, viendo la cantidad invertida o recibida de cada una de ellas. Podemos ver esta pantalla resumida en la siguiente Figura.
 
-![](img/capturas/Contabilidad.png)
+\begin{figure}[hbt]
+\includegraphics[width=\textwidth]{img/capturas/Contabilidad.png}
+\caption{Contabilidad}
+\end{figure}
