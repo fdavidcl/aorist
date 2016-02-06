@@ -22,6 +22,8 @@ header-includes:
   - \usepackage[spanish]{babel}
 ---
 
+\pagebreak
+
 # Descripción
 Aorist (Ad Oriented Information System) es un sistema de gestión dirigido a empresas de publicidad, principalmente orientado a la publicidad online. El sistema modela las empresas anunciantes y los medios de forma que se puedan relacionar mediante los anuncios de las primeras y los espacios publicitarios de los segundos. Además, se facilita la segmentación del mercado y la asociación entre anunciantes y medios con audiencias afines.
 
@@ -177,6 +179,7 @@ Desarrolladas en *Requisitos de Audiencia*:
 
 \rs{Medios y anunciantes}
 
+\pagebreak
 
 # Diseño de la aplicación
 
@@ -202,6 +205,26 @@ Desarrolladas en *Requisitos de Audiencia*:
 
 ### Primer refinamiento
 
+#### Refinamiento parcial del proceso 1
+
+\begin{center}\includegraphics[width=0.7\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Anunciantes1.png}\end{center}
+
+#### Refinamiento parcial del proceso 2
+
+\begin{center}\includegraphics[width=0.7\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Medios1.png}\end{center}
+
+#### Refinamiento parcial del proceso 3
+
+\begin{center}\includegraphics[width=0.7\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Anuncios1.png}\end{center}
+
+<!--#### Refinamiento parcial del proceso 4
+
+\begin{center}\includegraphics[width=\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Contabilidad1.png}\end{center}-->
+
+#### Refinamiento parcial del proceso 5
+
+\begin{center}\includegraphics[width=0.7\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Audiencia1.png}\end{center}
+
 #### Plano de refinamiento F de primer nivel
 
 \begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/plano_refinamiento1.png}\end{center}
@@ -211,6 +234,26 @@ Desarrolladas en *Requisitos de Audiencia*:
 \begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/externos_refinamiento1.png}\end{center}
 
 ### Segundo refinamiento
+
+#### Refinamiento parcial del proceso 1
+
+\begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Anunciantes2.png}\end{center}
+
+#### Refinamiento parcial del proceso 2
+
+\begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Medios2.png}\end{center}
+
+#### Refinamiento parcial del proceso 3
+
+\begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Anuncios2.png}\end{center}
+
+<!--#### Refinamiento parcial del proceso 4
+
+\begin{center}\includegraphics[width=\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Contabilidad1.png}\end{center}-->
+
+#### Refinamiento parcial del proceso 5
+
+\begin{center}\includegraphics[width=0.9\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{img/diagramas/Audiencia2.png}\end{center}
 
 #### Plano de refinamiento F de segundo nivel
 
@@ -277,7 +320,7 @@ Contrato_anunciante(\underline{ID contrato anunciante, ID anunciante}, Fecha, Im
 *FK*: ID anunciante $\rightarrow$ Anunciante.ID anunciante
 
 Cobro(\underline{ID cobro}, ID contrato anunciante, ID anunciante, Importe, Fecha) (Fusión de tablas)  
-*FK*: ID contrato anunciante $\rightarrow$ Contrato_anunciante.ID contrato anunciante  
+*FK*: ID contrato anunciante $\rightarrow$ Contrato_anunciante.ID contrato anunciante
 *FK*: ID anunciante $\rightarrow$ Anunciante.ID anunciante
 
 Contrato_medio(\underline{ID contrato medio, ID medio}, Fecha, Duración, Importe, Descripción)  
@@ -313,6 +356,7 @@ Hemos creado tres disparadores PL/SQL en nuestra implementación (se encuentran 
 
 - Disparador para pagos (preserva **RS8**): Idéntico al anterior, solo que se lanzará cuando intentemos insertar un pago.
 
+\pagebreak
 
 # Implementación
 
