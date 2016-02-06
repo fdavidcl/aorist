@@ -14,6 +14,8 @@ language: spanish
 
 mainfont: Droid Serif
 
+geometry: "a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=3cm"
+
 header-includes:
   - \usepackage{graphicx}
   - \usepackage{float}
