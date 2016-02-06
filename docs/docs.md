@@ -10,13 +10,13 @@ author:
 toc: true
 toc-depth: 2
 numbersections: true
-language: spanish
 
 mainfont: Droid Serif
 
 header-includes:
   - \usepackage{graphicx}
   - \usepackage{float}
+  - \usepackage[spanish]{babel}
 ---
 
 # Descripción
