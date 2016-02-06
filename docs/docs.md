@@ -298,9 +298,11 @@ Visita(\underline{ID medio, ID audiencia})
 *FK*: ID medio $\rightarrow$ Medio.ID medio  
 *FK*: ID audiencia $\rightarrow$ Audiencia.ID audiencia
 
+En el archivo `tablas.sql` asociado se especifican las sentencias DDL que se pueden utilizar para crear una base de datos siguiendo este diseño físico en el SGBD Oracle.
+
 ### Disparadores PL/SQL
 
-Hemos incluido tres disparadores PL/SQL en nuestra implementación, que detallamos a continuación:
+Hemos incluido tres disparadores PL/SQL en nuestra implementación (archivo `triggers.sql`), que detallamos a continuación:
 
 - Disparador para cobros: En el momento en el que intentamos insertar un nuevo cobro, antes de insertarlo comprobamos que el importe de todos los cobros sumados al nuevo no superen el importe especificado en el contrato. De ser así, el cobro no será insertado.
 
@@ -356,7 +358,7 @@ Instaladas las gemas, hemos de migrar la base de datos. Para ello, ejecutamos `r
 
 ## Arquitectura de la implementación
 
-Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos como gestiona Rails cada parte, y qué hemos implementado nosotros en cada una de ellas.
+Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos cómo gestiona Rails cada parte, y qué hemos implementado nosotros en cada una de ellas.
 
 ### Modelo
 
@@ -495,7 +497,7 @@ Para los contratos asociados a un medio, nos encontraremos la misma funcionalida
 
 ### Gestión de audiencias
 
-Al acceder al menú de Gestión de audiencias, nos encontramos un listado con todas las audiencias creadas en el sistema. Tenemos la posibilidad de crear una nueva audiencia, para la que especificaremos un nombre y una descripción detallada, que nos será útil en caso de consultas futuras. Accediendo a cada audiencia podemos ver sus datos, si bien no se pueden establecer relaciones entre las audiencias y las empresas; estas se harán en el apartado de gestión de cada una de estas empresas. Vemos en la siguientes Figuras un ejemplo del listado de las audiencias, el formulario de creación de una nueva y la ficha de una de ellas, desde donde podremos también eliminarla del sistema.
+Al acceder al menú de Gestión de audiencias, nos encontramos un listado con todas las audiencias creadas en el sistema. Tenemos la posibilidad de crear una nueva audiencia, para la que especificaremos un nombre y una descripción detallada, que nos será útil en caso de consultas futuras. Accediendo a cada audiencia podemos ver sus datos, si bien no se pueden establecer relaciones entre las audiencias y las empresas; estas se harán en el apartado de gestión de cada una de estas empresas. Vemos en la siguiente Figura un ejemplo del listado de las audiencias.
 
 \begin{figure}[H]
 \centering

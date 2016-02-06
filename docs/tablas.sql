@@ -18,7 +18,7 @@ CREATE TABLE anunciantes(
 CREATE TABLE anunciantes_audiences(
   ID                        NUMBER(38)          PRIMARY KEY,
   AUDIENCE_ID               NUMBER(38)          FOREIGN KEY REFERENCES audiences(ID),
-  ANUNCIANTE_ID             NUMBER(38)          FOREIGN KEY REFERENCES anunciantes(ID)  
+  ANUNCIANTE_ID             NUMBER(38)          FOREIGN KEY REFERENCES anunciantes(ID)
 );
 
 CREATE TABLE anuncio_allocations(
@@ -47,10 +47,10 @@ CREATE TABLE audiences_medios(
 );
 
 CREATE TABLE cobros(
-  ID				        NUMBER(38)          PRIMARY KEY,
-  ANUNCIANTE_CONTRATO_ID 	NUMBER(38)          FOREIGN KEY REFERENCES anunciantes(ID),
-  IMPORTE					BINARY_FLOAT,
-  FECHA						DATE
+  ID                        NUMBER(38)          PRIMARY KEY,
+  ANUNCIANTE_CONTRATO_ID    NUMBER(38)          FOREIGN KEY REFERENCES anunciantes(ID),
+  IMPORTE                   BINARY_FLOAT,
+  FECHA                     DATE
 );
 
 CREATE TABLE espacios(
