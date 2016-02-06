@@ -310,6 +310,16 @@ Hemos incluido tres disparadores PL/SQL en nuestra implementación, que detallam
 
 # Implementación
 
+## Tecnologías utilizadas
+
+En el desarrollo de Aorist hemos hecho uso de diversas tecnologías, principalmente el framework Rails sobre el lenguaje Ruby, los sistemas gestores de bases de datos SQLite y Oracle, y varias gemas (librerías de Ruby) que facilitan el uso de Rails y la gestión de los datos, entre las que destacan:
+
+- *activerecord*, que sincroniza los objetos del modelo con la base de datos
+- *sqlite3*, *ruby-oci8* y *oracle_enhanced* para la comunicación con las bases de datos
+- *haml*, *sass-rails*, *pure-css-rails* y *font-awesome-sass* para la creación de las vistas
+
+Todas las librerías usadas se detallan en el archivo `Gemfile` del código.
+
 ## Guía de instalación
 
 Esta es una guía para instalar Aorist en un sistema operativo con kernel Linux, creada y seguida desde Ubuntu 14.04.
@@ -343,27 +353,41 @@ Una vez instalado, en la carpeta de la aplicación ejecutamos `bundle --without=
 
 Instaladas las gemas, hemos de migrar la base de datos. Para ello, ejecutamos `rake db:migrate`. Una vez hecho esto, la aplicación está lista para usarse. Solo queda lanzar el servidor con el comando `rails server`.
 
-## Descripción de la implementación
+## Arquitectura de la implementación
 
 Aorist es una aplicación web implementada con Ruby on Rails siguiendo un patrón Modelo-Vista-Controlador. En esta sección detallaremos como gestiona Rails cada parte, y qué hemos implementado nosotros en cada una de ellas.
 
 ### Modelo
 
-El modelo es la realización del diseño conceptual en forma clases que se comunican con la base de datos. Cada modelo corresponde al menos a dos archivos: un archivo de código Ruby en *models/nombre.rb* y un archivo de migración que Rails utiliza para ejecutar el código SQL necesario al llevar el modelo a la base de datos. Dicho archivo puede ser modificado para incluir más datos a nuestro modelo, así que no debemos preocuparnos si olvidamos algún atributo en el comando, y en ningún caso es necesario escribir sentencias de definición de datos en SQL.
+El modelo es la realización del diseño conceptual en forma de clases que se comunican con la base de datos. Cada modelo corresponde al menos a dos archivos: un archivo de código Ruby en el directorio `app/models` y un archivo de migración que Rails utiliza para ejecutar el código SQL necesario al llevar el modelo a la base de datos, de forma que no es necesario escribir sentencias de definición de datos en SQL.
 
-En el archivo *models/nombre.rb* podremos especificar las relaciones de nuestro modelo con otros, mediante distintas asociaciones como *has_many* (uno a muchos, con el uno en el modelo actual), *belongs_to* (uno a muchos, con el uno en el otro modelo), *has_one* (uno a uno), etc... Esto creará automáticamente métodos para operar con los atributos relacionados de otro modelo que podremos usar en el controlador (por ejemplo, obtener todos los elementos de una entidad débil desde un elemento de la entidad fuerte). Dentro de este archivo podemos definir también validaciones, que son pequeñas comprobaciones que se hacen a la hora de insertar datos, como puede ser la presencia obligatoria de un dato, exigir que un valor numérico esté en un rango determinado, etc...
+En el código del modelo especificamos sus relaciones con otros, mediante distintas asociaciones como `has_many` (uno a muchos, con el uno en el modelo actual), `belongs_to` (uno a muchos, con el uno en el otro modelo), `has_one` (uno a uno), etc. Esto creará automáticamente métodos para operar con los atributos relacionados de otro modelo que podremos usar en el controlador (por ejemplo, obtener todos los elementos de una entidad débil desde un elemento de la entidad fuerte). Dentro de este archivo podemos definir también validaciones, que son pequeñas comprobaciones que se hacen a la hora de insertar datos, como por ejemplo la presencia obligatoria de un dato o exigir que un valor numérico esté en un rango determinado.
 
-Generaremos un modelo para cada entidad en nuestro diagrama conceptual, y en ocasiones, en las relaciones muchos a muchos será necesario crear un modelo para la relación (esto depende de la asociación elegida, queda como decisión del programador). Dicha relación contendrá las claves externas de los elementos relacionados y cualquier atributo de la relación que pueda existir.
-
-Una vez creados los modelos, hemos de migrar los archivos para que se modifique el esquema de la base de datos, con la creación de nuevas tablas y asociaciones. Dicha migración se hará con el comando de consola `rake db:migrate`, y hará que Rails interprete el código originado al crear el modelo y lo lleve a SQL. Una vez realizada la migración no podremos modificar los archivos que se han usado para esta, pero si queremos hacer cambios en la base de datos podemos crear una nueva migración y hacer los cambios dentro del archivo generado, en código Ruby. Para crear una migración, usaremos el comando `rails generate migration Nombre`.
-
-
-### Vistas
-
-Las vistas de la aplicación son código en formato Haml (HTML Abstraction Markup Language).
+Hemos generado un modelo para cada entidad en nuestro diagrama conceptual, y en ocasiones, en las relaciones muchos a muchos añadimos un modelo adicional representando la asociación. Una vez creados los modelos, se ejecutan las migraciones para que se modifique el esquema de la base de datos, con la creación de nuevas tablas y asociaciones. Dicha migración se realiza con el comando de consola `rake db:migrate`. Las migraciones se asocian a un sello temporal, de forma que el esquema de la base de datos se puede modificar progresivamente y cada vez que se ejecutan migraciones solo se realizan aquellas que no estaban aplicadas.
 
 ### Controladores
 
+Los controladores de la aplicación gestionan los datos que proporcionan los modelos y los preparan para mostrarlos en las vistas, a la vez que tramitan las peticiones que envían los usuarios. Se encuentran en el directorio `app/controllers`.
+
+La arquitectura de un controlador en Rails es sencilla: cada controlador es una clase, que contiene métodos que corresponden a acciones. La mayoría de las acciones tienen una vista asociada, aunque otras pueden redirigir a otra acción. Además, las acciones permiten organizar la forma en que se responde a las rutas pedidas por el navegador del usuario. Por ejemplo, si tenemos definida la ruta `GET "contabilidad/show"`, al acceder a dicha dirección Rails ejecutará el método `show` del controlador `ContabilidadController`.
+
+Todas las entidades del diseño conceptual tienen un controlador asociado, que responde a rutas siguiendo la convención REST (Representational State Transfer). Por ejemplo:
+
+~~~
+get    '/anunciantes'     => AnunciantesController#index
+get    '/anunciantes/new' => AnunciantesController#new
+post   '/anunciantes'     => AnunciantesController#create
+get    '/anunciantes/:id' => AnunciantesController#show
+delete '/anunciantes/:id' => AnunciantesController#destroy
+~~~
+
+Asimismo, algunos controladores adicionales añaden funcionalidad a la aplicación, en concreto `HomeController` proporciona una página de inicio y `ContabilidadController` da acceso a la contabilidad. Las rutas se especifican y se configuran con más detalle en el archivo `config/routes.rb`.
+
+### Vistas
+
+Las vistas de la aplicación son archivos de código en lenguaje Haml (HTML Abstraction Markup Language), que residen bajo el directorio `app/views`, con un nombre que referencia la acción del controlador a la que están asociadas. Haml permite referenciar a variables que haya definido dicha acción, y ejecutar métodos auxiliares definidos en el controlador como `helper_method`.
+
+### Otros archivos
 
 ## Uso de Aorist
 
