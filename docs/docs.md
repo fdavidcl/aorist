@@ -395,13 +395,9 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys\
 
 En este punto ya tendremos instalado RVM con Ruby. Seguidamente,  ejecutamos el comando `source /home/usuario/.rvm/scripts/rvm` para poder usar rvm. Cambiaremos de versión de Ruby a la 2.2.1 con el comando `rvm use 2.2.1`.
 
-### Instalación de las gemas y migración de la base de datos
+### Instalación de dependencias y preparación de la aplicación
 
-Ya tenemos instalado Ruby. Ahora tenemos que instalar las gemas necesarias. Para empezar, instalamos bundler con `gem install bundler`, lo que nos permitirá intalar el resto de gemas.
-
-Una vez instalado, en la carpeta de la aplicación ejecutamos `bundle --without=test` para instalar todas las gemas necesarias para Aorist.
-
-Instaladas las gemas, hemos de migrar la base de datos. Para ello, ejecutamos `rake db:migrate`. Una vez hecho esto, la aplicación está lista para usarse. Solo queda lanzar el servidor con el comando `rails server`.
+Una vez instalado Ruby, la aplicación cuenta con un *script* que automatiza la instalación de las gemas de las que depende, y prepara la base de datos. Simplemente debemos situarnos en la carpeta de la aplicación y ejecutar `bin/setup`. Si el proceso termina correctamente, únicamente queda lanzar el servidor con el comando `bin/rails server`.
 
 ## Arquitectura de la implementación
 

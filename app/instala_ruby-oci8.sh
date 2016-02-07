@@ -1,3 +1,6 @@
+# Script para instalar el cliente de Oracle y
+# la gema ruby-oci8 en Arch Linux
+
 #!/bin/bash
 
 sudo su -c 'echo "
