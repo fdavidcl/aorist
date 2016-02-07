@@ -1,15 +1,19 @@
 ---
-title: "Requisitos de Anuncios y Espacios"
+title: "Requisitos y diseño de Anuncios y Espacios"
 author:
   - Francisco David Charte Luque
-lang: spanish
 numbersections: yes
+toc: yes
+
+abstract:
+  En este documento se proporciona la documentación individual del área de Anuncios y Espacios del sistema de información orientado a la publicidad Aorist.
 
 mainfont: Droid Serif
 header-includes:
   - \setcounter{rf}{8}
   - \setcounter{rd}{6}
   - \setcounter{rs}{4}
+  - \usepackage[spanish]{babel}
 ---
 
 # Requisitos funcionales
@@ -168,3 +172,18 @@ al mismo anunciante.
 \rs{Anuncios y espacios incompatibles}
 
 No se pueden asignar anuncios a espacios incompatibles (anuncios con URL/contenido multimedia a espacios que no lo permitan).
+
+
+# Diagramas de flujos de datos y esquemas externos
+
+## Primer refinamiento
+
+### Refinamiento parcial (primer nivel) del proceso 3
+
+\begin{center}\includegraphics[width=\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{Anuncios1.png}\end{center}
+
+## Segundo refinamiento
+
+### Refinamiento parcial (segundo nivel) del proceso 3
+
+\begin{center}\includegraphics[width=\textwidth,height=\dimexpr\textheight-4\baselineskip\relax,keepaspectratio]{Anuncios2.png}\end{center}
